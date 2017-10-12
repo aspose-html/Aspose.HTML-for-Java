@@ -21,4 +21,4 @@ Directory | Description
 + **Download:** [Download Aspose.Html for Java](https://downloads.aspose.com/html/java)
 + **Documentation:** [Aspose.Html for Java Documentation](https://docs.aspose.com//display/htmljava/Home)
 + **Free Support Forum:** [Aspose.Html for Java Free Support Forum](https://forum.aspose.com/c/html)
-+ **Blog:** [Aspose.Words for Java Blog](https://blog.aspose.com/category/aspose-products/aspose-html-product-family/)
++ **Blog:** [Aspose.Html for Java Blog](https://blog.aspose.com/category/aspose-products/aspose-html-product-family/)
