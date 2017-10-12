@@ -19,6 +19,6 @@ Directory | Description
 + **Website:** [www.aspose.com](https://www.aspose.com)
 + **Product Home:** [Aspose.Html for Java](https://www.aspose.com/products/html/java)
 + **Download:** [Download Aspose.Html for Java](https://downloads.aspose.com/html/java)
-+ **Documentation:** [Aspose.Html for Java Documentation](https://docs.aspose.com//display/htmljava/Home)
++ **Documentation:** [Aspose.Html for Java Documentation](https://docs.aspose.com/display/htmljava/Home)
 + **Free Support Forum:** [Aspose.Html for Java Free Support Forum](https://forum.aspose.com/c/html)
 + **Blog:** [Aspose.Html for Java Blog](https://blog.aspose.com/category/aspose-products/aspose-html-product-family/)
