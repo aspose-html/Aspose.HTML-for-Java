@@ -1,4 +1,4 @@
-Aspose.Html for Java
+## Aspose.Html for Java
 [Aspose.Html for Java](https://www.aspose.com/products/html/java) is a Java component built to allow developers to programmatically create and manipulate HTML documents, whether simple or complex and on the fly. Aspose.Html for Java allows developers to Insert, Remove, Replace HTML nodes, extract CSS style information, Navigate through HTML document either by NodeIterator, TreeWalker that are provided by Traversal Specifications, XPath or CSS selector queries. It also offers the scripting which allows to manipulate HTML DOM via JavaScript. As well as HTML, this API also provides the capabilities to load EPUB and MHTML.
 
 This repository contains [Examples](Examples) for [Aspose.Html for Java](https://www.aspose.com/products/html/java) to help you learn and write your own applications.
