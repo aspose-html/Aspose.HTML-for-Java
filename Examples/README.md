@@ -1,6 +1,6 @@
-## Aspose.Html for Java Examples
+## Aspose.HTML for Java Examples
 
-This directory contains Java examples for [Aspose.Html for Java](https://www.aspose.com/products/html/java).
+This directory contains Java examples for [Aspose.HTML for Java](https://products.aspose.com/html/java).
 
 ## How to use the Examples?
 
