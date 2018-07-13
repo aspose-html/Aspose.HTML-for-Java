@@ -22,10 +22,10 @@ public class HtmlToXPS {
                 "color: green;" +
                 "}" +
                 "</style>" +
-                "<div id=id1>Aspose.Html rendering Text in Black Color</div>" +
-                "<div id=id2 class=''st''>Aspose.Html rendering Text in Green Color</div>" +
-                "<div id=id3 class=''st'' style='color: blue;'>Aspose.Html rendering Text in Blue Color</div>" +
-                "<div id=id3 class=''st'' style='color: red;'>Aspose.Html rendering Text in Red Color</div>";
+                "<div id=id1>Aspose.HTML rendering Text in Black Color</div>" +
+                "<div id=id2 class=''st''>Aspose.HTML rendering Text in Green Color</div>" +
+                "<div id=id3 class=''st'' style='color: blue;'>Aspose.HTML rendering Text in Blue Color</div>" +
+                "<div id=id3 class=''st'' style='color: red;'>Aspose.HTML rendering Text in Red Color</div>";
         try
         {   sw.write(style.getBytes());
 

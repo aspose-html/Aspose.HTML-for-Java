@@ -20,13 +20,7 @@
     </repository>
   </repositories>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.aspose</groupId>
-      <artifactId>aspose-html</artifactId>
-      <version>17.12</version>
-      
-    </dependency>    
+  <dependencies>    
     <dependency>
       <groupId>javax.media.jai</groupId>
       <artifactId>com.springsource.javax.media.jai.core</artifactId>
@@ -36,6 +30,12 @@
       <groupId>net.sf.ucanaccess</groupId>
       <artifactId>ucanaccess</artifactId>
       <version>3.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-html</artifactId>
+      <version>18.5.1</version>
+      <type>jar</type>
     </dependency>
   </dependencies>
 
