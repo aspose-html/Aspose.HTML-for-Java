@@ -9,8 +9,7 @@ This package contains Java Example Project for [Aspose.HTML for Java](http://pro
 </p>
 
 ## How to use the Examples?
-
-Clone or Download the ZIP and extract the contents to your local hard drive. This project uses Maven build system and can be opened in any modern IDE like IntelliJ IDEA, Eclipse or NetBeans. For more details, visit our [Documentation website](https://docs.aspose.com//display/htmljava/How+to+Run+the+Examples).
+All the examples are arranged in src folder and any modern IDE like IntelliJ IDEA, Eclipse, Netbeans etc can import the source folder easily. Visit our [documentation website]((https://docs.aspose.com//display/htmljava/How+to+Run+the+Examples)) for more details.
 
 ## Install and Configure Maven
 
