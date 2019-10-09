@@ -18,7 +18,7 @@
         <dependency>
             <groupId>com.aspose</groupId>
             <artifactId>aspose-html</artifactId>
-            <version>19.8</version>
+            <version>19.9</version>
             <type>jar</type>
         </dependency>
     </dependencies>
