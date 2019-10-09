@@ -1,5 +1,5 @@
 ## Aspose.HTML for Java
-[Aspose.HTML for Java](https://products.aspose.com/html/java) is a Java component built to allow developers to programmatically create and manipulate HTML documents, whether simple or complex and on the fly. Aspose.HTML for Java allows developers to Insert, Remove, Replace HTML nodes, extract CSS style information, Navigate through HTML document either by NodeIterator, TreeWalker that are provided by Traversal Specifications, XPath or CSS selector queries. It also offers the scripting which allows to manipulate HTML DOM via JavaScript. As well as HTML, this API also provides the capabilities to load EPUB and MHTML.
+[Aspose.HTML for Java](https://products.aspose.com/html/java) is a Java component built to allow developers to programmatically create and manipulate [HTML](https://wiki.fileformat.com/web/html/) documents, whether simple or complex and on the fly. Aspose.HTML for Java allows developers to Insert, Remove, Replace HTML nodes, extract CSS style information, Navigate through HTML document either by NodeIterator, TreeWalker that are provided by Traversal Specifications, XPath or CSS selector queries. It also offers the scripting which allows to manipulate HTML DOM via JavaScript. As well as HTML, this API also provides the capabilities to load EPUB and MHTML.
 
 This repository contains [Examples](Examples) for [Aspose.HTML for Java](https://products.aspose.com/html/java) to help you learn and write your own applications.
 
@@ -13,6 +13,18 @@ This repository contains [Examples](Examples) for [Aspose.HTML for Java](https:/
 Directory | Description
 --------- | -----------
 [Examples](Examples)  | A collection of Java examples that help you learn and explore the API features
+
+## How to Run the Examples
+
++ You can either clone the repository using your favorite GitHub client or download the ZIP file from here.
++ Extract the contents of the ZIP file to any folder on your computer. All the examples are located in the Examples folder.
++ You can run/execute these examples with any IDE of your choice.
++ Open the project in your selected IDE.
++ Open the example file that you want to run.
++ Run the file in your IDE (method may vary depending on the IDE you use).
++ The resources folder in the Examples/src folder contains input files used in the examples. It is mandatory that you download this folder along with the examples project.
+
+Please find more details on how to run the examples [here](https://docs.aspose.com/display/htmljava/How+to+Run+the+Examples).
 
 ## Resources
 
