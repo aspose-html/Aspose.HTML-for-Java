@@ -1,7 +1,14 @@
-## Aspose.HTML for Java
-[Aspose.HTML for Java](https://products.aspose.com/html/java) is a Java component built to allow developers to programmatically create and manipulate [HTML](https://wiki.fileformat.com/web/html/) documents, whether simple or complex and on the fly. Aspose.HTML for Java allows developers to Insert, Remove, Replace HTML nodes, extract CSS style information, Navigate through HTML document either by NodeIterator, TreeWalker that are provided by Traversal Specifications, XPath or CSS selector queries. It also offers the scripting which allows to manipulate HTML DOM via JavaScript. As well as HTML, this API also provides the capabilities to load EPUB and MHTML.
+# HTML File Manipulation Java API
 
-This repository contains [Examples](Examples) for [Aspose.HTML for Java](https://products.aspose.com/html/java) to help you learn and write your own applications.
+The [Java HTML API](https://products.aspose.com/html/java) assists developers to write, read, modify, navigate and convert (X)HTML documents from within Java applications.
+
+Aspose.HTML for Java API works as a headless browser that allows you to [create or open existing HTML documents](https://docs.aspose.com/display/htmljava/Loading+an+existing+HTML+document) from various sources in order to perform manipulation operations such as remove and replace HTML nodes, save HTML documents, extract CSS from HTML, configure a document sandbox and more. You may navigate HTML documents by using various methods, such as, element traversal, document traversal, XPath queries, and CSS selector queries as well as manipulate HTML DOM via JavaScript, convert HTML file to images or fixed layout formats, and convert XHTML and EPUB files to other file formats.
+
+The classes and properties of Aspose.HTML for Java API have similar names as that of W3C HTML specification.
+
+Directory | Description
+--------- | -----------
+[Examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/Examples) | A collection of Java examples that help you learn the product features.
 
 <p align="center">
 
@@ -10,27 +17,79 @@ This repository contains [Examples](Examples) for [Aspose.HTML for Java](https:/
   </a>
 </p>
 
-Directory | Description
---------- | -----------
-[Examples](Examples)  | A collection of Java examples that help you learn and explore the API features
+## HTML Processing API Features
 
-## How to Run the Examples
+### General Features
 
-+ You can either clone the repository using your favorite GitHub client or download the ZIP file from here.
-+ Extract the contents of the ZIP file to any folder on your computer. All the examples are located in the Examples folder.
-+ You can run/execute these examples with any IDE of your choice.
-+ Open the project in your selected IDE.
-+ Open the example file that you want to run.
-+ Run the file in your IDE (method may vary depending on the IDE you use).
-+ The resources folder in the Examples/src folder contains input files used in the examples. It is mandatory that you download this folder along with the examples project.
+- Written completely in Java and works with JRE.
+- Supports both the `32-bit` & `64-bit` OS support.
+- Create or open an existing HTML document from different sources.
+- Ability to manipulate (create, edit, remove, replace) HTML nodes via API.
+- Extract CSS styles for specific HTML node.
+- Configure a document sandbox that affects the processing of HTML documents.
+- Supports navigation through HTML document in various ways (Element Traversal, Document Traversal, XPath queries, CSS Selector queries).
+- Manipulate HTML DOM via JavaScript.
+- Convert web documents to various supported file formats.
 
-Please find more details on how to run the examples [here](https://docs.aspose.com/display/htmljava/How+to+Run+the+Examples).
+### Text Related Features
 
-## Resources
+- Extract text from pages.
+- Search text from pages.
+- Add text in HTML file.
 
-+ **Website:** [www.aspose.com](https://www.aspose.com)
-+ **Product Home:** [Aspose.HTML for Java](https://products.aspose.com/html/java)
-+ **Download:** [Download Aspose.HTML for Java](https://repository.aspose.com/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-html)
-+ **Documentation:** [Aspose.HTML for Java Documentation](https://docs.aspose.com/display/htmljava/Home)
-+ **Free Support Forum:** [Aspose.HTML for Java Free Support Forum](https://forum.aspose.com/c/html)
-+ **Blog:** [Aspose.HTML for Java Blog](https://blog.aspose.com/category/aspose-products/aspose-html-product-family/)
+### Document Related Features
+
+- Create, edit, remove and replace HTML nodes
+- Extracting CSS styles for particular HTML node
+- Convert HTML documents into various supported image formats: JPEG, PNG, BMP, TIFF
+- Convert HTML documents to PDF format
+- Convert HTML documents to XPS format.
+
+## Read & Write Web Formats
+
+**Web:** HTML, XHTML^, MHTML^^\
+**Other:** SVG*, MD**
+
+- ^Save option is only available when the input file is `XHTML`.
+- ^^Save option is only available when saving `MHTML` document.
+- *Save option is only available when the input file is `SVG`.
+- **Save option is only available when saving `HTML` document.
+
+## Save HTML As
+
+**Fixed Layout:** PDF, XPS\
+**Images:** TIFF, JPEG, PNG, BMP
+
+## Read Formats
+
+EPUB
+
+## Supported Environments
+
+- **Microsoft Windows:** Windows Desktop & Server (x86, x64)
+- **macOS:** Mac OS X
+- **Linux:** Ubuntu, OpenSUSE, CentOS, and others
+- **Java Versions:** `J2SE 8.0 (1.8)` or above
+
+## Get Started with Aspose.HTML for Java
+
+Aspose hosts all Java APIs at the [Aspose Repository](https://repository.aspose.com/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-html). You can easily use Aspose.HTML for Java API directly in your Maven projects with simple configurations. For the detailed instructions please visit [Installing Aspose.HTML for Java from Aspose Repository](https://docs.aspose.com/display/htmljava/Installation#Installation-InstallingAspose.HTMLforJavafromAsposeRepository) documentation page.
+
+## Load HTML File from a remote URL / Server using Java
+
+```java
+// For complete examples and data files, please go to https://github.com/aspose-html/Aspose.Html-for-Java
+// The path to the documents directory.
+String dataDir = Utils.getDataDir();
+// This simple test shows how to load document from remote server
+com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(new com.aspose.html.Url(dataDir + "input.html"));
+// Read children nodes and get length information
+if (document.getBody().getChildNodes().getLength() == 0)
+    System.out.println("No ChildNodes found...");
+// Print Document URI to console. As per information above, it has to be https://www.w3.org/TR/html5/
+System.out.println("Print Document URI = " + document.getDocumentURI());
+// Print domain name for remote HTML
+System.out.println("Domain Name = " + document.getDomain());
+```
+
+[Product Page](https://products.aspose.com/html/java) | [Docs](https://docs.aspose.com/display/htmljava/Home) | [Demos](https://products.aspose.app/html/family) | [API Reference](https://apireference.aspose.com/java/html) | [Examples](https://github.com/aspose-html/Aspose.Html-for-Java) | [Blog](https://blog.aspose.com/category/html/) | [Free Support](https://forum.aspose.com/c/html) | [Temporary License](https://purchase.aspose.com/temporary-license)
