@@ -1,7 +1,7 @@
 name: Hugo-CI
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
     paths:
       - 'Docs/**'
 
@@ -19,7 +19,7 @@ jobs:
         port: ${{ secrets.SSHPORT }}
         script: |
           cd aspose-html-docs
-          git clone --single-branch --branch develop https://github.com/aspose-html/Aspose.HTML-for-Java.git || (cd Aspose.HTML-for-Java; git pull)
+          git clone --single-branch --branch master https://github.com/aspose-html/Aspose.HTML-for-Java.git || (cd Aspose.HTML-for-Java; git pull)
           cp -R Aspose.HTML-for-Java/Docs/* aspose-prototype-html/content/java
           cd aspose-prototype-html
           hugo --baseURL https://docs.aspose.com/html
