@@ -4,12 +4,6 @@ The [Java HTML API](https://products.aspose.com/html/java) assists developers to
 
 Aspose.HTML for Java API works as a headless browser that allows you to [create or open existing HTML documents](https://docs.aspose.com/html/java/loading-an-existing-html-document/) from various sources in order to perform manipulation operations such as remove and replace HTML nodes, save HTML documents, extract CSS from HTML, configure a document sandbox and more. You may navigate HTML documents by using various methods, such as, element traversal, document traversal, XPath queries, and CSS selector queries as well as manipulate HTML DOM via JavaScript, convert HTML file to images or fixed layout formats, and convert XHTML and EPUB files to other file formats.
 
-The classes and properties of Aspose.HTML for Java API have similar names as that of W3C HTML specification.
-
-Directory | Description
---------- | -----------
-[Examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/Examples) | A collection of Java examples that help you learn the product features.
-
 <p align="center">
 
   <a title="Download complete Aspose.HTML for Java source code" href="https://github.com/aspose-html/Aspose.HTML-for-Java/archive/master.zip">
@@ -17,9 +11,13 @@ Directory | Description
   </a>
 </p>
 
-## HTML Processing API Features
+Directory | Description
+--------- | -----------
+[Examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/Examples) | A collection of Java examples that help you learn the product features.
 
-### General Features
+
+
+## HTML Processing Features
 
 - Written completely in Java and works with JRE.
 - Supports both the `32-bit` & `64-bit` OS support.
@@ -30,15 +28,9 @@ Directory | Description
 - Supports navigation through HTML document in various ways (Element Traversal, Document Traversal, XPath queries, CSS Selector queries).
 - Manipulate HTML DOM via JavaScript.
 - Convert web documents to various supported file formats.
-
-### Text Related Features
-
 - Extract text from pages.
 - Search text from pages.
 - Add text in HTML file.
-
-### Document Related Features
-
 - Create, edit, remove and replace HTML nodes
 - Extracting CSS styles for particular HTML node
 - Convert HTML documents into various supported image formats: JPEG, PNG, BMP, TIFF
@@ -50,11 +42,6 @@ Directory | Description
 **Web:** HTML, XHTML^, MHTML^^\
 **Other:** SVG*, MD**
 
-- ^Save option is only available when the input file is `XHTML`.
-- ^^Save option is only available when saving `MHTML` document.
-- *Save option is only available when the input file is `SVG`.
-- **Save option is only available when saving `HTML` document.
-
 ## Save HTML As
 
 **Fixed Layout:** PDF, XPS\
@@ -62,7 +49,7 @@ Directory | Description
 
 ## Read Formats
 
-EPUB
+**Images:** EPUB
 
 ## Supported Environments
 
@@ -75,20 +62,16 @@ EPUB
 
 Aspose hosts all Java APIs at the [Aspose Repository](https://repository.aspose.com/webapp/#/artifacts/browse/tree/General/repo/com/aspose/aspose-html). You can easily use Aspose.HTML for Java API directly in your Maven projects with simple configurations. For the detailed instructions please visit [Installing Aspose.HTML for Java from Aspose Repository](https://docs.aspose.com/html/java/installation/) documentation page.
 
-## Load HTML File from a remote URL / Server using Java
+## Load HTML from a Remote Location
 
 ```java
-// For complete examples and data files, please go to https://github.com/aspose-html/Aspose.Html-for-Java
-// The path to the documents directory.
-String dataDir = Utils.getDataDir();
-// This simple test shows how to load document from remote server
-com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(new com.aspose.html.Url(dataDir + "input.html"));
-// Read children nodes and get length information
+HTMLDocument document = HTMLDocument(new Url("template.html"));
+// read children nodes and get length information
 if (document.getBody().getChildNodes().getLength() == 0)
     System.out.println("No ChildNodes found...");
-// Print Document URI to console. As per information above, it has to be https://www.w3.org/TR/html5/
+// print Document URI to console. As per information above, it has to be https://www.w3.org/TR/html5/
 System.out.println("Print Document URI = " + document.getDocumentURI());
-// Print domain name for remote HTML
+// print domain name for remote HTML
 System.out.println("Domain Name = " + document.getDomain());
 ```
 
