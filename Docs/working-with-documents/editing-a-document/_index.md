@@ -32,12 +32,12 @@ There are many ways you can edit HTML by using our library. You can modify the 
 
 |**Method** |**Description** |
 | :-: | :-: |
-|[document.CreateCDATASection(data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document/methods/createcdatasection) |Creates a CDATASection node whose value is the specified string. |
-|[document.CreateComment(data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document/methods/createcomment) |Creates a Comment node given the specified string. |
-|[document.CreateDocumentFragment()](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document/methods/createdocumentfragment) |Creates an empty DocumentFragment object. |
-|[document.CreateElement(localName)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document/methods/createelement) |Creates an element of the type specified. |
-|[document.CreateEntityReference(name)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document/methods/createentityreference) |Creates an EntityReference object. |
-|[document.CreateProcessingInstruction(target, data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document/methods/createprocessinginstruction) |Creates an ProcessingInstruction with the specified name and data. |
+|[document.CreateCDATASection(data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createCDATASection-java.lang.String-) |Creates a CDATASection node whose value is the specified string. |
+|[document.CreateComment(data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createComment-java.lang.String-) |Creates a Comment node given the specified string. |
+|[document.CreateDocumentFragment()](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createDocumentFragment--) |Creates an empty DocumentFragment object. |
+|[document.CreateElement(localName)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createElement-java.lang.String-) |Creates an element of the type specified. |
+|[document.CreateEntityReference(name)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createEntityReference-java.lang.String-) |Creates an EntityReference object. |
+|[document.CreateProcessingInstruction(target, data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createProcessingInstruction-java.lang.String-java.lang.String-) |Creates an ProcessingInstruction with the specified name and data. |
 |[document.CreateTextNode(data)](https://apireference.aspose.com/html/java/com.aspose.html.dom/Document#createTextNode-java.lang.String-) |Creates a Text node given the specified string. |
 
 
