@@ -1,0 +1,31 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+ 
+# 1. Set up main directories
+ENV FID_HOME=/opt/icgccbfid
+RUN mkdir -p $FID_HOME
+
+# 2. Set up the media directory
+ENV MEDIA=/media/sf_redhat/
+ENV APP_PATH=${SERVICE_HOME}/app.jar
+RUN mkdir -p $MEDIA
+RUN chmod -R 775 $MEDIA
+COPY assets /media/sf_redhat/
+ 
+# 3. Set up the service directory and copy the JAR
+ENV SERVICE_HOME=$FID_HOME/test-redhat
+RUN mkdir -p $SERVICE_HOME
+RUN chmod -R 775 $SERVICE_HOME
+ 
+COPY build/libs/testing-aspose-redhat-jdk-gradle-1.0.0.jar $SERVICE_HOME/app.jar
+
+ENV APP_PATH=${SERVICE_HOME}/app.jar
+ 
+# 4. Install JDK
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends openjdk-17-jdk \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+ 
+ 
+# 5. Set ENTRYPOINT to run the application 
+ENTRYPOINT java -jar  $APP_PATH

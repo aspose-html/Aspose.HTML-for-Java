@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.12'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.redhat.spring.cloud.config.docker'
+version = '1.0.0'
+sourceCompatibility = '9'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation(name: 'aspose-html-24.2-jdk8', ext: 'jar')
+    implementation 'org.jsoup:jsoup:1.16.2'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

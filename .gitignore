@@ -1,42 +1,22 @@
+#Test output
+out/
+test-output
+
+#Idea
+.idea/
+.gradle
+build/
+
+#maven
+target
+
 # Eclipse project files
 .classpath
 .project
 .settings/
-test-output/
-
-# IntelliJ project files
-.idea/
-*.iws
-*.iml
-*.ipr
 
 # Mac
 .DS_Store
 
-# Others
-Temp/
-obj/
-classes/
-generated/
-bin/
-*_out_*
-* Out*
-* out*
-*_out*
-*.ldb
-_ReSharper*/
-*.eml
-out/
-*.user
-*.resx
-nbproject/
-target/
-build/
-build.xml
-Thumbs.db
-manifest.mf
-Out/
-Out*/
+# Lic file
 *.lic
-Data/*Out*
-/dist/
