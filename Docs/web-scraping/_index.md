@@ -11,11 +11,11 @@ There are many ways that can be used to make HTML navigation. The following sho
 
 |**Property**|**Description**|
 | :-: | :-: |
-|[FirstChild](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node/properties/firstchild)|Accessing this attribute of an element must return a reference to the first child node.|
-|[LastChild](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node/properties/lastchild)|Accessing this attribute of an element must return a reference to the last child node|
-|[NextSibling](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node/properties/nextsibling)|Accessing this attribute of an element must return a reference to the sibling node of that element which most immediately follows that element.|
-|[PreviousSibling](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node/properties/previoussibling)|Accessing this attribute of an element must return a reference to the sibling node of that element which most immediately precedes that element.|
-|[ChildNodes](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node/properties/childnodes)|Returns a [list](https://apireference.aspose.com/html/java/com.aspose.html.collections/NodeList) that contains all children of that element.|
+|[FirstChild](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node#getFirstChild--)|Accessing this attribute of an element must return a reference to the first child node.|
+|[LastChild](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node#getLastChild--)|Accessing this attribute of an element must return a reference to the last child node|
+|[NextSibling](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node#getNextSibling--)|Accessing this attribute of an element must return a reference to the sibling node of that element which most immediately follows that element.|
+|[PreviousSibling](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node#getPreviousSibling--)|Accessing this attribute of an element must return a reference to the sibling node of that element which most immediately precedes that element.|
+|[ChildNodes](https://apireference.aspose.com/html/java/com.aspose.html.dom/Node#getChildNodes--)|Returns a [list](https://apireference.aspose.com/html/java/com.aspose.html.collections/NodeList) that contains all children of that element.|
 Using the mentioned properties, you can navigate through an HTML document as it follows:
 
 

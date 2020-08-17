@@ -80,7 +80,7 @@ Q: How to use the MemoryStream object to store the rendering result instead of t
 
 **Answer:** 
 
-You can implement *com.aspose.html.examples.java.MemoryStreamProvider* interface to handle the output streams, as it’s described [here](/html/java/output-streams-html/).
+You can implement *com.aspose.html.examples.java.MemoryStreamProvider* interface to handle the output streams, as it’s described [here](/html/java/output-streams/).
 
 ![todo:image_alt_text](faq_1.png)
 
