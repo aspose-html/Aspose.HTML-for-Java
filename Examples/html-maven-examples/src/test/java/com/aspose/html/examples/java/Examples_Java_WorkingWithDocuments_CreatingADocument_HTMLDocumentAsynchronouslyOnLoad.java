@@ -16,7 +16,7 @@ public class Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAs
             @Override
             public void invoke(Object sender, com.aspose.html.dom.events.Event e) {
                 msg = document.getDocumentElement().getOuterHTML();
-                System.out.println(msg);
+                System.out.println(msg);document.dispose();
             }
         });
 

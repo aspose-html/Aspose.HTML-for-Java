@@ -28,6 +28,5 @@ public class Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAs
         synchronized (this) {
             wait(10000);
         }
-
     }
 }

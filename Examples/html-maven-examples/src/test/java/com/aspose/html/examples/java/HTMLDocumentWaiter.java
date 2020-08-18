@@ -24,4 +24,5 @@ public class HTMLDocumentWaiter implements Runnable {
             Thread.currentThread().interrupt();
         }
     }
+
 }
