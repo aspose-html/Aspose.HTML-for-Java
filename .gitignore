@@ -41,3 +41,5 @@ Out*/
 Data/*Out*
 /dist/
 Data/
+build/
+.gradle/

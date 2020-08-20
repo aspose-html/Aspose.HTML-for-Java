@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = uri('https://repository.aspose.com/repo/')
+    }
+}
+
+dependencies {
+
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter-engine:5.6.1",
+            "org.junit.jupiter:junit-jupiter-params:5.6.1",
+            "org.junit.platform:junit-platform-runner:1.6.1",
+            "com.aspose:aspose-html:20.8",
+
+    )
+}
+
+task SimpleWait(type: JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    main = 'com.aspose.html.examples.java.SimpleWait'
+    jvmArgs '--enable-preview'
+}
+
+test {
+    useJUnitPlatform()
+    jvmArgs '--enable-preview'
+}
+
+compileJava {
+    sourceCompatibility = "14"
+    targetCompatibility = "14"
+    options.compilerArgs += ["--enable-preview"]
+}
+
+compileTestJava {
+    sourceCompatibility = "14"
+    targetCompatibility = "14"
+    options.compilerArgs += ["--enable-preview"]
+}
