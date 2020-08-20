@@ -75,4 +75,4 @@ System.out.println("Print Document URI = " + document.getDocumentURI());
 System.out.println("Domain Name = " + document.getDomain());
 ```
 
-[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/html/java) | [Docs](https://docs.aspose.com/html/java/) | [Demos](https://products.aspose.app/html/family) | [API Reference](https://apireference.aspose.com/java/html) | [Examples](https://github.com/aspose-html/Aspose.Html-for-Java) | [Blog](https://blog.aspose.com/category/html/) | [Free Support](https://forum.aspose.com/c/html) | [Temporary License](https://purchase.aspose.com/temporary-license)
+[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/html/java) | [Docs](https://docs.aspose.com/html/java/) | [Demos](https://products.aspose.app/html/family) | [API Reference](https://apireference.aspose.com/html/java) | [Examples](https://github.com/aspose-html/Aspose.Html-for-Java) | [Blog](https://blog.aspose.com/category/html/) | [Free Support](https://forum.aspose.com/c/html) | [Temporary License](https://purchase.aspose.com/temporary-license)
