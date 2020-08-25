@@ -13,16 +13,19 @@ mvn compile test
 mvn -Dtest="com.aspose.html.examples.**" test
 
 .\gradlew test --tests "com.aspose.html.examples.*" for Windows
+
 ./gradlew test --tests "com.aspose.html.examples.*" for Linux
 
 ## Execute single test
 mvn -Dtest=Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded test
 
 .\gradlew test --tests "com.aspose.html.examples.Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded" for Windows
+
 ./gradlew test --tests "com.aspose.html.examples.Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded" for Linux
 
 ## Execute asynchronously test in Thread
 mvn org.codehaus.mojo:exec-maven-plugin:3.0.0:java -Dexec.mainClass="com.aspose.html.examples.SimpleWait" -Dexec.classpathScope="test" -Dexec.cleanupDaemonThreads=false
 
 .\gradlew SimpleWait for Windows
+
 ./gradlew SimpleWait for Linux
