@@ -1,4 +1,4 @@
-## Aspose.HTML for Java Examples with Maven build tools
+## Aspose.HTML for Java Examples with Maven/Gradle build tools
 
 This directory contains Java examples for [Aspose.HTML for Java](https://products.aspose.com/html/java).
 
@@ -10,16 +10,19 @@ Clone or Download the ZIP and extract the contents to your local hard drive. Thi
 mvn compile test
 
 ## Execute all tests
-mvn -Dtest="com.aspose.html.examples.java.**" test
+mvn -Dtest="com.aspose.html.examples.**" test
 
-.\gradlew test --tests "com.aspose.html.examples.java.*"
+.\gradlew test --tests "com.aspose.html.examples.*" for Windows
+./gradlew test --tests "com.aspose.html.examples.*" for Linux
 
 ## Execute single test
 mvn -Dtest=Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded test
 
-.\gradlew test --tests "com.aspose.html.examples.java.Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded"
+.\gradlew test --tests "com.aspose.html.examples.Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded" for Windows
+./gradlew test --tests "com.aspose.html.examples.Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded" for Linux
 
 ## Execute asynchronously test in Thread
-mvn org.codehaus.mojo:exec-maven-plugin:3.0.0:java -Dexec.mainClass="com.aspose.html.examples.java.SimpleWait" -Dexec.classpathScope="test" -Dexec.cleanupDaemonThreads=false
+mvn org.codehaus.mojo:exec-maven-plugin:3.0.0:java -Dexec.mainClass="com.aspose.html.examples.SimpleWait" -Dexec.classpathScope="test" -Dexec.cleanupDaemonThreads=false
 
-.\gradlew SimpleWait
+.\gradlew SimpleWait for Windows
+./gradlew SimpleWait for Linux

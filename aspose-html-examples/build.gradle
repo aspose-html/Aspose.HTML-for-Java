@@ -23,7 +23,7 @@ dependencies {
 
 task SimpleWait(type: JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
-    main = 'com.aspose.html.examples.java.SimpleWait'
+    main = 'com.aspose.html.examples.SimpleWait'
     jvmArgs '--enable-preview'
 }
 
