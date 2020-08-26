@@ -6,9 +6,9 @@ public class Examples_Java_Conversion_HTMLtoMarkdown_MarkdownOptions {
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory.
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
-        var document = new com.aspose.html.HTMLDocument("<p>my first paragraph</p>", dataDir);
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<p>my first paragraph</p>", dataDir);
         try {
             // Save to markdown by using default for the GIT formatting model
             document.save(dataDir + "Markdown.md", com.aspose.html.saving.MarkdownSaveOptions.getGit());

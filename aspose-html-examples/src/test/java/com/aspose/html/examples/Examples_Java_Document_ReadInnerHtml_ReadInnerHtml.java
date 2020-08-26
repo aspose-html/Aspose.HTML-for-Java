@@ -6,11 +6,11 @@ public class Examples_Java_Document_ReadInnerHtml_ReadInnerHtml {
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory.
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
         String InputHtml = dataDir + "input.html";
         // Create HtmlDocument instance to load existing HTML file
-        var document = new com.aspose.html.HTMLDocument(InputHtml);
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(InputHtml);
         // Print inner HTML of file to console
         System.out.println(document.getBody().getInnerHTML());
     }

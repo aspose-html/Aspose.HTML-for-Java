@@ -5,11 +5,11 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToImage_SpecifyC
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Open an existing MHTML file for reading.
-        try (var fileInputStream = new java.io.FileInputStream(dataDir + "sample.mht")) {
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "sample.mht")) {
             // Create an instance of MemoryStreamProvider
-            try (var streamProvider = new MemoryStreamProvider()) {
+            try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
                 // Convert MHTML to Image by using the MemoryStreamProvider
                 com.aspose.html.converters.Converter.convertMHTML(
                         fileInputStream,
@@ -21,7 +21,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToImage_SpecifyC
                 int bound = streamProvider.lStream.size();
                 for (int value = 0; value < bound; value++) {
                     // Flush the page to the output file
-                    try (var fileOutputStream = new java.io.FileOutputStream(dataDir + "page_{" + (value + 1) + "}.jpg")) {
+                    try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "page_{" + (value + 1) + "}.jpg")) {
                         java.io.InputStream inputStream = streamProvider.lStream.get(value);
                         byte[] buffer = new byte[inputStream.available()];
                         inputStream.read(buffer);

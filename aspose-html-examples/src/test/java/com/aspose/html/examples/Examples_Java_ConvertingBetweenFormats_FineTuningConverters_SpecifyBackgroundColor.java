@@ -5,23 +5,23 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Prepare an HTML code and save it to the file.
-        var code = "<p>Hello World!!</p>";
-        try (var fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        String code = "<p>Hello World!!</p>";
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
             fileWriter.write(code);
         }
 
         // Create an instance of HTML document
-        var document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
         try {
             // Initialize options with 'cyan' as a background-color
-            var options = new com.aspose.html.rendering.pdf.PdfRenderingOptions();
+            com.aspose.html.rendering.pdf.PdfRenderingOptions options = new com.aspose.html.rendering.pdf.PdfRenderingOptions();
 
             options.setBackgroundColor(com.aspose.html.drawing.Color.getCyan());
 
             // Create an instance of PDF device
-            var device = new com.aspose.html.rendering.pdf.PdfDevice(options, dataDir + "output.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(options, dataDir + "output.pdf");
             try {
                 // Render HTML to PDF
                 document.renderTo(device);

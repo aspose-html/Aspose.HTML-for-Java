@@ -6,45 +6,43 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory.
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
         // Set input file name.
-        try (var fileInputStream = new java.io.FileInputStream(dataDir + "FirstFile.html")) {
-            try (var fileOutputStream = new java.io.FileOutputStream(dataDir + "FirstFileOut.html")) {
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "FirstFile.html")) {
+            try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "FirstFileOut.html")) {
                 byte[] bytes = new byte[fileInputStream.available()];
                 fileInputStream.read(bytes);
                 fileOutputStream.write(bytes);
-                String style = """
-                        <style>
-                        .st
-                        {
-                        color: green;
-                        }
-                        </style>
-                        <div id=id1>Aspose.Html rendering Text in Black Color</div>
-                        <div id=id2 class=''st''>Aspose.Html rendering Text in Green Color</div>
-                        <div id=id3 class=''st'' style='color: blue;'>Aspose.Html rendering Text in Blue Color</div>
-                        <div id=id3 class=''st'' style='color: red;'>Aspose.Html rendering Text in Red Color</div>
-                        """;
+                String style = "<style>\n" +
+                               ".st\n" +
+                               "{\n" +
+                               "color: green;\n" +
+                               "}\n" +
+                               "</style>\n" +
+                               "<div id=id1>Aspose.Html rendering Text in Black Color</div>\n" +
+                               "<div id=id2 class=''st''>Aspose.Html rendering Text in Green Color</div>\n" +
+                               "<div id=id3 class=''st'' style='color: blue;'>Aspose.Html rendering Text in Blue Color</div>\n" +
+                               "<div id=id3 class=''st'' style='color: red;'>Aspose.Html rendering Text in Red Color</div>\n";
                 fileOutputStream.write(style.getBytes(java.nio.charset.StandardCharsets.UTF_8));
             }
 
             // Create HtmlRenderer object
-            var renderer = new com.aspose.html.rendering.HtmlRenderer();
+            com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
             try {
                 // Create HtmlDocument instnace while passing path of already created HTML file
-                var html_document = new com.aspose.html.HTMLDocument(dataDir + "FirstFileOut.html");
+                com.aspose.html.HTMLDocument html_document = new com.aspose.html.HTMLDocument(dataDir + "FirstFileOut.html");
                 try {
                     // Set the page size less than document min-width. The content in the resulting file will be cropped becuase of element with width: 200px
-                    var xps_options = new com.aspose.html.rendering.xps.XpsRenderingOptions();
-                    var page = new com.aspose.html.drawing.Page(new com.aspose.html.drawing.Size(100, 100));
-                    var pageSetup = new com.aspose.html.rendering.PageSetup();
+                    com.aspose.html.rendering.xps.XpsRenderingOptions xps_options = new com.aspose.html.rendering.xps.XpsRenderingOptions();
+                    com.aspose.html.drawing.Page page = new com.aspose.html.drawing.Page(new com.aspose.html.drawing.Size(100, 100));
+                    com.aspose.html.rendering.PageSetup pageSetup = new com.aspose.html.rendering.PageSetup();
                     pageSetup.setAnyPage(page);
                     pageSetup.setAdjustToWidestPage(false);
                     xps_options.setPageSetup(pageSetup);
 
-                    var output = dataDir + "not-adjusted-to-widest-page_out0.xps";
-                    var device = new com.aspose.html.rendering.xps.XpsDevice(xps_options, output);
+                    String output = dataDir + "not-adjusted-to-widest-page_out0.xps";
+                    com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(xps_options, output);
                     try {
                         // Render the output
                         renderer.render(device, html_document);

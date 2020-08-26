@@ -2,15 +2,11 @@ package com.aspose.html.examples;
 
 public class HTMLDocumentWaiter implements Runnable {
 
-    private Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAsynchronouslyOnLoad html;
+    private final Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAsynchronouslyOnLoad html;
 
-    public HTMLDocumentWaiter(Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAsynchronouslyOnLoad html) {
+    public HTMLDocumentWaiter(Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAsynchronouslyOnLoad html) throws Exception {
         this.html = html;
-        try {
-            this.html.execute();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        this.html.execute();
     }
 
     @Override
@@ -24,5 +20,4 @@ public class HTMLDocumentWaiter implements Runnable {
             Thread.currentThread().interrupt();
         }
     }
-
 }

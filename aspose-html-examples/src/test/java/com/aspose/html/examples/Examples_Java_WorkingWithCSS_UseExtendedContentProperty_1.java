@@ -5,43 +5,41 @@ public class Examples_Java_WorkingWithCSS_UseExtendedContentProperty_1 {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
         //  Initialize configuration object and set up the page-margins for the document
-        var configuration = new com.aspose.html.Configuration();
+        com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
         configuration.getService(com.aspose.html.services.IUserAgentService.class).setUserStyleSheet(
-                """
-                        @page
-                                {
-                                    /* Page margins should be not empty in order to write content inside the margin-boxes */
-                                    margin - top:1 cm;
-                                    margin - left:2 cm;
-                                    margin - right:2 cm;
-                                    margin - bottom:2 cm;
-                                                
-                                    /* Page counter located at the bottom of the page */
-                                    @bottom -right
-                                    {
-                                        -aspose - content:"" Page "" currentPageNumber() "" of "" totalPagesNumber();
-                                        color:
-                                        green;
-                                    }
-                                                
-                                    /* Page title located at the top-center box */
-                                    @top -center
-                                    {
-                                        -aspose - content:"" Document 's title"";
-                                        vertical - align:bottom;
-                                    }
-                                }
-                        """
+                "@page\n" +
+                "        {\n" +
+                "            /* Page margins should be not empty in order to write content inside the margin-boxes */\n" +
+                "            margin - top:1 cm;\n" +
+                "            margin - left:2 cm;\n" +
+                "            margin - right:2 cm;\n" +
+                "            margin - bottom:2 cm;\n" +
+                "\n" +
+                "            /* Page counter located at the bottom of the page */\n" +
+                "            @bottom -right\n" +
+                "            {\n" +
+                "                -aspose - content:\"\" Page \"\" currentPageNumber() \"\" of \"\" totalPagesNumber();\n" +
+                "                color:\n" +
+                "                green;\n" +
+                "            }\n" +
+                "\n" +
+                "            /* Page title located at the top-center box */\n" +
+                "            @top -center\n" +
+                "            {\n" +
+                "                -aspose - content:\"\" Document 's title\"\";\n" +
+                "                vertical - align:bottom;\n" +
+                "            }\n" +
+                "        }\n"
         );
 
         //  Initialize an empty document
-        var document = new com.aspose.html.HTMLDocument(configuration);
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(configuration);
         try {
             //  Initialize an output device
-            var device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "output_out.xps");
+            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "output_out.xps");
             try {
                 // Send the document to the output device
                 document.renderTo(device);

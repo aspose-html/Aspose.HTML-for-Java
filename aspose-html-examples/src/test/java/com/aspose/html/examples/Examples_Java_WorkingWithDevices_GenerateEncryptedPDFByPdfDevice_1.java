@@ -5,13 +5,13 @@ public class Examples_Java_WorkingWithDevices_GenerateEncryptedPDFByPdfDevice_1 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
-        var document = new com.aspose.html.HTMLDocument("<style>p { color: green; }</style><p>my first paragraph</p>", "c:\\work\\");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<style>p { color: green; }</style><p>my first paragraph</p>", "c:\\work\\");
         try {
-            var options = new com.aspose.html.rendering.pdf.PdfRenderingOptions();
-            var pageSetup = new com.aspose.html.rendering.PageSetup();
-            var anyPage = new com.aspose.html.drawing.Page();
+            com.aspose.html.rendering.pdf.PdfRenderingOptions options = new com.aspose.html.rendering.pdf.PdfRenderingOptions();
+            com.aspose.html.rendering.PageSetup pageSetup = new com.aspose.html.rendering.PageSetup();
+            com.aspose.html.drawing.Page anyPage = new com.aspose.html.drawing.Page();
             anyPage.setSize(
                     new com.aspose.html.drawing.Size(500, 500)
             );
@@ -27,7 +27,7 @@ public class Examples_Java_WorkingWithDevices_GenerateEncryptedPDFByPdfDevice_1 
                     )
             );
 
-            var device = new com.aspose.html.rendering.pdf.PdfDevice(options, dataDir + "document_out.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(options, dataDir + "document_out.pdf");
             try {
                 document.renderTo(device);
             } finally {

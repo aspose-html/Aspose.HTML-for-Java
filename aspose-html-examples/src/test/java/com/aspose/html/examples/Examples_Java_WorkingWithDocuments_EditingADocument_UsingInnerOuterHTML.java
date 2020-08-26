@@ -6,7 +6,7 @@ public class Examples_Java_WorkingWithDocuments_EditingADocument_UsingInnerOuter
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // Create an instance of HTML Document
-        var document = new com.aspose.html.HTMLDocument();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
             // Write the content of the HTML document into the console output
             System.out.println(document.getDocumentElement().getOuterHTML()); // output: <html><head></head><body></body></html>

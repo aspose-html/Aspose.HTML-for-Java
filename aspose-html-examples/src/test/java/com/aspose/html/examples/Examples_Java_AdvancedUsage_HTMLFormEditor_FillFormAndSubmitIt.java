@@ -5,12 +5,12 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Initialize an instance of HTML document from 'https://httpbin.org/forms/post' url
-        var document = new com.aspose.html.HTMLDocument("https://httpbin.org/forms/post");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("https://httpbin.org/forms/post");
         try {
             // Create an instance of Form Editor
-            var editor = com.aspose.html.forms.FormEditor.create(document, 0);
+            com.aspose.html.forms.FormEditor editor = com.aspose.html.forms.FormEditor.create(document, 0);
             try {
                 // You can fill the data up using direct access to the input elements, like this:
                 editor.get_Item("custname").setValue("John Doe");
@@ -18,25 +18,21 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                 document.save(dataDir + "out.html");
 
                 // or this:
-                var comments = editor.getElement(com.aspose.html.forms.TextAreaElement.class, "comments");
+                com.aspose.html.forms.TextAreaElement comments = editor.getElement(com.aspose.html.forms.TextAreaElement.class, "comments");
                 comments.setValue("MORE CHEESE PLEASE!");
 
                 // or even by performing a bulk operation, like this one:
                 java.util.Map<String, String> map = new java.util.HashMap<>();
                 map.put("custemail", "john.doe@gmail.com");
                 map.put("custtel", "+1202-555-0290");
-                var dictionary = new com.aspose.html.forms.collection.MapDictionary(
-                        map,
-                        com.aspose.html.forms.collection.enumeration.CaseComparer.ORDINALIGNORECASE
-                );
-                editor.fill(dictionary);
+                editor.fill(map);
 
                 // Create an instance of form submitter
-                var submitter = new com.aspose.html.forms.FormSubmitter(editor);
+                com.aspose.html.forms.FormSubmitter submitter = new com.aspose.html.forms.FormSubmitter(editor);
                 try {
                     // Submit the form data to the remote server.
                     // If you need you can specify user-credentials and timeout for the request, etc.
-                    var result = submitter.submit();
+                    com.aspose.html.forms.SubmissionResult result = submitter.submit();
 
                     // Check the status of the result object
                     if (result.isSuccess()) {
@@ -46,7 +42,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                             System.out.println(result.getContent().readAsString());
                         } else {
                             // Load the result data as an HTML document
-                            var resultDocument = result.loadDocument();
+                            com.aspose.html.dom.Document resultDocument = result.loadDocument();
                             try {
                                 // Inspect HTML document here.
                                 System.out.println(resultDocument.getDocumentElement().getTextContent());

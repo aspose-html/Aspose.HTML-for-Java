@@ -1,34 +1,33 @@
 package com.aspose.html.examples;
 
+
 public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_RendererTimeoutExample {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Prepare an HTML code
-        var code = """
-                < script >
-                        var count = 0;
-                        setInterval(function()
-                        {
-                            var element = document.createElement('div');
-                            var message = (++count) + '. ' + 'Hello World!!';
-                            var text = document.createTextNode(message);
-                            element.appendChild(text);
-                            document.body.appendChild(element);
-                        },1000);
-                </script >
-                """;
+        String code = "< script >\n" +
+                      "        var count = 0;\n" +
+                      "        setInterval(function()\n" +
+                      "        {\n" +
+                      "            var element = document.createElement('div');\n" +
+                      "            var message = (++count) + '. ' + 'Hello World!!';\n" +
+                      "            var text = document.createTextNode(message);\n" +
+                      "            element.appendChild(text);\n" +
+                      "            document.body.appendChild(element);\n" +
+                      "        },1000);\n" +
+                      "</script >\n";
 
         // Initialize an HTML document based on prepared HTML code
-        var document = new com.aspose.html.HTMLDocument(code, ".");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(code, ".");
         try {
             // Create an instance of HTML Renderer
-            var renderer = new com.aspose.html.rendering.HtmlRenderer();
+            com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
             try {
                 // Create an instance of PDF device
-                var device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "output.pdf");
+                com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "output.pdf");
                 try {
                     // Render HTML to PDF
                     renderer.render(device, 5, document);

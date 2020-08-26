@@ -6,11 +6,11 @@ public class Examples_Java_WorkingWithICreateStreamProvider_UseICreateStreamProv
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Create a custom StreamProvider based on ICreateStreamProvider interface
-        try (var streamProvider = new MemoryStreamProvider()) {
+        try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Create a simple HTML document
-            var document = new com.aspose.html.HTMLDocument();
+            com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
             try {
                 // Add your first 'hello world' to the document.
                 document.getBody().appendChild(document.createTextNode("Hello world!!!"));
@@ -22,10 +22,10 @@ public class Examples_Java_WorkingWithICreateStreamProvider_UseICreateStreamProv
                         streamProvider.lStream
                 );
                 // Get access to the memory stream that contains the result data
-                var inputStream = streamProvider.lStream.stream().findFirst().orElseThrow();
+                java.io.InputStream inputStream = streamProvider.lStream.stream().findFirst().get();
 
                 // Flush the result data to the output file
-                try (var fileOutputStream = new java.io.FileOutputStream(dataDir + "output.xps")) {
+                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "output.xps")) {
                     byte[] buffer = new byte[inputStream.available()];
                     inputStream.read(buffer);
                     fileOutputStream.write(buffer);

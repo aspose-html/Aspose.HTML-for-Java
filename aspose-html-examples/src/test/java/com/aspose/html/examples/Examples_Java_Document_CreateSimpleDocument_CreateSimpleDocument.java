@@ -5,14 +5,16 @@ public class Examples_Java_Document_CreateSimpleDocument_CreateSimpleDocument {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         String outputHtml = dataDir + "SimpleDocument.html";
 
         // Create an instance of HTMLDocument
-        var document = new com.aspose.html.HTMLDocument();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
 
         // Add image
-        if (document.createElement("img") instanceof com.aspose.html.HTMLImageElement img) {
+        com.aspose.html.dom.Element elm = document.createElement("img");
+        if (elm instanceof com.aspose.html.HTMLImageElement) {
+            com.aspose.html.HTMLImageElement img = (com.aspose.html.HTMLImageElement) elm;
             img.setSrc("http://via.placeholder.com/400x200");
             img.setAlt("Placeholder 400x200");
             img.setTitle("Placeholder image");
@@ -20,22 +22,22 @@ public class Examples_Java_Document_CreateSimpleDocument_CreateSimpleDocument {
         }
 
         // Add ordered list
-        var orderedListElement = (com.aspose.html.HTMLOListElement) document.createElement("ol");
+        com.aspose.html.HTMLOListElement orderedListElement = (com.aspose.html.HTMLOListElement) document.createElement("ol");
         for (int i = 0; i < 10; i++) {
-            var listItem = (com.aspose.html.HTMLLIElement) document.createElement("li");
+            com.aspose.html.HTMLLIElement listItem = (com.aspose.html.HTMLLIElement) document.createElement("li");
             listItem.setTextContent(" List Item {" + (i + 1) + "}");
             orderedListElement.appendChild(listItem);
         }
         document.getBody().appendChild(orderedListElement);
 
         // Add table 3x3
-        var table = (com.aspose.html.HTMLTableElement) document.createElement("table");
-        var tBody = (com.aspose.html.HTMLTableSectionElement) document.createElement("tbody");
-        for (var i = 0; i < 3; i++) {
-            var row = (com.aspose.html.HTMLTableRowElement) document.createElement("tr");
+        com.aspose.html.HTMLTableElement table = (com.aspose.html.HTMLTableElement) document.createElement("table");
+        com.aspose.html.HTMLTableSectionElement tBody = (com.aspose.html.HTMLTableSectionElement) document.createElement("tbody");
+        for (int i = 0; i < 3; i++) {
+            com.aspose.html.HTMLTableRowElement row = (com.aspose.html.HTMLTableRowElement) document.createElement("tr");
             row.setId("trow_" + i);
-            for (var j = 0; j < 3; j++) {
-                var cell = (com.aspose.html.HTMLTableCellElement) document.createElement("td");
+            for (int j = 0; j < 3; j++) {
+                com.aspose.html.HTMLTableCellElement cell = (com.aspose.html.HTMLTableCellElement) document.createElement("td");
                 cell.setId("cell{" + i + "}_{" + j + "}");
                 cell.setTextContent("Cell " + j);
                 row.appendChild(cell);

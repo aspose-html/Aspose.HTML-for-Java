@@ -6,13 +6,13 @@ public class Examples_Java_Document_ManipulateCanvas_ManipulateCanvas {
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory.
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
         // Create an empty document
-        var document = new com.aspose.html.HTMLDocument();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
             // Create a Canvas element
-            var canvas = (com.aspose.html.HTMLCanvasElement) document.createElement("canvas");
+            com.aspose.html.HTMLCanvasElement canvas = (com.aspose.html.HTMLCanvasElement) document.createElement("canvas");
             // Set the canvas size
             canvas.setWidth(300);
             canvas.setHeight(150);
@@ -20,10 +20,10 @@ public class Examples_Java_Document_ManipulateCanvas_ManipulateCanvas {
             document.getBody().appendChild(canvas);
 
             // Initialize a canvas 2D context
-            var context = (com.aspose.html.dom.canvas.ICanvasRenderingContext2D) canvas.getContext("2d");
+            com.aspose.html.dom.canvas.ICanvasRenderingContext2D context = (com.aspose.html.dom.canvas.ICanvasRenderingContext2D) canvas.getContext("2d");
 
             // Prepare a gradient brush
-            var gradient = context.createLinearGradient(0, 0, canvas.getWidth(), 0);
+            com.aspose.html.dom.canvas.ICanvasGradient gradient = context.createLinearGradient(0, 0, canvas.getWidth(), 0);
             gradient.addColorStop(0, "magenta");
             gradient.addColorStop(0.5, "blue");
             gradient.addColorStop(1.0, "red");
@@ -37,8 +37,8 @@ public class Examples_Java_Document_ManipulateCanvas_ManipulateCanvas {
             context.fillText("Hello World!", 10, 90, 500d);
 
             // Create an instance of HTML renderer and XPS output device
-            var renderer = new com.aspose.html.rendering.HtmlRenderer();
-            var device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "canvas.xps");
+            com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
+            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "canvas.xps");
             try {
                 //  Render the document to the specified device
                 renderer.render(device, document);

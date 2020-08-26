@@ -5,12 +5,12 @@ public class Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentFr
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Prepare an HTML code
-        var html_code = "<p>Hello World!</p>";
+        String html_code = "<p>Hello World!</p>";
 
         // Initialize document from the string variable
-        var document = new com.aspose.html.HTMLDocument(html_code, ".");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(html_code, ".");
         try {
             // Save the document to disk.
             document.save(dataDir + "document.html");

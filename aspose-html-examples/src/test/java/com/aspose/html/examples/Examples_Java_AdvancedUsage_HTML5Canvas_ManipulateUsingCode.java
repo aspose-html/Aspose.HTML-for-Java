@@ -6,12 +6,12 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
     public void execute() throws Exception {
 
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Create an empty HTML document
-        var document = new com.aspose.html.HTMLDocument();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
             // Create the Canvas element
-            var canvas = (com.aspose.html.HTMLCanvasElement) document.createElement("canvas");
+            com.aspose.html.HTMLCanvasElement canvas = (com.aspose.html.HTMLCanvasElement) document.createElement("canvas");
 
             // with a specified size
             canvas.setWidth(300);
@@ -21,10 +21,10 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
             document.getBody().appendChild(canvas);
 
             // Get the canvas rendering context to draw
-            var context = (com.aspose.html.dom.canvas.ICanvasRenderingContext2D) canvas.getContext("2d");
+            com.aspose.html.dom.canvas.ICanvasRenderingContext2D context = (com.aspose.html.dom.canvas.ICanvasRenderingContext2D) canvas.getContext("2d");
 
             // Prepare the gradient brush
-            var gradient = context.createLinearGradient(0, 0, canvas.getWidth(), 0);
+            com.aspose.html.dom.canvas.ICanvasGradient gradient = context.createLinearGradient(0, 0, canvas.getWidth(), 0);
             gradient.addColorStop(0, "magenta");
             gradient.addColorStop(0.5, "blue");
             gradient.addColorStop(1.0, "red");
@@ -40,7 +40,7 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
             context.fillRect(0, 95, 300, 20);
 
             // Create the PDF output device
-            var device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "canvas.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "canvas.pdf");
             try {
                 // Render HTML5 Canvas to PDF
                 document.renderTo(device);

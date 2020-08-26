@@ -5,13 +5,13 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToPDF_SpecifyPdfS
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Open an existing EPUB file for reading.
-        try (var fileInputStream = new java.io.FileInputStream(dataDir + "input.epub")) {
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "input.epub")) {
             // Create an instance of the PdfSaveOptions with a custom page-size and a background-color.
-            var options = new com.aspose.html.saving.PdfSaveOptions();
-            var pageSetup = new com.aspose.html.rendering.PageSetup();
-            var anyPage = new com.aspose.html.drawing.Page();
+            com.aspose.html.saving.PdfSaveOptions options = new com.aspose.html.saving.PdfSaveOptions();
+            com.aspose.html.rendering.PageSetup pageSetup = new com.aspose.html.rendering.PageSetup();
+            com.aspose.html.drawing.Page anyPage = new com.aspose.html.drawing.Page();
             anyPage.setSize(new com.aspose.html.drawing.Size(
                     com.aspose.html.drawing.Length.fromPixels(3000),
                     com.aspose.html.drawing.Length.fromPixels(1000))

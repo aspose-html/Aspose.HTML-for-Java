@@ -5,19 +5,19 @@ public class Examples_Java_WorkingWithDevices_GenerateXPSByXpsDevice_1 {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
-        var document = new com.aspose.html.HTMLDocument("<style>p { color: green; }</style><p>my first paragraph</p>", "c:/work/");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<style>p { color: green; }</style><p>my first paragraph</p>", "c:/work/");
         try {
-            var xpsRenderingOptions = new com.aspose.html.rendering.xps.XpsRenderingOptions();
-            var pageSetup = new com.aspose.html.rendering.PageSetup();
-            var anyPage = new com.aspose.html.drawing.Page(
+            com.aspose.html.rendering.xps.XpsRenderingOptions xpsRenderingOptions = new com.aspose.html.rendering.xps.XpsRenderingOptions();
+            com.aspose.html.rendering.PageSetup pageSetup = new com.aspose.html.rendering.PageSetup();
+            com.aspose.html.drawing.Page anyPage = new com.aspose.html.drawing.Page(
                     new com.aspose.html.drawing.Size(500, 500),
                     new com.aspose.html.drawing.Margin(50, 50, 50, 50)
             );
             pageSetup.setAnyPage(anyPage);
             xpsRenderingOptions.setPageSetup(pageSetup);
-            var device = new com.aspose.html.rendering.xps.XpsDevice(
+            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(
                     xpsRenderingOptions,
                     dataDir + "document_out.xps"
             );

@@ -7,7 +7,7 @@ public class Examples_Java_Document_LoadHtmlUsingURL_LoadHtmlUsingURL {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         String InputHtml = "http://aspose.com/";
         // Load HTML file using Url instance
-        var document = new com.aspose.html.HTMLDocument(new com.aspose.html.Url(InputHtml));
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(new com.aspose.html.Url(InputHtml));
         // Print inner HTML of file to console
         System.out.println(document.getBody().getInnerHTML());
     }

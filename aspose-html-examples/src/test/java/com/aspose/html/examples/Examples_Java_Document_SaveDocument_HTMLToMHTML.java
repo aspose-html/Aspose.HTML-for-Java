@@ -5,15 +5,14 @@ public class Examples_Java_Document_SaveDocument_HTMLToMHTML {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
-        var document = new com.aspose.html.HTMLDocument("""
-                <link href=""c:\\work\\style.css"" rel=""stylesheet"">
-                <p>my first paragraph</p>
-                """, "about:blank");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(
+                "<link href=\"\"c:\\work\\style.css\"\" rel=\"\"stylesheet\"\">\n" +
+                "<p>my first paragraph</p>\n", "about:blank");
         try {
             // Create corresponding save options
-            var saveOptions = new com.aspose.html.saving.MHTMLSaveOptions();
+            com.aspose.html.saving.MHTMLSaveOptions saveOptions = new com.aspose.html.saving.MHTMLSaveOptions();
 
             // Set default resource handling behaviour to "embed"
             saveOptions.getResourceHandlingOptions().setDefault(com.aspose.html.saving.ResourceHandling.Embed);

@@ -5,15 +5,15 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Prepare an HTML code
-        var code = "<div>Hello World!!</div>";
+        String code = "<div>Hello World!!</div>";
 
         // Initialize an instance of HTML document based on prepared code
-        var document = new com.aspose.html.HTMLDocument(code, ".");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(code, ".");
         try {
             // Create an instance of Rendering Options
-            var options = new com.aspose.html.rendering.image.ImageRenderingOptions();
+            com.aspose.html.rendering.image.ImageRenderingOptions options = new com.aspose.html.rendering.image.ImageRenderingOptions();
             options.setFormat(com.aspose.html.rendering.image.ImageFormat.Jpeg);
             // Disable smoothing mode
             options.setSmoothingMode(com.aspose.html.drawing.SmoothingMode.None);
@@ -22,7 +22,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
             options.setHorizontalResolution(com.aspose.html.drawing.Resolution.fromDotsPerInch(75));
 
             // Create an instance of Image Device
-            var device = new com.aspose.html.rendering.image.ImageDevice(options, dataDir + "output.jpg");
+            com.aspose.html.rendering.image.ImageDevice device = new com.aspose.html.rendering.image.ImageDevice(options, dataDir + "output.jpg");
             try {
                 // Render HTML to Image
                 document.renderTo(device);

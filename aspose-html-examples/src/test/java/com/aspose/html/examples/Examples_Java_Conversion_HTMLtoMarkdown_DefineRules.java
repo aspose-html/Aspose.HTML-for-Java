@@ -6,11 +6,11 @@ public class Examples_Java_Conversion_HTMLtoMarkdown_DefineRules {
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
-        var document = new com.aspose.html.HTMLDocument("<p>my first paragraph</p>", dataDir);
+        String dataDir = RunExamples.getResourcePath();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<p>my first paragraph</p>", dataDir);
         try {
             // Create MarkdownSaveOptions object
-            var options = new com.aspose.html.saving.MarkdownSaveOptions();
+            com.aspose.html.saving.MarkdownSaveOptions options = new com.aspose.html.saving.MarkdownSaveOptions();
 
             // Set the rules: only <a>, <img> and <p> elements will be converted to markdown.
             options.setFeatures(com.aspose.html.saving.MarkdownFeatures.Link | com.aspose.html.saving.MarkdownFeatures.Image | com.aspose.html.saving.MarkdownFeatures.AutomaticParagraph);

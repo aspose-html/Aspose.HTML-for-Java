@@ -5,12 +5,12 @@ public class Examples_Java_Document_SaveDocument_SaveUsingHTMLSaveOptions {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
 
-        var document = new com.aspose.html.HTMLDocument("<p>my first paragraph</p>", "about:blank");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<p>my first paragraph</p>", "about:blank");
         try {
             // Create options object
-            var options = new com.aspose.html.saving.HTMLSaveOptions();
+            com.aspose.html.saving.HTMLSaveOptions options = new com.aspose.html.saving.HTMLSaveOptions();
 
             // Set the maximum depth of resource which will be handled.
             // Depth of 1 means that only resources directly referenced from the saved document will be handled.

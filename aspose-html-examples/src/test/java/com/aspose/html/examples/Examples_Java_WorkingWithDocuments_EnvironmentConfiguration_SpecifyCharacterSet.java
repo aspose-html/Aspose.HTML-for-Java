@@ -5,10 +5,10 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Specify
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // Create an instance of Configuration
-        var configuration = new com.aspose.html.Configuration();
+        com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
 
         // Get the IUserAgentService
-        var userAgent = configuration.getService(com.aspose.html.services.IUserAgentService.class);
+        com.aspose.html.services.IUserAgentService userAgent = configuration.getService(com.aspose.html.services.IUserAgentService.class);
 
         // Set ISO-8859-1 encoding to parse the document
         userAgent.setCharSet("ISO-8859-1");

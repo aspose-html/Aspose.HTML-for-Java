@@ -5,11 +5,11 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToImage_SpecifyCu
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Create an instance of MemoryStreamProvider
-        try (var streamProvider = new MemoryStreamProvider()) {
+        try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Initialize an HTML document
-            var document = new com.aspose.html.HTMLDocument("<span>Hello</span> <span>World!!</span>", ".");
+            com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<span>Hello</span> <span>World!!</span>", ".");
             try {
                 // Convert HTML to Image by using the MemoryStreamProvider
                 com.aspose.html.converters.Converter.convertHTML(
@@ -19,10 +19,10 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToImage_SpecifyCu
                 );
 
                 // Get access to the memory stream that contains the result data
-                var inputStream = streamProvider.lStream.stream().findFirst().orElseThrow();
+                java.io.InputStream inputStream = streamProvider.lStream.stream().findFirst().get();
 
                 // Flush the result data to the output file
-                try (var fileOutputStream = new java.io.FileOutputStream(dataDir + "output.jpg")) {
+                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "output.jpg")) {
                     byte[] buffer = new byte[inputStream.available()];
                     inputStream.read(buffer);
                     fileOutputStream.write(buffer);

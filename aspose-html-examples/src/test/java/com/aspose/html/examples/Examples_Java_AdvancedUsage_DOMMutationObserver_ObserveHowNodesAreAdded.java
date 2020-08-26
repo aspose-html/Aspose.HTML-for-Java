@@ -6,10 +6,10 @@ public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreA
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // Create an empty HTML document
-        var document = new com.aspose.html.HTMLDocument();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
             // Create a mutation observer instance
-            var observer = new com.aspose.html.dom.mutations.MutationObserver(
+            com.aspose.html.dom.mutations.MutationObserver observer = new com.aspose.html.dom.mutations.MutationObserver(
                     new com.aspose.html.dom.mutations.MutationCallback() {
                         @Override
                         public void invoke(
@@ -28,7 +28,7 @@ public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreA
                     });
 
             // configuration of the observer
-            var config = new com.aspose.html.dom.mutations.MutationObserverInit();
+            com.aspose.html.dom.mutations.MutationObserverInit config = new com.aspose.html.dom.mutations.MutationObserverInit();
             config.setChildList(true);
             config.setSubtree(true);
             config.setCharacterData(true);

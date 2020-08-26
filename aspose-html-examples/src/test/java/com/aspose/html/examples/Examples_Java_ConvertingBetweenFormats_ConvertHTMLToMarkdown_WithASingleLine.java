@@ -5,14 +5,12 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToMarkdown_WithAS
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Prepare an HTML code and save it to the file.
-        var code = """
-                <h1>Header 1</h1>
-                <h2>Header 2</h2>
-                <p>Hello World!!</p>
-                """;
-        try (var fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        String code = "<h1>Header 1</h1>\n" +
+                      "<h2>Header 2</h2>\n" +
+                      "<p>Hello World!!</p>\n";
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
             fileWriter.write(code);
         }
 

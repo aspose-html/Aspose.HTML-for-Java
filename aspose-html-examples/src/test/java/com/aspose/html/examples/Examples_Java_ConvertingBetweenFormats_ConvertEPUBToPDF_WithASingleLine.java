@@ -5,9 +5,9 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToPDF_WithASingle
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Open an existing EPUB file for reading.
-        try (var fileInputStream = new java.io.FileInputStream(dataDir + "input.epub")) {
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "input.epub")) {
             // Call the ConvertEPUB method to convert the EPUB to PDF.
             com.aspose.html.converters.Converter.convertEPUB(
                     fileInputStream,

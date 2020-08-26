@@ -6,14 +6,14 @@ public class Examples_Java_Conversion_SVGtoPDF_1 {
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // The path to the documents directory
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Source SVG document
-        var svgDocument = new com.aspose.html.dom.svg.SVGDocument(dataDir + "input.svg");
+        com.aspose.html.dom.svg.SVGDocument svgDocument = new com.aspose.html.dom.svg.SVGDocument(dataDir + "input.svg");
         // Initialize pdfSaveOptions
-        var options = new com.aspose.html.saving.PdfSaveOptions();
+        com.aspose.html.saving.PdfSaveOptions options = new com.aspose.html.saving.PdfSaveOptions();
         options.setJpegQuality(100);
         // Output file path
-        var outputFile = dataDir + "SVGtoPDF_Output.pdf";
+        String outputFile = dataDir + "SVGtoPDF_Output.pdf";
         // Convert SVG to PDF
         com.aspose.html.converters.Converter.convertSVG(svgDocument, options, outputFile);
     }

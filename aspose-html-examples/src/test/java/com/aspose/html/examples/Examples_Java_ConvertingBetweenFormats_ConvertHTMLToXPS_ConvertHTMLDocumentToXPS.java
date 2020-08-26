@@ -5,18 +5,18 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToXPS_ConvertHTML
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        var dataDir = com.aspose.html.examples.RunExamples.GetDataDir_Data();
+        String dataDir = RunExamples.getResourcePath();
         // Prepare an HTML code and save it to the file.
-        var code = "<span>Hello World!!</span>";
-        try (var fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        String code = "<span>Hello World!!</span>";
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
             fileWriter.write(code);
         }
 
         // Initialize an HTML document from the file
-        var document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
         try {
             // Initialize XpsSaveOptions
-            var options = new com.aspose.html.saving.XpsSaveOptions();
+            com.aspose.html.saving.XpsSaveOptions options = new com.aspose.html.saving.XpsSaveOptions();
 
             // Convert HTML to XPS
             com.aspose.html.converters.Converter.convertHTML(
