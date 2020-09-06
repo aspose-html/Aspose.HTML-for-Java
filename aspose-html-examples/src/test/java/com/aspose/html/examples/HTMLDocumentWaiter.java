@@ -14,7 +14,7 @@ public class HTMLDocumentWaiter implements Runnable {
         System.out.println("Current Thread: " + Thread.currentThread().getName() + "; " + Thread.currentThread().getId());
         try {
             while (!Thread.currentThread().isInterrupted() && html.getMsg() == null) {
-                Thread.currentThread().sleep(60000);
+                Thread.sleep(60000);
             }
         } catch (InterruptedException ex) {
             Thread.currentThread().interrupt();

@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code
+// Prepare an HTML code
         String code = "<span>Hello World!!</span>";
 
         // Initialize the HTML document from the HTML code
@@ -24,7 +22,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
             options.getPageSetup().setAnyPage(anyPage);
 
             // Create the XPS Device and specify options and output file
-            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(options, dataDir + "output.xps");
+            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(options, Resources.output("output.xps"));
             try {
                 // Render HTML to XPS
                 document.renderTo(device);

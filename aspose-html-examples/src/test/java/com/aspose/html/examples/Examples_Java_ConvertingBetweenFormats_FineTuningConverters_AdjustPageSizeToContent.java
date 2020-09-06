@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_AdjustP
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code
+// Prepare an HTML code
         String code = "    <style>\n" +
                       "        div {\n" +
                       "            page - break -after:always;\n" +
@@ -25,7 +23,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_AdjustP
             options.getPageSetup().setAdjustToWidestPage(true);
 
             // Create the PDF Device and specify options and output file
-            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(options, dataDir + "output.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(options, Resources.output("output.pdf"));
             try {
                 // Render HTML to PDF
                 document.renderTo(device);

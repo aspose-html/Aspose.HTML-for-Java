@@ -4,7 +4,6 @@ public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreA
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         // Create an empty HTML document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {

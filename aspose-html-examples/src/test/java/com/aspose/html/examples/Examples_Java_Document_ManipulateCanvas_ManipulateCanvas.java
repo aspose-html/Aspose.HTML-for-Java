@@ -4,9 +4,6 @@ public class Examples_Java_Document_ManipulateCanvas_ManipulateCanvas {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        // The path to the documents directory.
-        String dataDir = RunExamples.getResourcePath();
 
         // Create an empty document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
@@ -38,7 +35,7 @@ public class Examples_Java_Document_ManipulateCanvas_ManipulateCanvas {
 
             // Create an instance of HTML renderer and XPS output device
             com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
-            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "canvas.xps");
+            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(Resources.output("canvas.xps"));
             try {
                 //  Render the document to the specified device
                 renderer.render(device, document);

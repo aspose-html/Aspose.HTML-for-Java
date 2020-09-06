@@ -4,11 +4,9 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToPDF_SpecifyPdfS
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code and save it to the file
+// Prepare an HTML code and save it to the file
         String code = "<span>Hello</span> <span>World!!</span>";
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {
             fileWriter.write(code);
         }
 
@@ -29,9 +27,9 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToPDF_SpecifyPdfS
 
         // Convert HTML document to PDF
         com.aspose.html.converters.Converter.convertHTML(
-                dataDir + "document.html",
+                Resources.output("document.html"),
                 options,
-                dataDir + "output.pdf"
+                Resources.output("output.pdf")
         );
     }
 }

@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToImage_SpecifyCus
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an SVG code and save it to the file
+// Prepare an SVG code and save it to the file
         String code = "<svg xmlns='http://www.w3.org/2000/svg'>\n" +
                       "<circle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' />\n" +
                       "</svg>\n";
@@ -29,7 +27,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToImage_SpecifyCus
                 java.io.InputStream inputStream = streamProvider.lStream.stream().findFirst().get();
 
                 // Flush the result data to the output file
-                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "output.jpg")) {
+                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("output.jpg"))) {
                     byte[] buffer = new byte[inputStream.available()];
                     inputStream.read(buffer);
                     fileOutputStream.write(buffer);

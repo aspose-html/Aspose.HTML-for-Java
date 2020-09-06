@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToXPS_SpecifyCust
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Create an instance of MemoryStreamProvider
+// Create an instance of MemoryStreamProvider
         try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Initialize an HTML document
             com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<span>Hello World!!</span>", ".");
@@ -22,7 +20,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToXPS_SpecifyCust
                 java.io.InputStream inputStream = streamProvider.lStream.stream().findFirst().get();
 
                 // Flush the result data to the output file
-                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "output.xps")) {
+                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("output.xps"))) {
                     byte[] buffer = new byte[inputStream.available()];
                     inputStream.read(buffer);
                     fileOutputStream.write(buffer);

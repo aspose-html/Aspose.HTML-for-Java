@@ -4,10 +4,8 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToImage_ConvertM
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
         // Open an existing MHTML file for reading.
-        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "sample.mht")) {
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("sample.mht"))) {
             // Initialize ImageSaveOptions
             com.aspose.html.saving.ImageSaveOptions options = new com.aspose.html.saving.ImageSaveOptions(com.aspose.html.rendering.image.ImageFormat.Bmp);
 
@@ -15,7 +13,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToImage_ConvertM
             com.aspose.html.converters.Converter.convertMHTML(
                     fileInputStream,
                     options,
-                    dataDir + "output.bmp"
+                    Resources.output("output.bmp")
             );
         }
     }

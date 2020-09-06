@@ -4,10 +4,8 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToXPS_ConvertMHT
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Open an existing MHTML file for reading.
-        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "sample.mht")) {
+// Open an existing MHTML file for reading.
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("sample.mht"))) {
             // Create an instance of XpsSaveOptions.
             com.aspose.html.saving.XpsSaveOptions options = new com.aspose.html.saving.XpsSaveOptions();
 
@@ -15,7 +13,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToXPS_ConvertMHT
             com.aspose.html.converters.Converter.convertMHTML(
                     fileInputStream,
                     options,
-                    dataDir + "output.xps"
+                    Resources.output("output.xps")
             );
         }
     }

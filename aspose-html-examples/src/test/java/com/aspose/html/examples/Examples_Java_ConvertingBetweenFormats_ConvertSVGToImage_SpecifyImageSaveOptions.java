@@ -4,13 +4,11 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToImage_SpecifyIma
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
         // Prepare an SVG code and save it to the file
         String code = "<svg xmlns='http://www.w3.org/2000/svg'>\n" +
                       "<circle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' />\n" +
                       "</svg>\n";
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.svg")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.svg"))) {
             fileWriter.write(code);
         }
 
@@ -31,9 +29,9 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToImage_SpecifyIma
 
         // Call the ConvertSVG to convert 'document.html' into jpeg image
         com.aspose.html.converters.Converter.convertSVG(
-                dataDir + "document.svg",
+                Resources.output("document.svg"),
                 options,
-                dataDir + "output.jpg"
+                Resources.output("output.jpg")
         );
     }
 }

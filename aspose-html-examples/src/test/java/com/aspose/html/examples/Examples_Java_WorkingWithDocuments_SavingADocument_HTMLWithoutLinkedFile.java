@@ -4,22 +4,20 @@ public class Examples_Java_WorkingWithDocuments_SavingADocument_HTMLWithoutLinke
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare a simple HTML file with a linked document.
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+// Prepare a simple HTML file with a linked document.
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {
             fileWriter.write("<p>Hello World!</p>\n" +
                              "<a href='linked.html'>linked file</a>\n"
             );
         }
 
         // Prepare a simple linked HTML file
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "linked.html")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("linked.html"))) {
             fileWriter.write("<p>Hello linked file!</p>");
         }
 
         // Load 'document.html' into memory
-        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(Resources.output("document.html"));
         try {
             // Create Save Options instance
             com.aspose.html.saving.HTMLSaveOptions options = new com.aspose.html.saving.HTMLSaveOptions();
@@ -29,7 +27,7 @@ public class Examples_Java_WorkingWithDocuments_SavingADocument_HTMLWithoutLinke
             options.getResourceHandlingOptions().setMaxHandlingDepth(1);
 
             // Save the document
-            document.save(dataDir + "document.html", options);
+            document.save(Resources.output("document.html"), options);
         } finally {
             if (document != null) {
                 document.dispose();

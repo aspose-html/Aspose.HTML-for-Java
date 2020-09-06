@@ -4,22 +4,20 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToImage_ConvertHT
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code and save it to the file.
+// Prepare an HTML code and save it to the file.
         String code = "<span>Hello</span> <span>World!!</span>";
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {
             fileWriter.write(code);
         }
 
         // Initialize an HTML document from the html file
-        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(Resources.output("document.html"));
         try {
             // Initialize ImageSaveOptions
             com.aspose.html.saving.ImageSaveOptions options = new com.aspose.html.saving.ImageSaveOptions(com.aspose.html.rendering.image.ImageFormat.Bmp);
 
             // Convert HTML to BMP
-            com.aspose.html.converters.Converter.convertHTML(document, options, dataDir + "output.bmp");
+            com.aspose.html.converters.Converter.convertHTML(document, options, Resources.output("output.bmp"));
         } finally {
             if (document != null) {
                 document.dispose();

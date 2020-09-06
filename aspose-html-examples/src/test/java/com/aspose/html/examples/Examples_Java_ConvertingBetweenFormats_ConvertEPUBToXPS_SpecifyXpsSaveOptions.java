@@ -1,14 +1,11 @@
 package com.aspose.html.examples;
 
-
 public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToXPS_SpecifyXpsSaveOptions {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Open an existing EPUB file for reading.
-        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "input.epub")) {
+// Open an existing EPUB file for reading.
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("input.epub"))) {
             // Create an instance of the XpsSaveOptions with a custom page-size and a background-color.
             com.aspose.html.saving.XpsSaveOptions options = new com.aspose.html.saving.XpsSaveOptions();
             com.aspose.html.rendering.PageSetup pageSetup = new com.aspose.html.rendering.PageSetup();
@@ -28,7 +25,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToXPS_SpecifyXpsS
             com.aspose.html.converters.Converter.convertEPUB(
                     fileInputStream,
                     options,
-                    dataDir + "output.xps"
+                    Resources.output("output.xps")
             );
         }
     }

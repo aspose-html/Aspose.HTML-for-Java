@@ -4,9 +4,7 @@ public class Examples_Java_WorkingWithICreateStreamProvider_UseICreateStreamProv
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        // The path to the documents directory
-        String dataDir = RunExamples.getResourcePath();
+
         // Create a custom StreamProvider based on ICreateStreamProvider interface
         try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Create a simple HTML document
@@ -25,7 +23,7 @@ public class Examples_Java_WorkingWithICreateStreamProvider_UseICreateStreamProv
                 java.io.InputStream inputStream = streamProvider.lStream.stream().findFirst().get();
 
                 // Flush the result data to the output file
-                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "output.xps")) {
+                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("output.xps"))) {
                     byte[] buffer = new byte[inputStream.available()];
                     inputStream.read(buffer);
                     fileOutputStream.write(buffer);

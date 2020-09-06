@@ -5,9 +5,7 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
 
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Create an empty HTML document
+// Create an empty HTML document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
             // Create the Canvas element
@@ -40,7 +38,7 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
             context.fillRect(0, 95, 300, 20);
 
             // Create the PDF output device
-            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "canvas.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(Resources.output("canvas.output.2.pdf"));
             try {
                 // Render HTML5 Canvas to PDF
                 document.renderTo(device);

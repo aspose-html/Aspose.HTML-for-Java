@@ -4,18 +4,16 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToMHTML_SpecifyMH
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code with a link to another file and save it to the file as 'document.html'
+// Prepare an HTML code with a link to another file and save it to the file as 'document.html'
         String code = "<span>Hello World!!</span>\n" +
                       "<a href='document2.html'>click</a>\n";
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {
             fileWriter.write(code);
         }
 
         // Prepare an HTML code and save it to the file as 'document2.html'
         code = "<span>Hello World!!</span>";
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document2.html")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document2.html"))) {
             fileWriter.write(code);
         }
 
@@ -25,9 +23,9 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToMHTML_SpecifyMH
 
         // Convert HTML to MHT
         com.aspose.html.converters.Converter.convertHTML(
-                dataDir + "document.html",
+                Resources.output("document.html"),
                 options,
-                dataDir + "output.mht"
+                Resources.output("output.mht")
         );
     }
 }

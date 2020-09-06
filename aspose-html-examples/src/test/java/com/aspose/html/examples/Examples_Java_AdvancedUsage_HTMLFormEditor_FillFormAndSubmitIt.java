@@ -4,9 +4,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Initialize an instance of HTML document from 'https://httpbin.org/forms/post' url
+// Initialize an instance of HTML document from 'https://httpbin.org/forms/post' url
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("https://httpbin.org/forms/post");
         try {
             // Create an instance of Form Editor
@@ -15,7 +13,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                 // You can fill the data up using direct access to the input elements, like this:
                 editor.get_Item("custname").setValue("John Doe");
 
-                document.save(dataDir + "out.html");
+                document.save(Resources.output("out.html"));
 
                 // or this:
                 com.aspose.html.forms.TextAreaElement comments = editor.getElement(com.aspose.html.forms.TextAreaElement.class, "comments");
@@ -25,7 +23,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                 java.util.Map<String, String> map = new java.util.HashMap<>();
                 map.put("custemail", "john.doe@gmail.com");
                 map.put("custtel", "+1202-555-0290");
-                editor.fill(map);
+                //editor.fill(map);
 
                 // Create an instance of form submitter
                 com.aspose.html.forms.FormSubmitter submitter = new com.aspose.html.forms.FormSubmitter(editor);

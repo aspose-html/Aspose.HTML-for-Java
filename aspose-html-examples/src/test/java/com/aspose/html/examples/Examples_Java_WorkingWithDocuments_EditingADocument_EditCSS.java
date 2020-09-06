@@ -1,13 +1,10 @@
 package com.aspose.html.examples;
 
-
 public class Examples_Java_WorkingWithDocuments_EditingADocument_EditCSS {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Create an instance of HTML Document with specified content
+// Create an instance of HTML Document with specified content
         String content = "<style>p { color: red; }</style><p>Hello World!</p>";
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(content, ".");
         try {
@@ -27,7 +24,7 @@ public class Examples_Java_WorkingWithDocuments_EditingADocument_EditCSS {
             paragraph.getStyle().setProperty("color", "navy");
 
             // Create the instance of the PDF output device and render the document into this device
-            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "output.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(Resources.output("output.pdf"));
             try {
                 document.renderTo(device);
             } finally {

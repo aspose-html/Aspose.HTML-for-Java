@@ -4,9 +4,6 @@ public class Examples_Java_Document_LoadHTMLdocAsyn_LoadHTMLdocAsyn {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        // The path to the documents directory.
-        String dataDir = RunExamples.getResourcePath();
 
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
 
@@ -20,6 +17,6 @@ public class Examples_Java_Document_LoadHTMLdocAsyn_LoadHTMLdocAsyn {
             }
         });
 
-        document.navigate(dataDir + "input.html");
+        document.navigate(Resources.output("output.html"));
     }
 }

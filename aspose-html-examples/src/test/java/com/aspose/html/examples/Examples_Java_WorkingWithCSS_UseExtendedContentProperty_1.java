@@ -4,10 +4,7 @@ public class Examples_Java_WorkingWithCSS_UseExtendedContentProperty_1 {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-
-        //  Initialize configuration object and set up the page-margins for the document
+//  Initialize configuration object and set up the page-margins for the document
         com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
         configuration.getService(com.aspose.html.services.IUserAgentService.class).setUserStyleSheet(
                 "@page\n" +
@@ -39,7 +36,7 @@ public class Examples_Java_WorkingWithCSS_UseExtendedContentProperty_1 {
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(configuration);
         try {
             //  Initialize an output device
-            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "output_out.xps");
+            com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(Resources.output("output_out.xps"));
             try {
                 // Send the document to the output device
                 document.renderTo(device);

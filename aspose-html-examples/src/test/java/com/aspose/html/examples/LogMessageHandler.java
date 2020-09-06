@@ -1,6 +1,5 @@
 package com.aspose.html.examples;
 
-// For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
 /// <summary>
 /// This message handler logs all failed requests to the console.
 /// </summary>

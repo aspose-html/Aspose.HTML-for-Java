@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code and save it to the file.
+// Prepare an HTML code and save it to the file.
         String code = "< style >\n" +
                       "                p\n" +
                       "        {\n" +
@@ -25,12 +23,12 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
                       "    </style >\n" +
                       "    <p > Hello World !! </p >\n";
 
-        try (java.io.FileWriter fileWriter = new java.io.FileWriter(dataDir + "document.html")) {
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {
             fileWriter.write(code);
         }
 
         // Create an instance of HTML document
-        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(dataDir + "document.html");
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(Resources.output("document.html"));
         try {
             // Create options for low-resolution screens
             com.aspose.html.rendering.pdf.PdfRenderingOptions options = new com.aspose.html.rendering.pdf.PdfRenderingOptions();
@@ -40,7 +38,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
             // Create an instance of PDF device
             com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(
                     options,
-                    dataDir + "output_resolution_50.pdf"
+                    Resources.output("output_resolution_50.pdf")
             );
             try {
                 // Render HTML to PDF
@@ -59,7 +57,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
             // Create an instance of PDF device
             device = new com.aspose.html.rendering.pdf.PdfDevice(
                     options,
-                    dataDir + "output_resolution_300.pdf"
+                    Resources.output("output_resolution_300.pdf")
             );
             try {
                 // Render HTML to PDF

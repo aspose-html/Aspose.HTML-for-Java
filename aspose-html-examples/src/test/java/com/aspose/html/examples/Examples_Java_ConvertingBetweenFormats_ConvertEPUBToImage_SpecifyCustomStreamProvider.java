@@ -4,10 +4,8 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToImage_SpecifyCu
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Open an existing EPUB file for reading.
-        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "input.epub")) {
+// Open an existing EPUB file for reading.
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("input.epub"))) {
             // Create an instance of MemoryStreamProvider
             try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
                 // Convert EPUB to Image by using the MemoryStreamProvider
@@ -23,7 +21,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToImage_SpecifyCu
                     java.io.InputStream inputStream = streamProvider.lStream.get(i);
 
                     // Flush the page to the output file
-                    try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "page_{" + (i + 1) + "}.jpg")) {
+                    try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("page_{" + (i + 1) + "}.jpg"))) {
                         byte[] buffer = new byte[inputStream.available()];
                         inputStream.read(buffer);
                         fileOutputStream.write(buffer);

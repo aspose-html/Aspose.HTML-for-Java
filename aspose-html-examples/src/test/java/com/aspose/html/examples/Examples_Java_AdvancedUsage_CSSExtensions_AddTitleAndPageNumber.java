@@ -3,10 +3,7 @@ package com.aspose.html.examples;
 public class Examples_Java_AdvancedUsage_CSSExtensions_AddTitleAndPageNumber {
 
     @org.junit.jupiter.api.Test
-    @org.junit.jupiter.api.Disabled
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
         //  Initialize configuration object and set up the page-margins for the document
         com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
         try {
@@ -40,7 +37,7 @@ public class Examples_Java_AdvancedUsage_CSSExtensions_AddTitleAndPageNumber {
             com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<div>Hello World!!!</div>", ".", configuration);
             try {
                 //  Initialize an output device
-                com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(dataDir + "output.xps");
+                com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(Resources.output("output.xps"));
                 try {
                     // Send the document to the output device
                     document.renderTo(device);

@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToPDF_SpecifyCusto
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Create an instance of MemoryStreamProvider
+// Create an instance of MemoryStreamProvider
         try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Prepare an SVG code
             String code = "<svg xmlns='http://www.w3.org/2000/svg'>\n" +
@@ -27,7 +25,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToPDF_SpecifyCusto
                 java.io.InputStream inputStream = streamProvider.lStream.stream().findFirst().get();
 
                 // Flush the result data to the output file
-                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "output.pdf")) {
+                try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("output.pdf"))) {
                     byte[] buffer = new byte[inputStream.available()];
                     inputStream.read(buffer);
                     fileOutputStream.write(buffer);

@@ -4,9 +4,7 @@ public class Examples_Java_Document_CreateSimpleDocument_CreateSimpleDocument {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        String outputHtml = dataDir + "SimpleDocument.html";
+        String outputHtml = Resources.output("SimpleDocument.html");
 
         // Create an instance of HTMLDocument
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();

@@ -4,8 +4,6 @@ public class Examples_Java_WorkingWithDocuments_EditingADocument_UsingDOM {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
         // Create the instance of HTML Document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
@@ -31,7 +29,7 @@ public class Examples_Java_WorkingWithDocuments_EditingADocument_UsingDOM {
             document.getBody().appendChild(p);
 
             // Create the instance of the PDF output device and render the document into this device
-            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "output.pdf");
+            com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(Resources.output("output.pdf"));
             try {
                 document.renderTo(device);
             } finally {

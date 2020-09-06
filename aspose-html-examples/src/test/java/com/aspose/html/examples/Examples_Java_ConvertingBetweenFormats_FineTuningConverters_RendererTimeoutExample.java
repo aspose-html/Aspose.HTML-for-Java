@@ -1,13 +1,10 @@
 package com.aspose.html.examples;
 
-
 public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_RendererTimeoutExample {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code
+// Prepare an HTML code
         String code = "< script >\n" +
                       "        var count = 0;\n" +
                       "        setInterval(function()\n" +
@@ -27,7 +24,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Rendere
             com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
             try {
                 // Create an instance of PDF device
-                com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(dataDir + "output.pdf");
+                com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(Resources.output("output.pdf"));
                 try {
                     // Render HTML to PDF
                     renderer.render(device, 5, document);

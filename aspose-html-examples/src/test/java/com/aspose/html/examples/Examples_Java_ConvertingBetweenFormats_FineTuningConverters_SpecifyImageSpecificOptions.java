@@ -4,9 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-        // Prepare an HTML code
+// Prepare an HTML code
         String code = "<div>Hello World!!</div>";
 
         // Initialize an instance of HTML document based on prepared code
@@ -22,7 +20,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
             options.setHorizontalResolution(com.aspose.html.drawing.Resolution.fromDotsPerInch(75));
 
             // Create an instance of Image Device
-            com.aspose.html.rendering.image.ImageDevice device = new com.aspose.html.rendering.image.ImageDevice(options, dataDir + "output.jpg");
+            com.aspose.html.rendering.image.ImageDevice device = new com.aspose.html.rendering.image.ImageDevice(options, Resources.output("output.jpg"));
             try {
                 // Render HTML to Image
                 document.renderTo(device);

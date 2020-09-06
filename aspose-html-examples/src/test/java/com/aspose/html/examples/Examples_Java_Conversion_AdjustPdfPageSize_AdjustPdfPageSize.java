@@ -4,11 +4,9 @@ public class Examples_Java_Conversion_AdjustPdfPageSize_AdjustPdfPageSize {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        // The path to the documents directory.
-        String dataDir = RunExamples.getResourcePath();
-        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "FirstFile.html")) {
-            try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "FirstFileOut.html")) {
+
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("FirstFile.html"))) {
+            try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("FirstFileOut.html"))) {
                 byte[] bytes = new byte[fileInputStream.available()];
                 fileInputStream.read(bytes);
                 fileOutputStream.write(bytes);
@@ -32,7 +30,7 @@ public class Examples_Java_Conversion_AdjustPdfPageSize_AdjustPdfPageSize {
             com.aspose.html.rendering.HtmlRenderer pdf_renderer = new com.aspose.html.rendering.HtmlRenderer();
             try {
                 // Create HtmlDocument instnace while passing path of already created HTML file
-                com.aspose.html.HTMLDocument html_document = new com.aspose.html.HTMLDocument(dataDir + "FirstFileOut.html");
+                com.aspose.html.HTMLDocument html_document = new com.aspose.html.HTMLDocument(Resources.output("FirstFileOut.html"));
                 try {
                     // Set the page size less than document min-width. The content in the resulting file will be cropped becuase of element with width: 200px
                     com.aspose.html.rendering.pdf.PdfRenderingOptions pdf_options =
@@ -42,7 +40,7 @@ public class Examples_Java_Conversion_AdjustPdfPageSize_AdjustPdfPageSize {
                     pageSetup.setAdjustToWidestPage(false);
                     pdf_options.setPageSetup(pageSetup);
 
-                    pdf_output = dataDir + "not-adjusted-to-widest-page_out.pdf";
+                    pdf_output = Resources.output("not-adjusted-to-widest-page_out.pdf");
                     com.aspose.html.rendering.pdf.PdfDevice device = new com.aspose.html.rendering.pdf.PdfDevice(pdf_options, pdf_output);
                     try {
                         // Render the output
@@ -60,7 +58,7 @@ public class Examples_Java_Conversion_AdjustPdfPageSize_AdjustPdfPageSize {
                     pageSetup.setAdjustToWidestPage(true);
                     pdf_options.setPageSetup(pageSetup);
 
-                    pdf_output = dataDir + "adjusted-to-widest-page_out.pdf";
+                    pdf_output = Resources.output("adjusted-to-widest-page_out.pdf");
                     device = new com.aspose.html.rendering.pdf.PdfDevice(pdf_options, pdf_output);
                     try {
                         // Render the output

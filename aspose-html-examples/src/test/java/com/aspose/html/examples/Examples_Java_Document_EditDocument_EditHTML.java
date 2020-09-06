@@ -4,7 +4,6 @@ public class Examples_Java_Document_EditDocument_EditHTML {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
             // Get body element

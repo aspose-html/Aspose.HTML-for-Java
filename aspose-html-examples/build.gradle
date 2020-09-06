@@ -17,8 +17,13 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-engine:5.6.2",
             "org.junit.jupiter:junit-jupiter-params:5.6.2",
             "org.junit.platform:junit-platform-runner:1.6.2",
-
+            "javax.xml.bind:jaxb-api:2.4.0-b180830.0359",
     )
+}
+
+task SimpleWait(type: JavaExec) {
+    classpath = sourceSets.test.runtimeClasspath
+    main = 'com.aspose.html.examples.SimpleWait'
 }
 
 test {

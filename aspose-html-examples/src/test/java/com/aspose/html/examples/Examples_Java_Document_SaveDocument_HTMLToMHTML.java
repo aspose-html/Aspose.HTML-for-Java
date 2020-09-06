@@ -4,9 +4,6 @@ public class Examples_Java_Document_SaveDocument_HTMLToMHTML {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        String dataDir = RunExamples.getResourcePath();
-
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(
                 "<link href=\"\"c:\\work\\style.css\"\" rel=\"\"stylesheet\"\">\n" +
                 "<p>my first paragraph</p>\n", "about:blank");
@@ -21,7 +18,7 @@ public class Examples_Java_Document_SaveDocument_HTMLToMHTML {
             saveOptions.getResourceHandlingOptions().setUrlRestriction(com.aspose.html.saving.UrlRestriction.None);
 
             // Save to .mht file
-            document.save(dataDir + "HtmlToMhtml_out.mht", saveOptions);
+            document.save(Resources.output("HtmlToMhtml_out.mht"), saveOptions);
         } finally {
             if (document != null) {
                 document.dispose();

@@ -4,13 +4,10 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
-        // The path to the documents directory.
-        String dataDir = RunExamples.getResourcePath();
 
         // Set input file name.
-        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(dataDir + "FirstFile.html")) {
-            try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(dataDir + "FirstFileOut.html")) {
+        try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("FirstFile.html"))) {
+            try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("FirstFileOut.html"))) {
                 byte[] bytes = new byte[fileInputStream.available()];
                 fileInputStream.read(bytes);
                 fileOutputStream.write(bytes);
@@ -31,7 +28,7 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
             com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
             try {
                 // Create HtmlDocument instnace while passing path of already created HTML file
-                com.aspose.html.HTMLDocument html_document = new com.aspose.html.HTMLDocument(dataDir + "FirstFileOut.html");
+                com.aspose.html.HTMLDocument html_document = new com.aspose.html.HTMLDocument(Resources.output("FirstFileOut.html"));
                 try {
                     // Set the page size less than document min-width. The content in the resulting file will be cropped becuase of element with width: 200px
                     com.aspose.html.rendering.xps.XpsRenderingOptions xps_options = new com.aspose.html.rendering.xps.XpsRenderingOptions();
@@ -41,7 +38,7 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
                     pageSetup.setAdjustToWidestPage(false);
                     xps_options.setPageSetup(pageSetup);
 
-                    String output = dataDir + "not-adjusted-to-widest-page_out0.xps";
+                    String output = Resources.output("not-adjusted-to-widest-page_out0.xps");
                     com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(xps_options, output);
                     try {
                         // Render the output
@@ -61,7 +58,7 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
                     pageSetup.setAdjustToWidestPage(true);
                     xps_options.setPageSetup(pageSetup);
 
-                    output = dataDir + "not-adjusted-to-widest-page_out1.xps";
+                    output = Resources.output("not-adjusted-to-widest-page_out1.xps");
                     device = new com.aspose.html.rendering.xps.XpsDevice(xps_options, output);
                     try {
                         // Render the output

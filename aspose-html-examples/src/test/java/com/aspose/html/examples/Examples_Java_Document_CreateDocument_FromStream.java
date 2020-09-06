@@ -4,7 +4,6 @@ public class Examples_Java_Document_CreateDocument_FromStream {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
         java.io.ByteArrayInputStream inputStream = new java.io.ByteArrayInputStream(
                 "<p>my first paragraph</p>".getBytes(java.nio.charset.StandardCharsets.UTF_8)
         );

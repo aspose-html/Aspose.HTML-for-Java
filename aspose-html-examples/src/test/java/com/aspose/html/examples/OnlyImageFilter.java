@@ -1,6 +1,5 @@
 package com.aspose.html.examples;
 
-// For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
 public class OnlyImageFilter extends com.aspose.html.dom.traversal.filters.NodeFilter {
 
     @Override
