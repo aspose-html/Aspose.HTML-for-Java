@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToMarkdown_Inline
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code and save it to the file.
+        // Prepare an HTML code and save it to the file.
         String code = "text<div markdown='inline'><code>text</code></div>";
         try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {
             fileWriter.write(code);

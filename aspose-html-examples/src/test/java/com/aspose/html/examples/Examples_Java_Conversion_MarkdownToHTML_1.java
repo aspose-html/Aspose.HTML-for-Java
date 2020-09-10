@@ -7,7 +7,7 @@ public class Examples_Java_Conversion_MarkdownToHTML_1 {
         // Convert markdown to HTML
         com.aspose.html.converters.Converter.convertMarkdown(
                 Resources.input("input.md"),
-                Resources.output("MarkdownToHTML.html")
+                Resources.output("Markdown-to-HTML.out.html")
         );
     }
 }

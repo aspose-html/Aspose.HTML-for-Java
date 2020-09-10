@@ -4,7 +4,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Initialize an instance of HTML document from 'https://httpbin.org/forms/post' url
+        // Initialize an instance of HTML document from 'https://httpbin.org/forms/post' url
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("https://httpbin.org/forms/post");
         try {
             // Create an instance of Form Editor
@@ -23,7 +23,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                 java.util.Map<String, String> map = new java.util.HashMap<>();
                 map.put("custemail", "john.doe@gmail.com");
                 map.put("custtel", "+1202-555-0290");
-                //editor.fill(map);
+                editor.fill(map);
 
                 // Create an instance of form submitter
                 com.aspose.html.forms.FormSubmitter submitter = new com.aspose.html.forms.FormSubmitter(editor);

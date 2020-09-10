@@ -6,6 +6,7 @@ public class Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentAs
 
     // Look as start this example in link files SimpleWait & HTMLDocumentWaiter
     public void execute() throws Exception {
+
         // Create the instance of HTML Document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
 

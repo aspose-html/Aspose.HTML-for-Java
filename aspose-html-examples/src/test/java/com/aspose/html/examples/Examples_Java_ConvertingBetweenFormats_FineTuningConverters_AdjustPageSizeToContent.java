@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_AdjustP
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code
+        // Prepare an HTML code
         String code = "    <style>\n" +
                       "        div {\n" +
                       "            page - break -after:always;\n" +

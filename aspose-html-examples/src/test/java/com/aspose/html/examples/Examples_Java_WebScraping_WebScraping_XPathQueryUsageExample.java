@@ -4,6 +4,7 @@ public class Examples_Java_WebScraping_WebScraping_XPathQueryUsageExample {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+
         // Prepare an HTML code
         String code = "< div class='happy' >\n" +
                       "        <div >\n" +

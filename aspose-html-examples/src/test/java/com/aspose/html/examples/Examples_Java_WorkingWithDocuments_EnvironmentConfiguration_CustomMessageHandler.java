@@ -4,7 +4,7 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_CustomM
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code with missing image file
+        // Prepare an HTML code with missing image file
         String code = "<img src='missing.jpg'>";
 
         try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {

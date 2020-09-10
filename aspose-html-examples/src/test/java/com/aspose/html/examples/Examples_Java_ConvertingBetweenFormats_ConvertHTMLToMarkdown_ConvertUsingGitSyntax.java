@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToMarkdown_Conver
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code and save it to the file.
+        // Prepare an HTML code and save it to the file.
         String code = "<h1>Header 1</h1>\n" +
                       "<h2>Header 2</h2>\n" +
                       "<p>Hello World!!</p>\n";

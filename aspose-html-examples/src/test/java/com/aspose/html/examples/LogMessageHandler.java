@@ -1,8 +1,8 @@
 package com.aspose.html.examples;
 
-/// <summary>
-/// This message handler logs all failed requests to the console.
-/// </summary>
+/**
+ *  This message handler logs all failed requests to the console.
+ */
 public class LogMessageHandler extends com.aspose.html.net.MessageHandler {
 
     public void invoke(com.aspose.html.net.INetworkOperationContext context) {

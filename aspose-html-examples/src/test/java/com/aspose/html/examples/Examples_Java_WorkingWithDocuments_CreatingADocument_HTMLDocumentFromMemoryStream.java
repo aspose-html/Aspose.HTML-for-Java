@@ -3,7 +3,7 @@ package com.aspose.html.examples;
 public class Examples_Java_WorkingWithDocuments_CreatingADocument_HTMLDocumentFromMemoryStream {
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Create a memory stream object
+        // Create a memory stream object
         java.io.InputStream inputStream =
                 new java.io.ByteArrayInputStream(
                         "<p>Hello World!</p>".getBytes(java.nio.charset.StandardCharsets.UTF_8)

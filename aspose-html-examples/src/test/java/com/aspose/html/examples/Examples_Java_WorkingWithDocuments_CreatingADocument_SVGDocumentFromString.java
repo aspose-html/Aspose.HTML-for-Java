@@ -4,6 +4,7 @@ public class Examples_Java_WorkingWithDocuments_CreatingADocument_SVGDocumentFro
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+
         // Initialize the SVG Document from the string object
         com.aspose.html.dom.svg.SVGDocument document = new com.aspose.html.dom.svg.SVGDocument("<svg xmlns='http://www.w3.org/2000/svg'><circle cx='50' cy='50' r='40'/></svg>", ".");
         try {

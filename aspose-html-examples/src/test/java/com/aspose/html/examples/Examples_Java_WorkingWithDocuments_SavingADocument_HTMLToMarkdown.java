@@ -4,7 +4,7 @@ public class Examples_Java_WorkingWithDocuments_SavingADocument_HTMLToMarkdown {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code
+        // Prepare an HTML code
         String html_code = "<H2>Hello World!</H2>";
 
         // Initialize document from the string variable

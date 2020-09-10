@@ -9,7 +9,6 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToImage_ConvertSVG
         String code = "<svg xmlns='http://www.w3.org/2000/svg'>\n" +
                       "<circle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' />\n" +
                       "</svg>\n";
-//        try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.svg"))) {
         try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.svg"))) {
             fileWriter.write(code);
         }

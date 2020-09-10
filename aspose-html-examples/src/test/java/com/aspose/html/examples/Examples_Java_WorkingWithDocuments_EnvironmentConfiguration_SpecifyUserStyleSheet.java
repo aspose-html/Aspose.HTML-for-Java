@@ -4,7 +4,7 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code and save it to the file.
+        // Prepare an HTML code and save it to the file.
         String code = "<span>Hello World!!!</span>";
 
         try (java.io.FileWriter fileWriter = new java.io.FileWriter(Resources.output("document.html"))) {

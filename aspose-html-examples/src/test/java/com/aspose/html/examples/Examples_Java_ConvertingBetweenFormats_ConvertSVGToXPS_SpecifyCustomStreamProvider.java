@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertSVGToXPS_SpecifyCusto
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Create an instance of MemoryStreamProvider
+        // Create an instance of MemoryStreamProvider
         try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Prepare an SVG code
             String code = "<svg xmlns='http://www.w3.org/2000/svg'>\n" +

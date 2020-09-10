@@ -4,7 +4,8 @@ public class Examples_Java_WorkingWithCSS_UseExtendedContentProperty_1 {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-//  Initialize configuration object and set up the page-margins for the document
+
+        //  Initialize configuration object and set up the page-margins for the document
         com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
         configuration.getService(com.aspose.html.services.IUserAgentService.class).setUserStyleSheet(
                 "@page\n" +

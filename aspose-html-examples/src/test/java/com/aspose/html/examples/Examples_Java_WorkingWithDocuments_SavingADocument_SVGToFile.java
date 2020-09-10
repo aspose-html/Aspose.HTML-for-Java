@@ -4,7 +4,7 @@ public class Examples_Java_WorkingWithDocuments_SavingADocument_SVGToFile {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an SVG code
+        // Prepare an SVG code
         String code = "<svg xmlns='http://www.w3.org/2000/svg' height='80' width='300'>\n" +
                       "        <g fill='none'>\n" +
                       "            <path stroke='red' d='M5 20 l215 0' />\n" +

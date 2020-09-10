@@ -38,7 +38,7 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
                     pageSetup.setAdjustToWidestPage(false);
                     xps_options.setPageSetup(pageSetup);
 
-                    String output = Resources.output("not-adjusted-to-widest-page_out0.xps");
+                    String output = Resources.output("not-adjusted-to-widest-page_out.1.xps");
                     com.aspose.html.rendering.xps.XpsDevice device = new com.aspose.html.rendering.xps.XpsDevice(xps_options, output);
                     try {
                         // Render the output
@@ -58,7 +58,7 @@ public class Examples_Java_Conversion_AdjustXPSPageSize_AdjustXPSPageSize {
                     pageSetup.setAdjustToWidestPage(true);
                     xps_options.setPageSetup(pageSetup);
 
-                    output = Resources.output("not-adjusted-to-widest-page_out1.xps");
+                    output = Resources.output("not-adjusted-to-widest-page_out.2.xps");
                     device = new com.aspose.html.rendering.xps.XpsDevice(xps_options, output);
                     try {
                         // Render the output

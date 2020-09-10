@@ -4,6 +4,7 @@ public class Examples_Java_WebScraping_WebScraping_NodeFilterUsageExample {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+
         // Prepare an HTML code
         String code = "    < p > Hello </p >\n" +
                       "    <img src = 'image1.png' >\n" +

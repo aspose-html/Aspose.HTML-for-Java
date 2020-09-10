@@ -11,7 +11,7 @@ public class Examples_Java_WorkingWithRenderers_RenderHTMLAsPNG_1 {
         );
         try {
             com.aspose.html.rendering.HtmlRenderer renderer = new com.aspose.html.rendering.HtmlRenderer();
-            com.aspose.html.rendering.image.ImageDevice device = new com.aspose.html.rendering.image.ImageDevice(Resources.output("document_out.png"));
+            com.aspose.html.rendering.image.ImageDevice device = new com.aspose.html.rendering.image.ImageDevice(Resources.output("E2.png"));
             try {
                 renderer.render(device, document);
             } finally {

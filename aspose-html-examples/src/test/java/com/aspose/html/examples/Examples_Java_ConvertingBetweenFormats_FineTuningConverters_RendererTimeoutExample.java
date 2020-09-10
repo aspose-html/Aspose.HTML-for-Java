@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Rendere
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code
+        // Prepare an HTML code
         String code = "< script >\n" +
                       "        var count = 0;\n" +
                       "        setInterval(function()\n" +

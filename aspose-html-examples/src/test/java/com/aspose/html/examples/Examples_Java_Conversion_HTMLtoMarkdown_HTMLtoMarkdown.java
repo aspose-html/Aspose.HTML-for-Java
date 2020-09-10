@@ -12,7 +12,7 @@ public class Examples_Java_Conversion_HTMLtoMarkdown_HTMLtoMarkdown {
         );
 
         try {
-            document.save(Resources.output("output.html.to.md"), com.aspose.html.saving.HTMLSaveFormat.Markdown);
+            document.save(Resources.output("Markdown-to-html.out.md"), com.aspose.html.saving.HTMLSaveFormat.Markdown);
         } finally {
             if (document != null) {
                 document.dispose();

@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertEPUBToImage_SpecifyIm
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Open an existing EPUB file for reading.
+        // Open an existing EPUB file for reading.
         try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("input.epub"))) {
             // Initailize the ImageSaveOptions with a custom page-size and a background-color.
             com.aspose.html.saving.ImageSaveOptions options = new com.aspose.html.saving.ImageSaveOptions(com.aspose.html.rendering.image.ImageFormat.Jpeg);

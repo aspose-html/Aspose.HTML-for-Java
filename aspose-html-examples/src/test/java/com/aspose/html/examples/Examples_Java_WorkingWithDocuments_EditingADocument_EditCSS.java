@@ -4,7 +4,7 @@ public class Examples_Java_WorkingWithDocuments_EditingADocument_EditCSS {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Create an instance of HTML Document with specified content
+        // Create an instance of HTML Document with specified content
         String content = "<style>p { color: red; }</style><p>Hello World!</p>";
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(content, ".");
         try {

@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertHTMLToImage_SpecifyCu
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Create an instance of MemoryStreamProvider
+        // Create an instance of MemoryStreamProvider
         try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
             // Initialize an HTML document
             com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<span>Hello</span> <span>World!!</span>", ".");

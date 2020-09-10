@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Combine
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code
+        // Prepare an HTML code
         String code1 = "<br><span style='color: green'>Hello World!!</span>";
         String code2 = "<br><span style='color: blue'>Hello World!!</span>";
         String code3 = "<br><span style='color: red'>Hello World!!</span>";

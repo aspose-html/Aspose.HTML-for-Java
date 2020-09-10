@@ -13,7 +13,7 @@ Aspose.HTML for Java API works as a headless browser that allows you to [create 
 
 Directory | Description
 --------- | -----------
-[Examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/aspose-html-examples) | A collection of Java examples that help you learn the product features.
+[aspose-html-examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/aspose-html-examples) | A collection of Java examples that help you learn the product features.
 
 
 
@@ -56,7 +56,7 @@ Directory | Description
 - **Microsoft Windows:** Windows Desktop & Server (x86, x64)
 - **macOS:** Mac OS X
 - **Linux:** Ubuntu, OpenSUSE, CentOS, and others
-- **Java Versions:** `J2SE 8.0 (1.8)` or above
+- **Java Versions:** `J2SE 6.0 (1.6)`,`J2SE 7.0 (1.7)`,`J2SE 8.0 (1.8)` 
 
 ## Get Started with Aspose.HTML for Java
 

@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_FineTuningConverters_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Prepare an HTML code
+        // Prepare an HTML code
         String code = "<div>Hello World!!</div>";
 
         // Initialize an instance of HTML document based on prepared code

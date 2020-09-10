@@ -4,7 +4,7 @@ public class Examples_Java_ConvertingBetweenFormats_ConvertMHTMLToXPS_SpecifyCus
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-// Open an existing MHTML file for reading.
+        // Open an existing MHTML file for reading.
         try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("sample.mht"))) {
             // Create an instance of MemoryStreamProvider
             try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
