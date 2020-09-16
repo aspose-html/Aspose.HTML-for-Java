@@ -11,13 +11,7 @@ Aspose.HTML for Java API works as a headless browser that allows you to [create 
   </a>
 </p>
 
-Directory | Description
---------- | -----------
-[aspose-html-examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/aspose-html-examples) | A collection of Java examples that help you learn the product features.
-
-
-
-## HTML Processing Features
+# HTML Processing Features
 
 - Written completely in Java and works with JRE.
 - Supports both the `32-bit` & `64-bit` OS support.
@@ -75,4 +69,57 @@ System.out.println("Print Document URI = " + document.getDocumentURI());
 System.out.println("Domain Name = " + document.getDomain());
 ```
 
-[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/html/java) | [Docs](https://docs.aspose.com/html/java/) | [Demos](https://products.aspose.app/html/family) | [API Reference](https://apireference.aspose.com/html/java) | [Examples](https://github.com/aspose-html/Aspose.HTML-for-Java/tree/master/aspose-html-examples) | [Blog](https://blog.aspose.com/category/html/) | [Free Support](https://forum.aspose.com/c/html) | [Temporary License](https://purchase.aspose.com/temporary-license)
+## How to use the Examples?
+
+Clone or Download the ZIP and extract the contents to your local hard drive. This project uses Maven/Gradle build system and can be opened in any modern IDE like IntelliJ IDEA, Eclipse or NetBeans. For more details, visit our [Documentation website](https://docs.aspose.com/display/htmljava/How+to+Run+the+Examples).
+
+## Step one
+
+For maven
+```
+mvn compile test
+```
+For gradle
+```
+gradle build
+```
+
+
+## Execute all tests
+Maven
+```
+mvn -Dtest="com.aspose.html.examples.**" test
+```
+
+Gradle
+```
+./gradlew test --tests "com.aspose.html.examples.*"
+```
+
+## Execute single test
+Maven
+```
+mvn -Dtest=Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded test
+```
+Gradle
+```
+./gradlew test --tests "com.aspose.html.examples.Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded" 
+```
+## Execute asynchronously test in Thread
+Maven
+```
+mvn org.codehaus.mojo:exec-maven-plugin:3.0.0:java -Dexec.mainClass="com.aspose.html.examples.SimpleWait" -Dexec.classpathScope="test" -Dexec.cleanupDaemonThreads=false
+```
+Gradle
+```
+./gradlew SimpleWait
+```
+
+[Home](https://www.aspose.com/) 
+| [Product Page](https://products.aspose.com/html/java) 
+| [Docs](https://docs.aspose.com/html/java/) 
+| [Demos](https://products.aspose.app/html/family) 
+| [API Reference](https://apireference.aspose.com/html/java) 
+| [Blog](https://blog.aspose.com/category/html/) 
+| [Free Support](https://forum.aspose.com/c/html) 
+| [Temporary License](https://purchase.aspose.com/temporary-license)

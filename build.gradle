@@ -3,15 +3,17 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-    mavenCentral()
+    jcenter()
     maven {
         url = uri('https://repository.aspose.com/repo/')
     }
 }
 
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
 dependencies {
-    compile "com.aspose:aspose-html:20.8:jdk16"
+    compile "com.aspose:aspose-html:20.9:jdk16"
 
     testCompile(
             "org.junit.jupiter:junit-jupiter-engine:5.6.2",
@@ -31,14 +33,4 @@ test {
     systemProperty "OUTPUT_DIR_OF_TEST_RESULT", "$projectDir/test-output"
 
     useJUnitPlatform()
-}
-
-compileJava {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
-}
-
-compileTestJava {
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
 }
