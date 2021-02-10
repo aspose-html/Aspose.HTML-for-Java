@@ -1,8 +1,9 @@
+![GitHub](https://img.shields.io/github/license/aspose-html/Aspose.html-for-java)
 # HTML File Manipulation Java API
 
 The [Java HTML API](https://products.aspose.com/html/java) assists developers to write, read, modify, navigate and convert (X)HTML documents from within Java applications.
 
-Aspose.HTML for Java API works as a headless browser that allows you to [create or open existing HTML documents](https://docs.aspose.com/html/java/loading-an-existing-html-document/) from various sources in order to perform manipulation operations such as remove and replace HTML nodes, save HTML documents, extract CSS from HTML, configure a document sandbox and more. You may navigate HTML documents by using various methods, such as, element traversal, document traversal, XPath queries, and CSS selector queries as well as manipulate HTML DOM via JavaScript, convert HTML file to images or fixed layout formats, and convert XHTML and EPUB files to other file formats.
+Aspose.HTML for Java API works as a headless browser that allows you to [create or open existing HTML documents](https://docs.aspose.com/html/java/creating-a-document/) from various sources in order to perform manipulation operations such as remove and replace HTML nodes, save HTML documents, extract CSS from HTML, configure a document sandbox and more. You may navigate HTML documents by using various methods, such as, element traversal, document traversal, XPath queries, and CSS selector queries as well as manipulate HTML DOM via JavaScript, convert HTML file to images or fixed layout formats, and convert XHTML and EPUB files to other file formats.
 
 <p align="center">
 
