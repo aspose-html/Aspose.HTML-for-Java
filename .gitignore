@@ -17,3 +17,6 @@ target
 
 # Mac
 .DS_Store
+
+# Lic file
+*.lic
