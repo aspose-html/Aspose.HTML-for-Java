@@ -121,6 +121,7 @@ Gradle
 | [Docs](https://docs.aspose.com/html/java/) 
 | [Demos](https://products.aspose.app/html/family) 
 | [API Reference](https://apireference.aspose.com/html/java) 
-| [Blog](https://blog.aspose.com/category/html/) 
+| [Blog](https://blog.aspose.com/category/html/)
+| [Search](https://search.aspose.com/) 
 | [Free Support](https://forum.aspose.com/c/html) 
 | [Temporary License](https://purchase.aspose.com/temporary-license)
