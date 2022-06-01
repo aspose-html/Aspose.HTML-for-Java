@@ -12,7 +12,15 @@ Aspose.HTML for Java API works as a headless browser that allows you to [create 
   </a>
 </p>
 
-# HTML Processing Features
+## Workflow
+
+In order to make changes in the repository, you need to:
+
+1. Create a branch with the proposed changes whose name matches the feature/* pattern.
+2. Create a pull request for this branch. It will be automatically assigned to a suitable reviewer.
+3. Once the request is approved, it can be merged.
+
+## HTML Processing Features
 
 - Written completely in Java and works with JRE.
 - Supports both the `32-bit` & `64-bit` OS support.
