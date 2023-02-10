@@ -17,7 +17,7 @@ public class Examples_Java_Document_SaveDocument_SaveUsingHTMLSaveOptions {
 
             // This property is used to set restriction applied to handlers of external resources.
             // SameHost means that only resources located at the same host will be saved.
-            options.getResourceHandlingOptions().setUrlRestriction(com.aspose.html.saving.UrlRestriction.SameHost);
+            options.getResourceHandlingOptions().setPageUrlRestriction(com.aspose.html.saving.UrlRestriction.SameHost);
 
             // This property is used to setup processing behaviour of any type of resource.
             // ResourceHandling.Save means all resources will be saved to the output folder

@@ -13,13 +13,22 @@ sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 dependencies {
-    compile "com.aspose:aspose-html:20.9:jdk16"
+    //            def libDir = "C:\\prj\\aspose\\src\\DI_SRC\\DI.aspose.html.license.tests.DI\\Aspose.Html.Java-collected\\ignore\\libs\\"
+    def libDir = "C:\\prj\\aspose\\src\\DI_SRC\\DI.aspose.html.license.tests.DI\\Aspose.Html.Java-collected\\build\\libs\\"
+//            def jarName = libDir + "aspose-html-22.12.2299-all.obfuscate.jar"
+//    def jarName = libDir + "aspose-html-23.2-all.jar"
+    def jarName = libDir + "aspose-html-23.2.444-all.jar"
+    testImplementation files(jarName)
+//            testImplementation files(jarName)
 
-    testCompile(
-            "org.junit.jupiter:junit-jupiter-engine:5.6.2",
-            "org.junit.jupiter:junit-jupiter-params:5.6.2",
-            "org.junit.platform:junit-platform-runner:1.6.2",
-            'com.github.javaparser:javaparser-core:3.16.1',
+
+//    compile "com.aspose:aspose-html:23.1:jdk1.8"
+
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter-engine:5.9.2",
+            "org.junit.jupiter:junit-jupiter-params:5.9.2",
+            "org.junit.platform:junit-platform-runner:1.9.2",
+//            'com.github.javaparser:javaparser-core:3.16.1',
 
     )
 }

@@ -15,7 +15,7 @@ public class Examples_Java_Document_SaveDocument_HTMLToMHTML {
             saveOptions.getResourceHandlingOptions().setDefault(com.aspose.html.saving.ResourceHandling.Embed);
 
             // Remove URL restrictions because referenced resource is in another domain
-            saveOptions.getResourceHandlingOptions().setUrlRestriction(com.aspose.html.saving.UrlRestriction.None);
+            saveOptions.getResourceHandlingOptions().setPageUrlRestriction(com.aspose.html.saving.UrlRestriction.None);
 
             // Save to .mht file
             document.save(Resources.output("HtmlToMhtml_out.mht"), saveOptions);

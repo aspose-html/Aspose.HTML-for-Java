@@ -1,5 +1,9 @@
 package com.aspose.html.examples;
 
+import com.aspose.html.dom.mutations.MutationObserver;
+import com.aspose.html.dom.mutations.MutationRecord;
+import com.aspose.ms.System.Collections.Generic.IGenericList;
+
 public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded {
 
     @org.junit.jupiter.api.Test
@@ -10,9 +14,10 @@ public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreA
             // Create a mutation observer instance
             com.aspose.html.dom.mutations.MutationObserver observer = new com.aspose.html.dom.mutations.MutationObserver(
                     new com.aspose.html.dom.mutations.MutationCallback() {
+
                         @Override
                         public void invoke(
-                                Iterable<com.aspose.html.dom.mutations.MutationRecord> mutations,
+                                IGenericList<com.aspose.html.dom.mutations.MutationRecord> mutations,
                                 com.aspose.html.dom.mutations.MutationObserver mutationObserver
                         ) {
                             mutations.forEach(mutationRecord -> {
