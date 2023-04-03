@@ -4,7 +4,7 @@ public class Examples_Java_Conversion_CanvasToPDF_CanvasToPDF {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-
+        //@START
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument(Resources.input("canvas.html"));
         try {
             // Create an instance of HTML renderer and XPS output device
@@ -29,5 +29,6 @@ public class Examples_Java_Conversion_CanvasToPDF_CanvasToPDF {
                 document.dispose();
             }
         }
+        //@END
     }
 }

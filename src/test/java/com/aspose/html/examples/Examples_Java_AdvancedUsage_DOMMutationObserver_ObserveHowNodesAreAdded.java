@@ -8,6 +8,7 @@ public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreA
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+        //@START
         // Create an empty HTML document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
@@ -61,5 +62,6 @@ public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreA
                 document.dispose();
             }
         }
+        //@END
     }
 }

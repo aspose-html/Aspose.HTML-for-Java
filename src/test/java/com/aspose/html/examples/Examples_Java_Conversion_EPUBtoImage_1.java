@@ -4,6 +4,7 @@ public class Examples_Java_Conversion_EPUBtoImage_1 {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+        //@START
         // Source EPUB document
         try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("input.epub"))) {
             // Initialize ImageSaveOptions
@@ -17,5 +18,6 @@ public class Examples_Java_Conversion_EPUBtoImage_1 {
                     outputFile
             );
         }
+        //@END
     }
 }

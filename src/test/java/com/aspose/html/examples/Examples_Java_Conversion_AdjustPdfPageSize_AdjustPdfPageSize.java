@@ -4,7 +4,7 @@ public class Examples_Java_Conversion_AdjustPdfPageSize_AdjustPdfPageSize {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-
+        //@START
         try (java.io.FileInputStream fileInputStream = new java.io.FileInputStream(Resources.input("FirstFile.html"))) {
             try (java.io.FileOutputStream fileOutputStream = new java.io.FileOutputStream(Resources.output("FirstFileOut.html"))) {
                 byte[] bytes = new byte[fileInputStream.available()];
@@ -79,5 +79,6 @@ public class Examples_Java_Conversion_AdjustPdfPageSize_AdjustPdfPageSize {
                 }
             }
         }
+        //@END
     }
 }

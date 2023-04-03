@@ -4,7 +4,7 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-
+        //@START
         // Create an empty HTML document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
         try {
@@ -52,5 +52,6 @@ public class Examples_Java_AdvancedUsage_HTML5Canvas_ManipulateUsingCode {
                 document.dispose();
             }
         }
+        //@END
     }
 }

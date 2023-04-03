@@ -5,6 +5,7 @@ public class Examples_Java_AdvancedUsage_CSSExtensions_AddTitleAndPageNumber {
     @org.junit.jupiter.api.Test
     @org.junit.jupiter.api.Disabled
     public void execute() throws Exception {
+        //@START
         //  Initialize configuration object and set up the page-margins for the document
         com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
         try {
@@ -57,5 +58,6 @@ public class Examples_Java_AdvancedUsage_CSSExtensions_AddTitleAndPageNumber {
                 configuration.dispose();
             }
         }
+        //@END
     }
 }

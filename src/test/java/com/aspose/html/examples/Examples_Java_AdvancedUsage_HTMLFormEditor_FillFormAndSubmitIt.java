@@ -4,6 +4,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+        //@START
         // Initialize an instance of HTML document from 'https://httpbin.org/forms/post' url
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("https://httpbin.org/forms/post");
         try {
@@ -67,5 +68,6 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                 document.dispose();
             }
         }
+        //@END
     }
 }
