@@ -4,7 +4,6 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Disable
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // START_SNIPPET Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_DisableScriptsExecution
         // Prepare an HTML code and save it to the file.
         String code = "<span>Hello World!!</span>\n" +
                       "<script>document.write('Have a nice day!');</script>\n";
@@ -38,6 +37,5 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Disable
                 configuration.dispose();
             }
         }
-        // END_SNIPPET
     }
 }

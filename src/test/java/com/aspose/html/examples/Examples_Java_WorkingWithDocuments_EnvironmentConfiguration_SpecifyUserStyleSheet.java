@@ -4,7 +4,6 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
-        // START_SNIPPET Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_SpecifyUserStyleSheet
         // Prepare an HTML code and save it to the file.
         String code = "<span>Hello World!!!</span>";
 
@@ -40,6 +39,5 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Specify
                 configuration.dispose();
             }
         }
-        // END_SNIPPET
     }
 }
