@@ -22,15 +22,20 @@ public class WorkingWithHTMLDocuments_CreateDocuments_NewHTML {
 //        }
 
         // START_SNIPPET WorkingWithHTMLDocuments_CreateDocuments_NewHTML
-        // Create an instance of Configuration
-        com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
+        // Initialize an empty HTML Document.
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
+        try {
+            // Create a text element and add it to the document
+            com.aspose.html.dom.Text text = document.createTextNode("Hello World!");
+            document.getBody().appendChild(text);
 
-        // Get the IUserAgentService
-        com.aspose.html.services.IUserAgentService userAgent = configuration.getService(com.aspose.html.services.IUserAgentService.class);
-
-        // Set ISO-8859-1 encoding to parse the document
-        userAgent.setCharSet("ISO-8859-1");
-        userAgent.getFontsSettings().setFontsLookupFolder(...);
+            // Save the document to disk.
+            document.save("document.html");
+        } finally {
+            if (document != null) {
+                document.dispose();
+            }
+        }
         // END_SNIPPET
     }
 }

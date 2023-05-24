@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class WorkingWithHTMLDocuments_EnvironmentConfiguration_Sandboxing {
     public static void main(String [] args) throws IOException {
-        // START_SNIPPET Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_DisableScriptsExecution
+        // START_SNIPPET WorkingWithHTMLDocuments_EnvironmentConfiguration_Sandboxing
         // Prepare an HTML code and save it to the file.
         String code = "<span>Hello World!!</span>\n" +
                 "<script>document.write('Have a nice day!');</script>\n";
