@@ -29,6 +29,7 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-params:5.9.2",
             "org.junit.platform:junit-platform-runner:1.9.2",
 //            'com.github.javaparser:javaparser-core:3.16.1',
+            'com.aspose:aspose-html:23.1:jdk1.8'
 
     )
 }

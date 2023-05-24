@@ -4,6 +4,7 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Specify
 
     @org.junit.jupiter.api.Test
     public void execute() throws Exception {
+        // START_SNIPPET Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_SpecifyCharacterSet
         // Create an instance of Configuration
         com.aspose.html.Configuration configuration = new com.aspose.html.Configuration();
 
@@ -12,5 +13,6 @@ public class Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_Specify
 
         // Set ISO-8859-1 encoding to parse the document
         userAgent.setCharSet("ISO-8859-1");
+        // END_SNIPPET
     }
 }
