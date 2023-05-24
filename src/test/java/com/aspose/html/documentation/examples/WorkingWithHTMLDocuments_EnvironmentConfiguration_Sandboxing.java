@@ -6,26 +6,6 @@ import java.io.IOException;
 
 public class WorkingWithHTMLDocuments_EnvironmentConfiguration_Sandboxing {
     public static void main(String [] args) throws IOException {
-//        // Prepare HTML code and save it to a file
-//        var code = "<span>Hello World!!</span> " +
-//                "<script>document.write('Have a nice day!');</script>";
-//
-//        File.WriteAllText(Path.Combine(OutputDir, "sandboxing.html"), code);
-//
-//        // Create an instance of Configuration
-//        using (var configuration = new Configuration())
-//        {
-//            // Mark 'scripts' as an untrusted resource
-//            configuration.Security |= Sandbox.Scripts;
-//
-//            // Initialize an HTML document with specified configuration
-//            using(var document = new HTMLDocument(Path.Combine(OutputDir, "sandboxing.html"), configuration))
-//            {
-//                // Convert HTML to PDF
-//                Converter.ConvertHTML(document, new PdfSaveOptions(), Path.Combine(OutputDir, "sandboxing_out.pdf"));
-//            }
-//        }
-
         // START_SNIPPET Examples_Java_WorkingWithDocuments_EnvironmentConfiguration_DisableScriptsExecution
         // Prepare an HTML code and save it to the file.
         String code = "<span>Hello World!!</span>\n" +
