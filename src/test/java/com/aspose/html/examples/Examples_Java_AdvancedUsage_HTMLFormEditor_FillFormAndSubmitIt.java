@@ -24,7 +24,7 @@ public class Examples_Java_AdvancedUsage_HTMLFormEditor_FillFormAndSubmitIt {
                 java.util.Map<String, String> map = new java.util.HashMap<>();
                 map.put("custemail", "john.doe@gmail.com");
                 map.put("custtel", "+1202-555-0290");
-                editor.fill(map);
+                editor.a(map);
 
                 // Create an instance of form submitter
                 com.aspose.html.forms.FormSubmitter submitter = new com.aspose.html.forms.FormSubmitter(editor);
