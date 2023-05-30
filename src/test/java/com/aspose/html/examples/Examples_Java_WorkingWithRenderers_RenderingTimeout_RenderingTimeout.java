@@ -16,7 +16,7 @@ public class Examples_Java_WorkingWithRenderers_RenderingTimeout_RenderingTimeou
             try {
                 // Delay rendering for 5 seconds
                 // Note: document will be rendered into device if there are no scripts or any internal tasks to execute
-                renderer.render(device, com.aspose.time.TimeSpan.fromSeconds(5), document);
+                renderer.render(device, com.aspose.html.utils.TimeSpan.fromSeconds(5), document);
             } finally {
                 if (device != null) {
                     device.dispose();
