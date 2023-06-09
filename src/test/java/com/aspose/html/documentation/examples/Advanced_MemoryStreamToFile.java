@@ -5,7 +5,7 @@ public class Advanced_MemoryStreamToFile {
         // START_SNIPPET Advanced_MemoryStreamToFile
         MemoryStreamProvider streamProvider = new MemoryStreamProvider();
 
-        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
+        com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument("<span>Hello World!!</span>");
 
         com.aspose.html.converters.Converter.convertHTML(document, new com.aspose.html.saving.ImageSaveOptions(com.aspose.html.rendering.image.ImageFormat.Jpeg), streamProvider.lStream);
 

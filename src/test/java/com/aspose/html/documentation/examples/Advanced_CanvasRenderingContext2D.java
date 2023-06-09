@@ -1,10 +1,5 @@
 package com.aspose.html.documentation.examples;
 
-//import com.aspose.html.HTMLDocument;
-//import com.aspose.html.dom.canvas.ICanvasGradient;
-
-//import java.io.IOException;
-
 public class Advanced_CanvasRenderingContext2D {
     public static void main(String[] args) throws java.io.IOException {
         // START_SNIPPET Advanced_HTML5Canvas

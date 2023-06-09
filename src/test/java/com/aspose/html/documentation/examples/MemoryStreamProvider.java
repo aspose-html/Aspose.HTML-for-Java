@@ -1,4 +1,4 @@
-// START_SNIPPET MemoryStreamProvider
+// START_SNIPPET Advanced_MemoryStreamProvider
 package com.aspose.html.documentation.examples;
 
 // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
