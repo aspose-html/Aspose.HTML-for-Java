@@ -1,0 +1,126 @@
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'java'
+    id("me.champeau.jmh") version "$jmh_version"
+    id("io.morethan.jmhreport") version "0.9.0"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+
+    maven {
+        url = uri('https://repository.aspose.com/repo/')
+    }
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of("${JAVA_VERSION}")
+    }
+}
+
+
+dependencies {
+    implementation(group: 'com.aspose', name: 'aspose-html', version: "$aspose_html_for_java_lib_version", classifier: "jdk$JAVA_VERSION")
+
+    testImplementation(
+            "org.junit.jupiter:junit-jupiter-api:$junit_version",
+            "org.junit.jupiter:junit-jupiter-engine:$junit_version",
+            "org.junit.jupiter:junit-jupiter-params:$junit_version",
+            "org.junit.platform:junit-platform-runner:$junit_platform_version",
+            "org.junit.vintage:junit-vintage-engine:$junit_version",
+    )
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks = Runtime.runtime.availableProcessors()
+    forkEvery = 1
+}
+
+dependencies {
+    jmh "org.openjdk.jmh:jmh-core:$jmh_version"
+    jmh "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
+
+    // this is the line that solves the missing /META-INF/BenchmarkList error
+    jmhAnnotationProcessor "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
+
+    jmh(
+            "org.slf4j:slf4j-api:$slf4j_version",
+            "org.slf4j:slf4j-ext:$slf4j_version",
+
+//            "org.slf4j:slf4j-simple:$slf4j_version",
+//            "org.slf4j:slf4j-reload4j:$slf4j_version",
+
+//            "org.slf4j:slf4j-core:$slf4j_version",
+//            "java.util.logging:java.util.logging-api:1.8.0"
+
+//            "org.apache.logging.log4j:log4j-slf4j-impl:$slf4j_libs_version",
+//            "org.apache.logging.log4j:log4j-core:$slf4j_libs_version",
+
+            "ch.qos.logback:logback-classic:1.5.6",
+            "ch.qos.logback:logback-core:1.5.6",
+    )
+
+}
+
+jmh {
+    def timestamp = getDateTime()
+    def reportPrefix = "ts_$timestamp-jvm_$JAVA_VERSION-jre_$aspose_html_for_java_lib_version-$JAVA_VERSION"
+//    def reportRoot = project.getLayout().buildDirectory.toString()
+    def reportRoot = project.getBuildDir()
+    def jmhReport =  "${reportRoot}/jmh-reports/${reportPrefix}"
+
+
+//    def file = project.file("${jmhReport}_log.txt")
+    def file = "${jmhReport}_log.txt"
+    System.setProperty( "org.slf4j.simpleLogger.logFile", file)
+
+    resultFormat = 'JSON' // Result format type (one of CSV, JSON, NONE, SCSV, TEXT)
+//    includes = ['some regular expression'] // include pattern (regular expression) for benchmarks to be executed
+//    excludes = ['some regular expression'] // exclude pattern (regular expression) for benchmarks to be executed
+    iterations = 3 // Number of measurement iterations to do.
+    benchmarkMode = ['avgt'] // Benchmark mode. Available modes are: [Throughput/thrpt, AverageTime/avgt, SampleTime/sample, SingleShotTime/ss, All/all]
+    batchSize = 1 // Batch size: number of benchmark method calls per operation. (some benchmark modes can ignore this setting)
+    fork = 2 // How many times to forks a single benchmark. Use 0 to disable forking altogether
+    failOnError = false // Should JMH fail immediately if any benchmark had experienced the unrecoverable error?
+    forceGC = false // Should JMH force GC between iterations?
+//    jvm = 'myjvm' // Custom JVM to use when forking.
+//    jvmArgs = ['Custom JVM args to use when forking.']
+//    jvmArgsAppend = ['Custom JVM args to use when forking (append these)']
+//    jvmArgsPrepend =[ 'Custom JVM args to use when forking (prepend these)']
+    humanOutputFile = project.file("${jmhReport}_human.txt") // human-readable output file
+    resultsFile = project.file("${jmhReport}_results.json") // results file
+    operationsPerInvocation = 5 // Operations per invocation.
+//    benchmarkParameters =  [:] // Benchmark parameters.
+//    profilers = [] // Use profilers to collect additional data. Supported profilers: [cl, comp, gc, stack, perf, perfnorm, perfasm, xperf, xperfasm, hs_cl, hs_comp, hs_gc, hs_rt, hs_thr, async]
+    timeOnIteration = '1s' // Time to spend at each measurement iteration.
+//    synchronizeIterations = false // Synchronize iterations?
+//    threads = 2 // Number of worker threads to run with.
+//    threadGroups = [2,3,4] //Override thread group distribution for asymmetric benchmarks.
+    jmhTimeout = '3m' // Timeout for benchmark iteration.
+    timeUnit = 'ms' // Output time unit. Available time units are: [m, s, ms, us, ns].
+    verbosity = 'EXTRA' // Verbosity mode. Available modes are: [SILENT, NORMAL, EXTRA]
+    warmup = '1s' // Time to spend at each warmup iteration.
+    warmupBatchSize = 10 // Warmup batch size: number of benchmark method calls per operation.
+    warmupForks = 0 // How many warmup forks to make for a single benchmark. 0 to disable warmup forks.
+    warmupIterations = 2 // Number of warmup iterations to do.
+    warmupMode = 'INDI' // Warmup mode for warming up selected benchmarks. Warmup modes are: [INDI, BULK, BULK_INDI].
+    warmupBenchmarks = ['.*Warmup'] // Warmup benchmarks to include in the run in addition to already selected. JMH will not measure these benchmarks, but only use them for the warmup.
+
+}
+
+jmhReport {
+    jmhResultPath = project.file('build/results/jmh/results.json')
+//    jmhResultPath = project.file('build/results/jmh/results.txt')
+    jmhReportOutput = project.file('build/reports/jmh')
+}
+
+def getDateTime() {
+    DateFormat df = new SimpleDateFormat("yyyy-MM-dd-HH-mm");
+
+    return df.format(new Date());
+}
