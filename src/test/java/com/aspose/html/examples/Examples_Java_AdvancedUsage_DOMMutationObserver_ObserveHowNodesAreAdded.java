@@ -1,8 +1,7 @@
 package com.aspose.html.examples;
 
-import com.aspose.html.dom.mutations.MutationObserver;
 import com.aspose.html.dom.mutations.MutationRecord;
-import com.aspose.ms.System.Collections.Generic.IGenericList;
+import com.aspose.html.utils.collections.generic.IGenericList;
 
 public class Examples_Java_AdvancedUsage_DOMMutationObserver_ObserveHowNodesAreAdded {
 

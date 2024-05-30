@@ -3,33 +3,30 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    mavenLocal()
+    mavenCentral()
+
     maven {
         url = uri('https://repository.aspose.com/repo/')
     }
 }
 
-sourceCompatibility = "1.8"
-targetCompatibility = "1.8"
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of("${JAVA_VERSION}")
+    }
+}
+
 
 dependencies {
-    //            def libDir = "C:\\prj\\aspose\\src\\DI_SRC\\DI.aspose.html.license.tests.DI\\Aspose.Html.Java-collected\\ignore\\libs\\"
-    def libDir = "C:\\prj\\aspose\\src\\DI_SRC\\DI.aspose.html.license.tests.DI\\Aspose.Html.Java-collected\\build\\libs\\"
-//            def jarName = libDir + "aspose-html-22.12.2299-all.obfuscate.jar"
-//    def jarName = libDir + "aspose-html-23.2-all.jar"
-    def jarName = libDir + "aspose-html-23.2.444-all.jar"
-    testImplementation files(jarName)
-//            testImplementation files(jarName)
-
-
-//    compile "com.aspose:aspose-html:23.1:jdk1.8"
+    implementation(group: 'com.aspose', name: 'aspose-html', version: "$aspose_html_version", classifier: "$aspose_html_classifier")
 
     testImplementation(
-            "org.junit.jupiter:junit-jupiter-engine:5.9.2",
-            "org.junit.jupiter:junit-jupiter-params:5.9.2",
-            "org.junit.platform:junit-platform-runner:1.9.2",
-//            'com.github.javaparser:javaparser-core:3.16.1',
-
+            "org.junit.jupiter:junit-jupiter-api:$junit_version",
+            "org.junit.jupiter:junit-jupiter-engine:$junit_version",
+            "org.junit.jupiter:junit-jupiter-params:$junit_version",
+            "org.junit.platform:junit-platform-runner:$junit_platform_version",
+            "org.junit.vintage:junit-vintage-engine:$junit_version",
     )
 }
 
@@ -39,7 +36,8 @@ task SimpleWait(type: JavaExec) {
 }
 
 test {
-    systemProperty "OUTPUT_DIR_OF_TEST_RESULT", "$projectDir/test-output"
-
     useJUnitPlatform()
+    maxParallelForks = Runtime.runtime.availableProcessors()
+    forkEvery = 1
+
 }
