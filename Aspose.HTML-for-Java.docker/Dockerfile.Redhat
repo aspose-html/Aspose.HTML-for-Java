@@ -1,0 +1,34 @@
+FROM registry.access.redhat.com/ubi8/ubi:8.9-1028
+
+ENV FID_HOME=/opt/icgccbfid
+RUN mkdir -p $FID_HOME
+ENV MEDIA=/media/sf_redhat/
+RUN mkdir -p $MEDIA
+RUN chmod -R 775 $MEDIA
+COPY ../../assets $MEDIA
+ENV SERVICE_HOME=$FID_HOME/test-redhat
+RUN mkdir -p $SERVICE_HOME
+RUN chmod -R 775 $SERVICE_HOME
+COPY target/testing-aspose-redhat-jdk-1.0.0.jar $SERVICE_HOME/app.jar
+ENV APP_PATH=${SERVICE_HOME}/app.jar
+
+RUN yum -y --skip-broken install wget
+RUN cd ~
+RUN yum -y install java-1.8.0-openjdk
+RUN ls
+
+# 3. Install Microsoft True Type Core Fonts
+RUN yum -y --skip-broken install -y ttf-mscorefonts-installer fontconfig
+RUN fc-list
+RUN ls
+
+# 4. Copy and install xorg-x11-server-Xvfb package
+COPY xorg-x11-server-Xvfb-1.20.11-15.el8.x86_64.rpm /tmp/xorg-x11-server-Xvfb-1.20.11-15.el8.x86_64.rpm
+RUN yum -y localinstall /tmp/xorg-x11-server-Xvfb-1.20.11-15.el8.x86_64.rpm
+RUN ls
+
+RUN yum -y --skip-broken install rpm
+RUN ls
+
+# 5. Set ENTRYPOINT to run the application with Xvfb
+ENTRYPOINT xvfb-run --server-args="-screen 0 1024x768x24" java -jar app.jar -Djava.awt.headless=false $APP_PATH
