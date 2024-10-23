@@ -3,10 +3,11 @@ package com.aspose.html.documentation.examples;
 public class Advanced_CanvasRenderingContext2D {
     public static void main(String[] args) throws java.io.IOException {
         // START_SNIPPET Advanced_HTML5Canvas
-        // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-Java
+        // @md products/html/en/java/advanced-programming/edit-html5-canvas-programmatically/_index.md
         // Create an empty HTML document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
 
+        // Create the Canvas element
         com.aspose.html.HTMLCanvasElement canvas = (com.aspose.html.HTMLCanvasElement) document.createElement("canvas");
 
         // with a specified size

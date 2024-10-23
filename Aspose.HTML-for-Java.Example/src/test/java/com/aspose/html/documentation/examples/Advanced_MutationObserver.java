@@ -3,8 +3,11 @@ package com.aspose.html.documentation.examples;
 public class Advanced_MutationObserver {
     public static void main(String [] args) throws java.io.IOException {
         // START_SNIPPET Advanced_MutationObserver
+        // @md products/html/en/java/advanced-programming/dom-mutationobserver/_index.md
+        // Create an empty HTML document
         com.aspose.html.HTMLDocument document = new com.aspose.html.HTMLDocument();
 
+        // Create an instance of the MutationObserver
         com.aspose.html.dom.mutations.MutationObserver observer = new com.aspose.html.dom.mutations.MutationObserver(new com.aspose.html.dom.mutations.MutationCallback() {
             @Override
             public void invoke(com.aspose.html.utils.collections.generic.IGenericList<com.aspose.html.dom.mutations.MutationRecord> mutations, com.aspose.html.dom.mutations.MutationObserver mutationObserver) {
@@ -17,17 +20,17 @@ public class Advanced_MutationObserver {
             }
         });
 
-        // configuration of the observer
+        // Configure options for the MutationObserver
         com.aspose.html.dom.mutations.MutationObserverInit config = new com.aspose.html.dom.mutations.MutationObserverInit();
         config.setChildList(true);
         config.setSubtree(true);
         config.setCharacterData(true);
 
-        // pass in the target node to observe with the specified configuration
+        // Pass to observer the target node to observe with the specified configuration
         observer.observe(document.getBody(), config);
 
         // Now, we are going to modify DOM tree to check
-        // Create an paragraph element and append it to the document body
+        // Create a paragraph element and append it to the document body
         com.aspose.html.dom.Element p = document.createElement("p");
         document.getBody().appendChild(p);
         // Create a text and append it to the paragraph

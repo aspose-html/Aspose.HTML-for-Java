@@ -3,6 +3,7 @@ package com.aspose.html.documentation.examples;
 public class Advanced_CSSExtension {
     public static void main(String [] args) throws java.io.IOException {
         // START_SNIPPET Advanced_CSSExtension
+        // @md products/html/en/java/advanced-programming/css-extensions/_index.md
         // For complete examples and data files, please go to https://github.com/aspose-html/Aspose.HTML-for-.NET
         //  Initialize configuration object and set up the page-margins for the document
 
