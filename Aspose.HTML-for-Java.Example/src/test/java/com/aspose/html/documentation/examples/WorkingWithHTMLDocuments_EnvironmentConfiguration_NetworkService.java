@@ -5,10 +5,11 @@ import java.io.IOException;
 public class WorkingWithHTMLDocuments_EnvironmentConfiguration_NetworkService {
     public static void main(String [] args) throws IOException {
         // START_SNIPPET WorkingWithHTMLDocuments_EnvironmentConfiguration_NetworkService
-        // Prepare an HTML code with missing image file
-        String code = "<img src=\"https://docs.aspose.com/svg/net/drawing-basics/filters-and-gradients/park.jpg\" >\r\n" +
-                "<img src=\"https://docs.aspose.com/html/net/missing1.jpg\" >\r\n" +
-                "<img src=\"https://docs.aspose.com/html/net/missing2.jpg\" >\r\n";
+        // @md products/html/en/java/working-with-documents/environment-configuration/_index.md
+        // @code-snippet7
+
+// Prepare HTML code with missing image file
+String code = "<img src='missing.jpg'>";
 
         try (java.io.FileWriter fileWriter = new java.io.FileWriter("document.html")) {
             fileWriter.write(code);
@@ -19,8 +20,7 @@ public class WorkingWithHTMLDocuments_EnvironmentConfiguration_NetworkService {
         try {
             // Add ErrorMessageHandler to the chain of existing message handlers
             com.aspose.html.services.INetworkService network = configuration.getService(com.aspose.html.services.INetworkService.class);
-            com.aspose.html.net.MessageHandler logHandler = new LogMessageHandler();
-            network.getMessageHandlers().addItem(logHandler);
+    network.getMessageHandlers().addItem(handler);
 
             // Initialize an HTML document with specified configuration
             // During the document loading, the application will try to load the image and we will see the result of this operation in the console.
