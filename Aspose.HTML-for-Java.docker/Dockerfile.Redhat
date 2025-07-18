@@ -22,13 +22,8 @@ RUN yum -y --skip-broken install -y ttf-mscorefonts-installer fontconfig
 RUN fc-list
 RUN ls
 
-# 4. Copy and install xorg-x11-server-Xvfb package
-COPY xorg-x11-server-Xvfb-1.20.11-15.el8.x86_64.rpm /tmp/xorg-x11-server-Xvfb-1.20.11-15.el8.x86_64.rpm
-RUN yum -y localinstall /tmp/xorg-x11-server-Xvfb-1.20.11-15.el8.x86_64.rpm
-RUN ls
-
 RUN yum -y --skip-broken install rpm
 RUN ls
 
-# 5. Set ENTRYPOINT to run the application with Xvfb
-ENTRYPOINT xvfb-run --server-args="-screen 0 1024x768x24" java -jar app.jar -Djava.awt.headless=false $APP_PATH
+# 4. Set ENTRYPOINT to run the application 
+ENTRYPOINT java -jar  $APP_PATH
