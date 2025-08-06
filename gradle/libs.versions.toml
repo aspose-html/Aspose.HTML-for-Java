@@ -1,0 +1,137 @@
+[versions]
+# This is versions for Aspose.HTML for Java library
+aspose-html = "25.+"
+spring-boot = "3.+"
+spring-dep-mgmt = "1.+"
+jsoup = "1.+"
+com-palantir-docker-version =  "0.35.0"
+jmh-plugin = "0.+"
+jmh = "1.+"
+jmhreport = "0.+"
+
+me-champeau-jmh = "0.7.2"
+io-morethan-jmhreport = "0.9.0"
+apache-commons-csv = "1.+"
+apache-commons-io = "2.+"
+apache-commons-lang3 = "3.+"
+aspectj = "1.9.21.1"
+assertj = "3.+"
+bouncycastle-bc-fips = "2.0.0"
+bouncycastle-bc-fips_8 = "1.0.2.5"
+bouncycastle-bcpkix-fips = "1.0.7"
+bouncycastle-bcpkix-fips_8 = "2.0.7"
+gson = "2.+"
+guava = "33.+"
+jackson = "2.+"
+jdk = "17"
+jest = "6.+"
+junit = "5.+"
+junit-launcher = "1.+"
+junit-platform = "1.+"
+log4j = "2.24.+"
+logback = "1.+"
+lombok = "1.+"
+opencsv = "5.+"
+org-hamcrest = "3.+"
+org-json = "20250107"
+org-reflection = "0.+"
+plugin-ben-manes-versions = "0.51.0"
+plugin-dorongold-task-tree = "1.5"
+plugin-goooler-shadow = "8.1.8"
+plugin-gradleup-shadow = "9.+"
+plugin-grgit = "4.+"
+plugin-net-nemerosa-versioning = "3.1.0"
+plugin-net-nemerosa-versioning_8 = "2.15.1"
+plugin-org-sonarqube = "6.1.0.5360"
+plugin-org-sonarqube_8 = "5.0.0.4638"
+plugin-proguard = "7.7.0"
+plugin-undercouch-download = "5.6.0"
+slf4j = "2.0.+"
+
+[libraries]
+aspose-html = { group = "com.aspose", name = "aspose-html", version.ref = "aspose-html" }
+jmh-core = { group = "org.openjdk.jmh", name = "jmh-core", version.ref = "jmh" }
+jmh-generator-annprocess = { group = "org.openjdk.jmh", name = "jmh-generator-annprocess", version.ref = "jmh" }
+spring-boot-starter-web = { group = "org.springframework.boot", name = "spring-boot-starter-web", version.ref = "spring-boot" }
+spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-boot-starter-test", version.ref = "spring-boot" }
+jsoup = { group = "org.jsoup", name = "jsoup", version.ref = "jsoup" }
+
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+logback-core = { group = "ch.qos.logback", name = "logback-core", version.ref = "logback" }
+assertj = { module = "org.assertj:assertj-core", version.ref = "assertj" }
+commons-csv = { module = "org.apache.commons:commons-csv", version.ref = "apache-commons-csv" }
+commons-io = { module = "commons-io:commons-io", version.ref = "apache-commons-io" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "apache-commons-lang3" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+guava = { module = "com.google.guava:guava", version.ref = "guava" }
+hamcrest = { module = "org.hamcrest:hamcrest", version.ref = "org-hamcrest" }
+hamcrest-library = { module = "org.hamcrest:hamcrest-library", version.ref = "org-hamcrest" }
+hamcrest-spotify = { module = "com.spotify:hamcrest", version.ref = "org-hamcrest" }
+jackson-core = { module = "com.fasterxml.jackson.core:jackson-core", version.ref = "jackson" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+jackson-dataformat-yaml = { module = "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml", version.ref = "jackson" }
+jest = { module = "io.searchbox:jest", version.ref = "jest" }
+json = { module = "org.json:json", version.ref = "org-json" }
+junit-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+junit-jupiter-api = { module = "org.junit.jupiter:junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { module = "org.junit.jupiter:junit-jupiter-engine", version.ref = "junit" }
+junit-jupiter-params = { module = "org.junit.jupiter:junit-jupiter-params", version.ref = "junit" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-launcher" }
+junit-platform-runner = { module = "org.junit.platform:junit-platform-runner", version.ref = "junit-platform" }
+junit-platform-suite = { module = "org.junit.platform:junit-platform-suite", version.ref = "junit-platform" }
+junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit" }
+log4j-core = { module = "org.apache.logging.log4j:log4j-core", version.ref = "log4j" }
+log4j-slf4j-impl = { module = "org.apache.logging.log4j:log4j-slf4j-impl", version.ref = "log4j" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+opencsv = { module = "com.opencsv:opencsv", version.ref = "opencsv" }
+reflections = { module = "org.reflections:reflections", version.ref = "org-reflection" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+slf4j-ext = { module = "org.slf4j:slf4j-ext", version.ref = "slf4j" }
+slf4j-reload4j = { module = "org.slf4j:slf4j-reload4j", version.ref = "slf4j" }
+slf4j-simple = { module = "org.slf4j:slf4j-simple", version.ref = "slf4j" }
+
+[bundles]
+apache-commons = ["commons-lang3", "commons-csv"]
+jackson = ["jackson-core", "jackson-databind"]
+
+testing = ["reflections", "jest", "hamcrest-library", "guava"]
+junit = [
+    "junit-jupiter",
+    "junit-platform-launcher",
+    "junit-jupiter-api",
+    "junit-jupiter-engine",
+    "junit-jupiter-params",
+    "junit-platform-suite",
+    "junit-platform-runner",
+    "junit-vintage-engine"
+]
+slf4j-simple = ["slf4j-api", "slf4j-simple"]
+slf4j-log4j = ["log4j-slf4j-impl", "log4j-core"]
+slf4j-reload4j = [
+    "slf4j-ext",
+    # "slf4j-simple", # case: simple for out logger to console
+    "slf4j-reload4j", # case: for log4j
+    "jackson-dataformat-yaml" # for support format YAML of lg4j configuration
+]
+
+[plugins]
+jmh = { id = "me.champeau.jmh", version.ref = "me-champeau-jmh" }
+jmhreport = { id = "io.morethan.jmhreport", version.ref = "io-morethan-jmhreport" }
+java = { id = "java" }
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+com-palantir-docker = { id = "com.palantir.docker", version.ref = "com-palantir-docker-version" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dep-mgmt" }
+
+signing = { id = "signing" }
+maven_publish = { id = "maven-publish" }
+org_sonarqube = { id = "org.sonarqube", version.ref = "plugin-org-sonarqube" }
+undercouch_download = { id = "de.undercouch.download", version.ref = "plugin-undercouch-download" }
+dorongold_task_tree = { id = "com.dorongold.task-tree", version.ref = "plugin-dorongold-task-tree" }
+net_nemerosa_versioning = { id = "net.nemerosa.versioning", version.ref = "plugin-net-nemerosa-versioning" }
+goooler_shadow = { id = "io.github.goooler.shadow", version.ref = "plugin-goooler-shadow" }
+gradleup_shadow = { id = "com.gradleup.shadow", version.ref = "plugin-gradleup-shadow" }
+ben_manes_versions = { id = "com.github.ben-manes.versions", version.ref = "plugin-ben-manes-versions" }
+grgit = { id = "org.ajoberstar.grgit", version.ref = "plugin-grgit" }

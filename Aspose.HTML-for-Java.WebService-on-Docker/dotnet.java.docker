@@ -1,0 +1,19 @@
+FROM mcr.microsoft.com/dotnet/sdk:8.0
+
+# Установим зависимости
+RUN apt-get update && \
+    apt-get install -y wget gnupg curl tar software-properties-common fontconfig && \
+    rm -rf /var/lib/apt/lists/*
+
+# Добавим репозиторий Adoptium для JDK 21
+RUN wget -qO - https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --dearmor -o /usr/share/keyrings/adoptium.gpg && \
+    echo "deb [signed-by=/usr/share/keyrings/adoptium.gpg] https://packages.adoptium.net/artifactory/deb $(. /etc/os-release && echo $VERSION_CODENAME) main" \
+    > /etc/apt/sources.list.d/adoptium.list
+
+# Установка JDK 21
+RUN apt-get update && \
+    apt-get install -y temurin-21-jdk && \
+    rm -rf /var/lib/apt/lists/*
+
+# Проверка установки
+RUN java -version

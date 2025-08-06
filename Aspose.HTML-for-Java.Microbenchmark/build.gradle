@@ -2,9 +2,9 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 
 plugins {
-    id 'java'
-    id("me.champeau.jmh") version "$jmh_version"
-    id("io.morethan.jmhreport") version "0.9.0"
+    alias(libs.plugins.java)
+    alias(libs.plugins.jmh)
+    alias(libs.plugins.jmhreport)
 }
 
 repositories {
@@ -17,54 +17,67 @@ repositories {
 }
 
 java {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "${JAVA_VERSION}"
     toolchain {
         languageVersion = JavaLanguageVersion.of("${JAVA_VERSION}")
     }
 }
 
-
 dependencies {
-    implementation(group: 'com.aspose', name: 'aspose-html', version: "$aspose_html_for_java_lib_version", classifier: "jdk$JAVA_VERSION")
+    implementation(libs.aspose.html) {
+        artifact {
+            classifier = "jdk${JAVA_VERSION}"
+        }
+    }
 
     testImplementation(
-            "org.junit.jupiter:junit-jupiter-api:$junit_version",
-            "org.junit.jupiter:junit-jupiter-engine:$junit_version",
-            "org.junit.jupiter:junit-jupiter-params:$junit_version",
-            "org.junit.platform:junit-platform-runner:$junit_platform_version",
-            "org.junit.vintage:junit-vintage-engine:$junit_version",
+            libs.commons.lang3,
+            libs.bundles.junit
     )
+}
+
+dependencies {
+    jmh libs.jmh.core
+    jmh libs.jmh.generator.annprocess
+    jmhAnnotationProcessor libs.jmh.generator.annprocess
+
+    jmh(
+            libs.slf4j.api,
+            libs.slf4j.ext,
+            libs.logback.classic,
+            libs.logback.core
+    )
+
+//    jmh "org.openjdk.jmh:jmh-core:$jmh_version"
+//    jmh "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
+//
+//    // this is the line that solves the missing /META-INF/BenchmarkList error
+//    jmhAnnotationProcessor "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
+//
+//    jmh(
+//            "org.slf4j:slf4j-api:$slf4j_version",
+//            "org.slf4j:slf4j-ext:$slf4j_version",
+//
+////            "org.slf4j:slf4j-simple:$slf4j_version",
+////            "org.slf4j:slf4j-reload4j:$slf4j_version",
+//
+////            "org.slf4j:slf4j-core:$slf4j_version",
+////            "java.util.logging:java.util.logging-api:1.8.0"
+//
+////            "org.apache.logging.log4j:log4j-slf4j-impl:$slf4j_libs_version",
+////            "org.apache.logging.log4j:log4j-core:$slf4j_libs_version",
+//
+//            "ch.qos.logback:logback-classic:1.5.6",
+//            "ch.qos.logback:logback-core:1.5.6",
+//    )
+
 }
 
 test {
     useJUnitPlatform()
     maxParallelForks = Runtime.runtime.availableProcessors()
     forkEvery = 1
-}
-
-dependencies {
-    jmh "org.openjdk.jmh:jmh-core:$jmh_version"
-    jmh "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
-
-    // this is the line that solves the missing /META-INF/BenchmarkList error
-    jmhAnnotationProcessor "org.openjdk.jmh:jmh-generator-annprocess:$jmh_version"
-
-    jmh(
-            "org.slf4j:slf4j-api:$slf4j_version",
-            "org.slf4j:slf4j-ext:$slf4j_version",
-
-//            "org.slf4j:slf4j-simple:$slf4j_version",
-//            "org.slf4j:slf4j-reload4j:$slf4j_version",
-
-//            "org.slf4j:slf4j-core:$slf4j_version",
-//            "java.util.logging:java.util.logging-api:1.8.0"
-
-//            "org.apache.logging.log4j:log4j-slf4j-impl:$slf4j_libs_version",
-//            "org.apache.logging.log4j:log4j-core:$slf4j_libs_version",
-
-            "ch.qos.logback:logback-classic:1.5.6",
-            "ch.qos.logback:logback-core:1.5.6",
-    )
-
 }
 
 jmh {

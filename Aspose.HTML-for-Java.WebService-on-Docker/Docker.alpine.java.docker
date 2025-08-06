@@ -1,0 +1,31 @@
+FROM eclipse-temurin:21-jdk-alpine
+
+ENV SAMPLE_APP_JAR=Aspose.HTML-for-Java.WebService-on-Docker.jar
+ENV ASPOSE_PRODUCT_DIR=aspose-html-for-java
+ENV ASPOSE_SAMPLE_APP_DIR=sample-web-service
+
+# 1. Set up workdir directories
+ENV WORK_DIR_HOME=/home/${ASPOSE_PRODUCT_DIR}
+RUN mkdir -p ${WORK_DIR_HOME}
+
+# 2. Set up app directory and copy JAR
+ENV SERVICE_HOME=${WORK_DIR_HOME}/${ASPOSE_SAMPLE_APP_DIR}
+RUN mkdir -p ${SERVICE_HOME}
+RUN chmod -R 775 ${SERVICE_HOME}
+COPY build/libs/${SAMPLE_APP_JAR} ${SERVICE_HOME}/
+ENV APP_PATH=${SERVICE_HOME}/${SAMPLE_APP_JAR}
+
+# 3. Set up assets directory
+ENV ASSETS=${SERVICE_HOME}/assets
+RUN mkdir -p ${ASSETS}
+RUN chmod -R 775 ${ASSETS}
+COPY ../../assets/ ${ASSETS}/
+
+# 4. Check Java version and font installation
+RUN java -version && fc-list | grep -i arial || true
+
+# 5. Declare exposed port (used in docker run -p or docker-compose)
+EXPOSE 9999
+
+# 6. Set ENTRYPOINT to run the application
+ENTRYPOINT ["java", "-jar", "/home/aspose-html-for-java/sample-web-service/Aspose.HTML-for-Java.WebService-on-Docker.jar"]

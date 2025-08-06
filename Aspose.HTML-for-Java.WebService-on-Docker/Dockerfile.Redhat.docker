@@ -1,0 +1,63 @@
+FROM registry.access.redhat.com/ubi8/ubi:latest
+
+ENV SAMPLE_APP_JAR=Aspose.HTML-for-Java.WebService-on-Docker.jar
+ENV ASPOSE_PRODUCT_DIR=aspose-html-for-java
+ENV ASPOSE_SAMPLE_APP_DIR=sample-web-service
+
+# 1. Set up workdir directories
+ENV WORK_DIR_HOME=/home/${ASPOSE_PRODUCT_DIR}
+RUN mkdir -p ${WORK_DIR_HOME}
+
+# 2. Set up app directory and copy JAR
+ENV SERVICE_HOME=${WORK_DIR_HOME}/${ASPOSE_SAMPLE_APP_DIR}
+RUN mkdir -p ${SERVICE_HOME}
+RUN chmod -R 775 ${SERVICE_HOME}
+COPY build/libs/${SAMPLE_APP_JAR} ${SERVICE_HOME}/
+ENV APP_PATH=${SERVICE_HOME}/${SAMPLE_APP_JAR}
+
+# 3. Set up assets directory
+ENV ASSETS=${SERVICE_HOME}/assets
+RUN mkdir -p ${ASSETS}
+RUN chmod -R 775 ${ASSETS}
+COPY ../../assets/ ${ASSETS}/
+
+# 4. Install JDK (Temurin 21)
+RUN yum -y --skip-broken install wget curl tar fontconfig && \
+    curl -L -o /tmp/jdk21.tar.gz https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.3%2B9/OpenJDK21U-jdk_x64_linux_hotspot_21.0.3_9.tar.gz && \
+    mkdir -p /usr/lib/jvm/jdk-21 && \
+    tar -xzf /tmp/jdk21.tar.gz --strip-components=1 -C /usr/lib/jvm/jdk-21 && \
+    rm /tmp/jdk21.tar.gz && \
+    alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-21/bin/java 1 && \
+    java -version
+
+# 5. Install Microsoft True Type Fonts (via RPM Fusion or manually)
+RUN rpm --import https://packages.microsoft.com/keys/microsoft.asc || true && \
+    yum -y --skip-broken install curl cabextract xorg-x11-font-utils fontconfig && \
+    curl -L -o /tmp/fonts.tar.gz https://downloads.sourceforge.net/corefonts/thefonts.tar.gz && \
+    mkdir -p /usr/share/fonts/msttcore && \
+    tar -xzf /tmp/fonts.tar.gz -C /usr/share/fonts/msttcore && \
+    fc-cache -fv && \
+    rm -f /tmp/fonts.tar.gz
+
+# 6. Install Google Fonts (Noto, DejaVu, Croscore)
+RUN yum -y --skip-broken install \
+    google-noto-sans-cjk-ttc-fonts \
+    google-noto-serif-cjk-ttc-fonts \
+    dejavu-sans-fonts \
+    dejavu-serif-fonts \
+    dejavu-sans-mono-fonts \
+    google-croscore-arimo-fonts \
+    google-croscore-cousine-fonts \
+    google-croscore-tinos-fonts
+
+# 7. Update font cache and list all available fonts
+RUN fc-cache -fv && fc-list
+
+# 8. Check Java version again
+RUN java -version
+
+# 9. Declare exposed port (used in docker run -p or docker-compose)
+EXPOSE 9999
+
+# 10. Set ENTRYPOINT to run the application
+ENTRYPOINT ["java", "-jar", "/home/aspose-html-for-java/sample-web-service/Aspose.HTML-for-Java.WebService-on-Docker.jar"]

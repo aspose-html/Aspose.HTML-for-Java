@@ -1,0 +1,8 @@
+rootProject.name = 'Aspose.HTML-for-Java'
+
+include(
+    ':Aspose.HTML-for-Java.Example',
+    ':Aspose.HTML-for-Java.Start',
+    ':Aspose.HTML-for-Java.Microbenchmark',
+    ':Aspose.HTML-for-Java.WebService-on-Docker'
+)

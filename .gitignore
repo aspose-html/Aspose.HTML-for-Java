@@ -1,6 +1,9 @@
+update-gists.ps1
+
 #Test output
 out/
 test-output
+aspsoe-examples-output
 
 #Idea
 .idea/

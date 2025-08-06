@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    alias(libs.plugins.java)
 }
 
 repositories {
@@ -12,31 +12,129 @@ repositories {
 }
 
 java {
+    sourceCompatibility = "1.8"
+    targetCompatibility = "${JAVA_VERSION}"
     toolchain {
         languageVersion = JavaLanguageVersion.of("${JAVA_VERSION}")
     }
 }
 
-
 dependencies {
-    implementation(group: 'com.aspose', name: 'aspose-html', version: "$aspose_html_for_java_lib_version", classifier: "jdk$JAVA_VERSION")
+    implementation(libs.aspose.html) {
+        artifact {
+            classifier = "jdk${JAVA_VERSION}"
+        }
+    }
 
-    testImplementation(
-            "org.junit.jupiter:junit-jupiter-api:$junit_version",
-            "org.junit.jupiter:junit-jupiter-engine:$junit_version",
-            "org.junit.jupiter:junit-jupiter-params:$junit_version",
-            "org.junit.platform:junit-platform-runner:$junit_platform_version",
-            "org.junit.vintage:junit-vintage-engine:$junit_version",
+    implementation(
+            libs.commons.lang3,
+            libs.bundles.junit
     )
 }
 
-task SimpleWait(type: JavaExec) {
+tasks.register('SimpleWait', JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
-    main = 'com.aspose.html.examples.SimpleWait'
+    mainClass = 'com.aspose.html.examples.SimpleWait'
 }
 
 test {
-    useJUnitPlatform()
+    description = 'Runs the tests in the examples source set'
+    group = 'verification'
+    testClassesDirs = sourceSets.main.output.classesDirs
+    classpath = sourceSets.main.runtimeClasspath
+    useJUnitPlatform() // Enables JUnit 5 (Jupiter)
     maxParallelForks = Runtime.runtime.availableProcessors()
-//    forkEvery = 1
+    testLogging.showStandardStreams = false
+    def printLog = false
+//    forkEvery = 4
+//    timeout = Duration.ofSeconds(5)
+    // listen to events in the test execution lifecycle
+    beforeTest { descriptor ->
+        if (printLog)
+            logger.lifecycle(">> **TEST** Gradle: beforeTest: Running test: " + descriptor)
+    }
+
+    doLast {
+        if (printLog)
+            println(">> **TEST** Gradle: doLast: Longest 3 tests")
+//        test.testDurations.sortedBy { it.duration }
+//                .reversed()
+//                .take(3)
+//                .forEach { println(it) }
+    }
+
+    afterSuite { descriptor, result ->
+        def duration = java.util.concurrent.TimeUnit.MILLISECONDS
+                .toSeconds(result.endTime - result.startTime)
+        if (printLog)
+            println "     >> **TEST** Gradle: afterSuite: Total duration of $descriptor : $duration  seconds"
+    }
+
+    afterTest { descriptor, result ->
+        def totalTime = result.endTime - result.startTime
+        if (printLog)
+            println "     >> **TEST** Gradle: afterTest: Total time of $descriptor  was $totalTime"
+    }
+
+    // fail the 'test' task on the first test failure
+//            failFast = true
+
+    // skip an actual test execution
+//            dryRun = true
+
+    // listen to standard out and standard error of the test JVM(s)
+    onOutput { descriptor, event ->
+        if (printLog)
+            logger.lifecycle(
+                    ">> **TEST** Gradle: onOutput: Test: " + descriptor + " produced standard out/err: " + event.message)
+    }
 }
+
+tasks.register('remoteTest1', Test) {
+    useJUnitPlatform()
+    systemProperty('includeTags', 'remote')
+    description = 'Запускает только тесты с тегом @Tag("remote")'
+    group = 'verification'
+    testClassesDirs = sourceSets.main.output.classesDirs
+    classpath = sourceSets.main.runtimeClasspath
+    useJUnitPlatform() // Enables JUnit 5 (Jupiter)
+    maxParallelForks = Runtime.runtime.availableProcessors()
+    testLogging.showStandardStreams = false
+    def printLog = false
+
+}
+
+tasks.register('remoteTest', Test) {
+    description = 'Runs tests marked with @Remote annotation'
+    group = 'verification'
+
+    testClassesDirs = sourceSets.main.output.classesDirs
+    classpath = sourceSets.main.runtimeClasspath
+
+    useJUnitPlatform {
+        includeTags 'Remote'
+    }
+
+    maxParallelForks = Runtime.runtime.availableProcessors()
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
+
+    reports {
+        html.required = true
+        junitXml.required = true
+    }
+
+    afterSuite { desc, result ->
+        if (!desc.parent) {
+            println "\nTest result: ${result.resultType}"
+            println "Test summary: ${result.testCount} tests, " +
+                    "${result.successfulTestCount} succeeded, " +
+                    "${result.failedTestCount} failed, " +
+                    "${result.skippedTestCount} skipped"
+        }
+    }
+}
+
+apply from: "./gradle/preparing-for-gists.gradle"

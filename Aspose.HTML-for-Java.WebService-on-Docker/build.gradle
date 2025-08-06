@@ -1,0 +1,47 @@
+plugins {
+    alias(libs.plugins.java)
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+//    alias(libs.plugins.com.palantir.docker)
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url = uri('https://repository.aspose.com/repo/')
+    }
+}
+
+dependencies {
+    implementation("${libs.aspose.html.get()}") {
+        artifact {
+            classifier = "jdk${JAVA_VERSION}"
+        }
+    }
+
+    implementation libs.spring.boot.starter.web
+    testImplementation libs.spring.boot.starter.test
+
+    implementation libs.jsoup
+}
+
+test {
+    useJUnitPlatform()
+}
+
+//docker {
+//    name "${project.group}/${project.name}:${project.version}"
+//    files 'build/libs/your-app.jar'
+//    buildArgs(['JAR_FILE': 'your-app.jar'])
+//}
+//
+//tasks.register('dockerBuild', Exec) {
+//    commandLine 'docker', 'build', '-t', 'my-app:latest', '.'
+//}
+//
+//tasks.register('dockerRun', Exec) {
+//    commandLine 'docker', 'run', '--rm', '-p', '8080:8080', 'my-app:latest'
+//}
+
+// ./gradlew dockerBuild
+// ./gradlew dockerRun
