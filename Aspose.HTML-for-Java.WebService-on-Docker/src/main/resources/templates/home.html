@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>HTML to PDF Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navigation {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .navigation a {
+            margin: 0 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
+        .success {
+            color: green;
+            margin: 10px 0;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-item {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .convert-link {
+            background-color: #3498db;
+            color: white;
+            padding: 5px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .convert-link:hover {
+            background-color: #2980b9;
+        }
+        .upload-form {
+            margin: 20px 0;
+        }
+        .upload-button {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .upload-button:hover {
+            background-color: #2980b9;
+        }
+    
+    .file-actions {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .delete-button {
+        background-color: #e74c3c;
+        color: white;
+        padding: 5px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    .delete-button:hover {
+        background-color: #c0392b;
+    }
+    
+    .delete-all-button {
+        background-color: #e74c3c;
+        color: white;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-bottom: 20px;
+    }
+    
+    .delete-all-button:hover {
+        background-color: #c0392b;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="/aspose-html-for-java/sample-web-service">Home</a> |
+            <a href="/aspose-html-for-java/sample-web-service/files">Results</a>
+        </div>
+        
+        <h1>Upload HTML File</h1>
+        
+        <div th:if="${message}" class="success" th:text="${message}"></div>
+        <div th:if="${error}" class="error" th:text="${error}"></div>
+
+        <form class="upload-form" method="POST" action="/aspose-html-for-java/sample-web-service/upload" 
+              enctype="multipart/form-data">
+            <input type="file" name="file" accept=".html,.htm" required>
+            <button type="submit" class="upload-button">Upload</button>
+        </form>
+
+        <h2>Uploaded Files</h2>
+        <!-- В секции со списком файлов -->
+        <div class="file-actions" th:if="${not #lists.isEmpty(inputFiles)}">
+            <form method="POST" th:action="@{/aspose-html-for-java/sample-web-service/input/delete-all}" style="display: inline;">
+                <button type="submit" class="delete-all-button">Delete All Files</button>
+            </form>
+        </div>
+
+        <ul class="file-list">
+            <li th:each="file : ${inputFiles}" class="file-item">
+                <span th:text="${file}"></span>
+                <div class="file-actions">
+                    <a th:href="@{'/aspose-html-for-java/sample-web-service/convert/' + ${file}}"
+                       class="convert-link">Convert</a>
+                    <form method="POST" 
+                          th:action="@{'/aspose-html-for-java/sample-web-service/input/delete/' + ${file}}" 
+                          style="display: inline;">
+                        <button type="submit" class="delete-button">Delete</button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

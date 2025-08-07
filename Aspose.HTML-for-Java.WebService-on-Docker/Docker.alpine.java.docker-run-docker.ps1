@@ -1,0 +1,1 @@
+docker run -p8080:9999 -p2222:22 --rm  alpine-java21

@@ -1,0 +1,1 @@
+docker build -t docker.alpine.java.ms.google.fonts.docker-java21 -f Docker.alpine.java.ms.google.fonts.docker .

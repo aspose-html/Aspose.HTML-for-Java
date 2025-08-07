@@ -1,0 +1,1 @@
+docker build -t alpine-java21 -f Docker.alpine.java.docker .

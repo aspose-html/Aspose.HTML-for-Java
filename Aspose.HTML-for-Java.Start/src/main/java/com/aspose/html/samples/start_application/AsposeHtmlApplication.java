@@ -1,4 +1,3 @@
-
 package com.aspose.html.samples.start_application;
 
 import java.io.OutputStreamWriter;

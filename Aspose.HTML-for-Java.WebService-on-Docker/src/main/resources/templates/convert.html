@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Conversion Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navigation {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .navigation a {
+            margin: 0 10px;
+            color: #3498db;
+            text-decoration: none;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
+        .form-group {
+            margin: 15px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+    /* ... существующие стили ... */
+    
+    .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+    
+    select.form-control {
+        background-color: white;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <a href="/aspose-html-for-java/sample-web-service">Home</a> |
+            <a href="/aspose-html-for-java/sample-web-service/files">Results</a>
+        </div>
+
+        <h1>Conversion Settings</h1>
+        
+        <div th:if="${error}" class="error" th:text="${error}"></div>
+
+        <!-- В секции form добавим выбор формата -->
+<form method="POST" action="/aspose-html-for-java/sample-web-service/convert">
+    <input type="hidden" name="filename" th:value="${filename}">
+    
+    <div class="form-group">
+        <label for="outputFormat">Output Format:</label>
+        <select id="outputFormat" name="outputFormat" class="form-control">
+            <option value="PDF">PDF</option>
+            <option value="XPS">XPS</option>
+            <option value="PNG">PNG</option>
+        </select>
+    </div>
+    
+    <div class="form-group pdf-xps-options">
+        <label>
+            <input type="checkbox" name="adjustToWidestPage" value="true">
+            Adjust to widest page
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="pageWidth">Page width (inches):</label>
+        <input type="number" id="pageWidth" name="pageWidth" step="0.01" value="11.69" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="pageHeight">Page height (inches):</label>
+        <input type="number" id="pageHeight" name="pageHeight" step="0.01" value="8.26" class="form-control">
+    </div>
+
+    <button type="submit">Convert</button>
+</form>
+    </div>
+</body>
+<!-- Добавим JavaScript для управления видимостью опций -->
+<script>
+document.getElementById('outputFormat').addEventListener('change', function() {
+    var pdfXpsOptions = document.querySelector('.pdf-xps-options');
+    if (this.value === 'PNG') {
+        pdfXpsOptions.style.display = 'none';
+    } else {
+        pdfXpsOptions.style.display = 'block';
+    }
+});
+</script>
+</html>

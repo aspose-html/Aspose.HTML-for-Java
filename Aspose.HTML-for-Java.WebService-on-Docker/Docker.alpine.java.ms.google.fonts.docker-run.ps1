@@ -1,0 +1,1 @@
+docker run -p8080:9999 -p2222:22 --rm  docker.alpine.java.ms.google.fonts.docker-java21

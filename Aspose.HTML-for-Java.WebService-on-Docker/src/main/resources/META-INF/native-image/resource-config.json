@@ -1,0 +1,13 @@
+{
+  "resources": {
+    "includes": [
+      {"pattern": "templates/.*"},
+      {"pattern": "static/.*"},
+      {"pattern": "application.properties"},
+      {"pattern": "META-INF/.*"}
+    ]
+  },
+  "bundles": [
+    {"name": "messages"}
+  ]
+}
