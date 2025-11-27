@@ -21,7 +21,7 @@ RUN mkdir -p ${ASSETS}
 RUN chmod -R 775 ${ASSETS}
 COPY ../../assets/ ${ASSETS}/
 
-# 4. Install Google font dependencies and tools
+# 4. Optional: Install Google font dependencies and tools
 RUN apk add --no-cache \
     fontconfig \
     freetype \
@@ -36,7 +36,7 @@ RUN apk add --no-cache \
     unzip \
     msttcorefonts-installer || true
 
-# 5. Manually install Microsoft Core Fonts
+# 5. Optional: Manually install Microsoft Core Fonts
 RUN mkdir -p /usr/share/fonts/truetype/msttcore && \
     cd /usr/share/fonts/truetype/msttcore && \
     curl -LO http://downloads.sourceforge.net/corefonts/arial32.exe && \

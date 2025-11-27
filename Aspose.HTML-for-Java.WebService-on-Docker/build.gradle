@@ -2,8 +2,6 @@ plugins {
     alias(libs.plugins.java)
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
-//    id 'org.graalvm.buildtools.native' version '0.11.0'
-    id 'org.graalvm.buildtools.native' version '0.10.2'
 }
 
 repositories {
@@ -17,6 +15,7 @@ dependencies {
     implementation("${libs.aspose.html.get()}") {
         artifact {
             classifier = "jdk${JAVA_VERSION}"
+//            classifier = "jdk21"
         }
     }
 
@@ -29,46 +28,4 @@ dependencies {
 
 test {
     useJUnitPlatform()
-}
-
-tasks.register('dockerBuild', Exec) {
-    commandLine 'docker', 'build', '-t', 'alpine-java21','-f', 'Docker.alpine.java.docker', '.'
-}
-
-tasks.register('dockerRun', Exec) {
-    commandLine 'docker', 'run', '--rm', '-p', '8080:8080','-p', '2222:22', 'alpine-java21'
-}
-
-tasks.register('dockerRun2', Exec) {
-    commandLine 'docker', 'run', '--rm', '-p', '8080:8080','-p', '2222:22', 'alpine-java21'
-}
-
-graalvmNative {
-    toolchainDetection = false // полагаться на GRAALVM_HOME
-    binaries {
-        main {
-            imageName = 'html-converter'
-            debug = true
-            verbose = true
-            buildArgs.add('--initialize-at-build-time=com.aspose.html')
-            buildArgs.add('-H:+ReportExceptionStackTraces')
-            buildArgs.add('--enable-url-protocols=http,https')
-            jvmArgs.add('-Dspring.native.remove-yaml-support=false')
-            buildArgs.add("--verbose")
-        }
-    }
-}
-
-configurations {
-    developmentOnly
-    runtimeClasspath {
-        extendsFrom developmentOnly
-    }
-}
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-        vendor = JvmVendorSpec.GRAAL_VM
-    }
 }
