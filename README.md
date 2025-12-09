@@ -6,6 +6,8 @@ This repository contains code examples, starter templates, and microbenchmarks d
 
 [Aspose.HTML for Java](https://products.aspose.com/html/java/) enables developers to load, parse, generate, modify, and convert HTML documents in any Java environment, including desktop, server-side, microservices, and cloud applications.
 
+This repository works hand in hand with the official [Aspose.HTML for Java documentation](https://docs.aspose.com/html/java/). The examples provided here are intended to complement the documentation, extend it, and provide ready-to-use code snippets for processing, parsing, converting, and rendering HTML-based documents, working with the DOM, and more. 
+
 ## Key Features Demonstrated in This Repository
 
 * Create or load HTML documents from multiple sources.
