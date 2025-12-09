@@ -2,6 +2,21 @@
 
 This guide explains how to install Aspose.HTML for Java using Maven, Gradle, or by downloading the library manually. Choose the method that best fits your project setup.
 
+## Install via Gradle
+
+Add the repository and dependency to your `build.gradle`:
+```
+repositories {
+     maven {
+         url = uri('https://repository.aspose.com/repo/')
+     }
+ }
+
+dependencies {
+    implementation "com.aspose:aspose-html:25.12"
+}
+```
+
 ## Install via Maven
 
 Add the Aspose repository and dependency to your `pom.xml`:
@@ -23,21 +38,6 @@ Add the Aspose repository and dependency to your `pom.xml`:
         <classifier>jdk16</classifier>
     </dependency>
 </dependencies>
-```
-
-## Install via Gradle
-
-Add the repository and dependency to your `build.gradle`:
-```
-repositories {
-     maven {
-         url = uri('https://repository.aspose.com/repo/')
-     }
- }
-
-dependencies {
-    implementation "com.aspose:aspose-html:25.12"
-}
 ```
 
 After completing these steps, the Aspose.HTML for Java library will be successfully configured in your Maven project. You can now begin using its powerful features for HTML manipulation, conversion, and processing.
