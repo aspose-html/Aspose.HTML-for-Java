@@ -4,7 +4,7 @@ import com.aspose.html.MimeType;
 import com.aspose.html.net.INetworkOperationContext;
 import com.aspose.html.net.ResponseMessage;
 import com.aspose.html.net.StreamContent;
-import com.aspose.html.utils.Stream;
+import com.aspose.html.utils.io.Stream;
 
 // @START_SNIPPET Example_ZipFileSchemaMessageHandler.java
 // Create ZIP file schema handler for custom protocols in Aspose.HTML for Java

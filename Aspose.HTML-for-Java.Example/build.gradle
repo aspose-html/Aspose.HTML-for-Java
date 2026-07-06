@@ -9,6 +9,10 @@ repositories {
     maven {
         url = uri('https://repository.aspose.com/repo/')
     }
+
+    maven {
+        url = uri("D:/prj/aspose/libs/aspose-md-html")
+    }
 }
 
 java {
@@ -20,11 +24,14 @@ java {
 }
 
 dependencies {
-    implementation(libs.aspose.html) {
-        artifact {
-            classifier = "jdk${JAVA_VERSION}"
-        }
-    }
+//    implementation("com.aspose.html:aspose-html:26.8-M6-20260705110550:jdk8-obfuscated")
+    implementation("com.aspose.html:aspose-html:26.8-M6-20260706093853:jdk8-obfuscated")
+
+//    implementation(libs.aspose.html) {
+//        artifact {
+//            classifier = "jdk${JAVA_VERSION}"
+//        }
+//    }
 
     implementation(
             libs.commons.lang3,

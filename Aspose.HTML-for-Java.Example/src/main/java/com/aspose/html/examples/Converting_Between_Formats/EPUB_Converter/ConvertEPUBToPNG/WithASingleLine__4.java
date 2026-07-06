@@ -2,7 +2,7 @@ package com.aspose.html.examples.Converting_Between_Formats.EPUB_Converter.Conve
 
 import com.aspose.html.converters.Converter;
 import com.aspose.html.saving.ImageSaveOptions;
-import com.aspose.html.utils.ms.System.IO.File;
+import com.aspose.html.utils.io.File;
 import org.junit.jupiter.api.Assertions;
 
 import java.io.FileInputStream;

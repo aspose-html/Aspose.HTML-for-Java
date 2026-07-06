@@ -4,6 +4,7 @@ import com.aspose.html.io.ICreateOutputStreamProvider;
 import com.aspose.html.io.MemoryOutputStream;
 import com.aspose.html.io.OutputStream;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -16,11 +17,13 @@ public class MemoryOutputStreamProvider
     private java.util.List<OutputStream> outpuStreamList = new java.util.ArrayList<>();
 
     @Override
-    public void close()
-            throws
-            java.io.IOException {
+    public void close() {
         for (java.io.InputStream stream : lStream) {
-            stream.close();
+            try {
+                stream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         for (OutputStream stream : outpuStreamList) {
             stream.close();

@@ -6,7 +6,7 @@ import com.aspose.html.drawing.Length;
 import com.aspose.html.drawing.Page;
 import com.aspose.html.drawing.Size;
 import com.aspose.html.saving.PdfSaveOptions;
-import com.aspose.html.utils.ms.System.IO.File;
+import com.aspose.html.utils.io.File;
 import org.junit.jupiter.api.Assertions;
 
 import static com.aspose.html.examples.utils.Resources.$i;

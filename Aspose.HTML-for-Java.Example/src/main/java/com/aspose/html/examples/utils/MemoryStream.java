@@ -5,7 +5,7 @@
 
 package com.aspose.html.examples.utils;
 
-public class MemoryStream extends com.aspose.html.utils.Stream {
+public class MemoryStream extends com.aspose.html.utils.io.Stream {
 
     @Override
     public boolean canRead() {
