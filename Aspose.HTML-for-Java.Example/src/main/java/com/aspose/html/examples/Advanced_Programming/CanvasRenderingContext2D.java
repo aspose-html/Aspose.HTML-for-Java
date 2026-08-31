@@ -19,7 +19,6 @@ public class CanvasRenderingContext2D {
 
         // Create an empty HTML document
         try (HTMLDocument document = new HTMLDocument()) {
-            ;
 
             // Create a canvas element
             HTMLCanvasElement canvas = (HTMLCanvasElement) document.createElement("canvas");
