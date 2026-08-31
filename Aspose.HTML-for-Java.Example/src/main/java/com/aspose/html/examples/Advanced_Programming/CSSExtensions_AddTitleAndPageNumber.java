@@ -44,13 +44,14 @@ public class CSSExtensions_AddTitleAndPageNumber {
                         "  }\n" +
                         "}");
         //  Initialize an HTML document
-        HTMLDocument document = new HTMLDocument("<div>Hello, World!!!</div>", ".", configuration);
+        try(HTMLDocument document = new HTMLDocument("<div>Hello, World!!!</div>", ".", configuration)) {
 
-        //  Initialize an output device
-        XpsDevice device = new XpsDevice($o("output.xps"));
+            //  Initialize an output device
+            XpsDevice device = new XpsDevice($o("output.xps"));
 
-        // Send the document to the output device
-        document.renderTo(device);
+            // Send the document to the output device
+            document.renderTo(device);
+        }
         //@END_SNIPPET Examples_Java_AdvancedUsage_CSSExtensions_AddTitleAndPageNumber
     }
 }

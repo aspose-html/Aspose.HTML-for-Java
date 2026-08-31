@@ -28,10 +28,11 @@ public class HTML5Canvas {
         }
 
         // Initialize an HTML document from the HTML file
-        HTMLDocument document = new HTMLDocument($o("document.html"));
+        try(HTMLDocument document = new HTMLDocument($o("document.html"))) {
 
-        // Convert HTML to PDF
-        Converter.convertHTML(document, new PdfSaveOptions(), $o("output.pdf"));
+            // Convert HTML to PDF
+            Converter.convertHTML(document, new PdfSaveOptions(), $o("output.pdf"));
+        }
         // @END_SNIPPET
     }
 }

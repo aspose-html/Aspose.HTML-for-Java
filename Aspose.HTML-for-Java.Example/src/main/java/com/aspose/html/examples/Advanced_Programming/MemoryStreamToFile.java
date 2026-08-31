@@ -22,21 +22,24 @@ public class MemoryStreamToFile {
         // Learn more: https://docs.aspose.com/html/java/output-streams/
 
         // Create an instance of MemoryStreamProvider
-        MemoryOutputStreamProvider streamProvider = new MemoryOutputStreamProvider();
+        try (MemoryOutputStreamProvider streamProvider = new MemoryOutputStreamProvider()) {
 
-        // Initialize an HTMLDocument instance
-        HTMLDocument document = new HTMLDocument("<span>Hello, World!!</span>", ".");
+            // Initialize an HTMLDocument instance
+            try (HTMLDocument document = new HTMLDocument("<span>Hello, World!!</span>", ".")) {
 
-        // Convert HTML to JPG using the MemoryStreamProvider
-        Converter.convertHTML(document, new ImageSaveOptions(ImageFormat.Jpeg), streamProvider.lStream);
+                // Convert HTML to JPG using the MemoryStreamProvider
+                Converter.convertHTML(document, new ImageSaveOptions(ImageFormat.Jpeg), streamProvider.lStream);
 
-        // Get access to the memory stream that contains the result data
-        java.io.InputStream memory = streamProvider.lStream.get(0);
-        memory.reset();
+                // Get access to the memory stream that contains the result data
+                try (java.io.InputStream memory = streamProvider.lStream.get(0)) {
+                    memory.reset();
 
-        // Flush the result data to the output file
-        Path outputFile = new File($o("output.jpg")).toPath();
-        Files.copy(memory, outputFile, StandardCopyOption.REPLACE_EXISTING);
+                    // Flush the result data to the output file
+                    Path outputFile = new File($o("output.jpg")).toPath();
+                    Files.copy(memory, outputFile, StandardCopyOption.REPLACE_EXISTING);
+                }
+            }
+        }
         // @END_SNIPPET
     }
 }
