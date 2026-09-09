@@ -9,8 +9,12 @@ import com.aspose.html.net.MessageHandler;
 import com.aspose.html.net.ResponseMessage;
 import com.aspose.html.net.messagefilters.ProtocolMessageFilter;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 // @START_SNIPPET Example_ZipArchiveMessageHandler.java
@@ -33,21 +37,31 @@ public class ZIPArchiveMessageHandler extends MessageHandler implements IDisposa
 
     @Override
     public void invoke(INetworkOperationContext context) {
-        // Call the GetFile() method that defines the logic in the Invoke() method
-        byte[] buff = new byte[0];
+        String trimmedStart = StringExtensions.trimStart(context.getRequest().getRequestUri().getPathname(), '/');
+        Path resourcePath = Paths.get(filePath, trimmedStart);
 
-        try {
-            buff = Files.readAllBytes(Paths.get(StringExtensions.trimStart(context.getRequest().getRequestUri().getPathname(), '/')));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (!Files.exists(resourcePath)) {
+            context.setResponse(new ResponseMessage(HttpURLConnection.HTTP_NOT_FOUND));
+            invoke(context);
+            return;
         }
-        if (buff != null) {
-            // Checking: if a resource is found in the archive, then return it as a Response
-            ResponseMessage msg = new ResponseMessage(200);
-            msg.setContent(new ByteArrayContent(buff));
-            context.getResponse().getHeaders().getContentType().setMediaType(MimeType.fromFileExtension(context.getRequest().getRequestUri().getPathname()));
-        } else {
-            context.setResponse(new ResponseMessage(404));
+
+        try (InputStream inputStream = Files.newInputStream(resourcePath);
+             ByteArrayOutputStream outputStream = new ByteArrayOutputStream()) {
+            byte[] buffer = new byte[8192];
+            int bytesRead;
+
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+
+            ResponseMessage msg = new ResponseMessage(HttpURLConnection.HTTP_OK);
+            msg.setContent(new ByteArrayContent(outputStream.toByteArray()));
+            MimeType mimeType = MimeType.fromFileExtension(context.getRequest().getRequestUri().getPathname());
+            msg.getHeaders().getContentType().setMediaType(mimeType);
+            context.setResponse(msg);
+        } catch (IOException e) {
+            context.setResponse(new ResponseMessage(HttpURLConnection.HTTP_INTERNAL_ERROR));
         }
 
         // Call the next message handler

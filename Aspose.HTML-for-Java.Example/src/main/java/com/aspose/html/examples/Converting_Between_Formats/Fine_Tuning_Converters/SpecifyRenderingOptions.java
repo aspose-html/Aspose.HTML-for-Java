@@ -23,26 +23,28 @@ public class SpecifyRenderingOptions {
         String code = "<span>Hello, World!!</span>";
 
         // Initialize a HTML document from the HTML code
-        HTMLDocument document = new HTMLDocument(code, ".");
+        try (HTMLDocument document = new HTMLDocument(code, ".")) {
 
-        // Create an instance of PdfRenderingOptions and set a custom page-size
-        PdfRenderingOptions options = new PdfRenderingOptions();
-        PageSetup pageSetup = new PageSetup();
-        Page anyPage = new Page();
-        anyPage.setSize(
-                new Size(
-                        Length.fromInches(5),
-                        Length.fromInches(2)
-                )
-        );
-        pageSetup.setAnyPage(anyPage);
-        options.setPageSetup(pageSetup);
+            // Create an instance of PdfRenderingOptions and set a custom page-size
+            PdfRenderingOptions options = new PdfRenderingOptions();
+            PageSetup pageSetup = new PageSetup();
+            Page anyPage = new Page();
+            anyPage.setSize(
+                    new Size(
+                            Length.fromInches(5),
+                            Length.fromInches(2)
+                    )
+            );
+            pageSetup.setAnyPage(anyPage);
+            options.setPageSetup(pageSetup);
 
-        // Create a PDF Device and specify options and output file
-        PdfDevice device = new PdfDevice(options, $o("output.pdf"));
+            // Create a PDF Device and specify options and output file
+            try (PdfDevice device = new PdfDevice(options, $o("output.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

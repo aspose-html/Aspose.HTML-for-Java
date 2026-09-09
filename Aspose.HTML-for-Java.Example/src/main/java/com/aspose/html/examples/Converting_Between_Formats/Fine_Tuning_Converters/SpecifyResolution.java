@@ -40,29 +40,32 @@ public class SpecifyResolution {
         }
 
         // Create an instance of the HTMLDocument class
-        HTMLDocument document = new HTMLDocument($o("document.html"));
+        try(HTMLDocument document = new HTMLDocument($o("document.html"))) {
 
-        // Create options for low-resolution screens
-        PdfRenderingOptions options = new PdfRenderingOptions();
-        options.setHorizontalResolution(Resolution.to_Resolution(50d));
-        options.setVerticalResolution(Resolution.to_Resolution(50d));
+            // Create options for low-resolution screens
+            PdfRenderingOptions options = new PdfRenderingOptions();
+            options.setHorizontalResolution(Resolution.to_Resolution(50d));
+            options.setVerticalResolution(Resolution.to_Resolution(50d));
 
-        // Create an instance of the PdfDevice
-        PdfDevice device = new PdfDevice(options, $o("output_resolution_50.pdf"));
+            // Create an instance of the PdfDevice
+            try (PdfDevice device = new PdfDevice(options, $o("output_resolution_50.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
 
-        // Create options for high-resolution screens
-        options = new PdfRenderingOptions();
-        options.setHorizontalResolution(Resolution.to_Resolution(300d));
-        options.setVerticalResolution(Resolution.to_Resolution(300d));
+            // Create options for high-resolution screens
+            options = new PdfRenderingOptions();
+            options.setHorizontalResolution(Resolution.to_Resolution(300d));
+            options.setVerticalResolution(Resolution.to_Resolution(300d));
 
-        // Create an instance of PDF device
-        device = new PdfDevice(options, $o("output_resolution_300.pdf"));
+            // Create an instance of PDF device
+            try (PdfDevice device = new PdfDevice(options, $o("output_resolution_300.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

@@ -20,24 +20,26 @@ public class SpecifyImageSpecificOptions {
         String code = "<div>Hello, World!!</div>";
 
         // Initialize an instance of the HTMLDocument class based on prepared code
-        HTMLDocument document = new HTMLDocument(code, ".");
+        try (HTMLDocument document = new HTMLDocument(code, ".")) {
 
-        // Create an instance of the ImageRenderingOptions class
-        ImageRenderingOptions options = new ImageRenderingOptions();
-        options.setFormat(ImageFormat.Jpeg);
+            // Create an instance of the ImageRenderingOptions class
+            ImageRenderingOptions options = new ImageRenderingOptions();
+            options.setFormat(ImageFormat.Jpeg);
 
-        // Disable smoothing mode
-        options.setSmoothingMode(SmoothingMode.None);
+            // Disable smoothing mode
+            options.setSmoothingMode(SmoothingMode.None);
 
-        // Set the image resolution as 75 dpi
-        options.setVerticalResolution(Resolution.fromDotsPerInch(75));
-        options.setHorizontalResolution(Resolution.fromDotsPerInch(75));
+            // Set the image resolution as 75 dpi
+            options.setVerticalResolution(Resolution.fromDotsPerInch(75));
+            options.setHorizontalResolution(Resolution.fromDotsPerInch(75));
 
-        // Create an instance of the ImageDevice class
-        ImageDevice device = new ImageDevice(options, "output.jpg");
+            // Create an instance of the ImageDevice class
+            try (ImageDevice device = new ImageDevice(options, "output.jpg")) {
 
-        // Render HTML to Image
-        document.renderTo(device);
+                // Render HTML to Image
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

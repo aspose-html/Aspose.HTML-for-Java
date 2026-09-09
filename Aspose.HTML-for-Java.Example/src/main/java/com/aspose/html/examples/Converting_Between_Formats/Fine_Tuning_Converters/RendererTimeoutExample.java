@@ -29,16 +29,18 @@ public class RendererTimeoutExample {
                 "</script >\n";
 
         // Initialize an HTML document based on prepared HTML code
-        HTMLDocument document = new HTMLDocument(code, ".");
+        try (HTMLDocument document = new HTMLDocument(code, ".");) {
 
-        // Create an instance of HTML Renderer
-        HtmlRenderer renderer = new HtmlRenderer();
+            // Create an instance of HTML Renderer
+            HtmlRenderer renderer = new HtmlRenderer();
 
-        // Create an instance of the PdfDevice class
-        PdfDevice device = new PdfDevice($o("output.pdf"));
+            // Create an instance of the PdfDevice class
+            try (PdfDevice device = new PdfDevice($o("output.pdf"))) {
 
-        // Render HTML to PDF
-        renderer.render(device, 5, document);
+                // Render HTML to PDF
+                renderer.render(device, 5, document);
+            }
+        }
         // @END_SNIPPET
     }
 }

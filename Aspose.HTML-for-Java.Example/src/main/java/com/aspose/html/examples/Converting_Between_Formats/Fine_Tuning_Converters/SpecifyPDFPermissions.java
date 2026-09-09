@@ -22,26 +22,28 @@ public class SpecifyPDFPermissions {
         String code = "<div>Hello, World!!</div>";
 
         // Initialize an HTML document from the HTML code
-        HTMLDocument document = new HTMLDocument(code, ".");
+        try(HTMLDocument document = new HTMLDocument(code, ".")) {
 
-        // Create the instance of the PdfRenderingOptions class
-        PdfRenderingOptions options = new PdfRenderingOptions();
+            // Create the instance of the PdfRenderingOptions class
+            PdfRenderingOptions options = new PdfRenderingOptions();
 
-        // Set file permissions
-        options.setEncryption(
-                new PdfEncryptionInfo(
-                        "user_pwd",
-                        "owner_pwd",
-                        PdfPermissions.PrintDocument,
-                        PdfEncryptionAlgorithm.RC4_128
-                )
-        );
+            // Set file permissions
+            options.setEncryption(
+                    new PdfEncryptionInfo(
+                            "user_pwd",
+                            "owner_pwd",
+                            PdfPermissions.PrintDocument,
+                            PdfEncryptionAlgorithm.RC4_128
+                    )
+            );
 
-        // Create a PDF Device and specify options and output file
-        PdfDevice device = new PdfDevice(options, $o("output.pdf"));
+            // Create a PDF Device and specify options and output file
+            try (PdfDevice device = new PdfDevice(options, $o("output.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

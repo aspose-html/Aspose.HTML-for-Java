@@ -16,20 +16,22 @@ public class InlineCSS {
 
         // Create an instance of an HTML document with specified content
         String content = "<p> Inline CSS </p>";
-        HTMLDocument document = new HTMLDocument(content, ".");
+        try(HTMLDocument document = new HTMLDocument(content, ".")) {
 
-        // Find the paragraph element to set a style attribute
-        HTMLElement paragraph = (HTMLElement) document.getElementsByTagName("p").get_Item(0);
+            // Find the paragraph element to set a style attribute
+            HTMLElement paragraph = (HTMLElement) document.getElementsByTagName("p").get_Item(0);
 
-        // Set the style attribute
-        paragraph.setAttribute("style", "font-size: 250%; font-family: verdana; color: #cd66aa");
+            // Set the style attribute
+            paragraph.setAttribute("style", "font-size: 250%; font-family: verdana; color: #cd66aa");
 
-        // Save the HTML document to a file
-        document.save($o("edit-inline-css.html"));
+            // Save the HTML document to a file
+            document.save($o("edit-inline-css.html"));
 
-        // Create an instance of the PDF output device and render the document into this device
-        PdfDevice device = new PdfDevice($o("edit-inline-css.html"));
-        document.renderTo(device);
+            // Create an instance of the PDF output device and render the document into this device
+            try (PdfDevice device = new PdfDevice($o("edit-inline-css.html"))) {
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

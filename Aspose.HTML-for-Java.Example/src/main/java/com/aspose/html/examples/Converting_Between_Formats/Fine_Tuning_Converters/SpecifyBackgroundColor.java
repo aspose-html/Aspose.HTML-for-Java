@@ -23,17 +23,19 @@ public class SpecifyBackgroundColor {
         }
 
         // Create an instance of the HTMLDocument class
-        HTMLDocument document = new HTMLDocument($o("document.html"));
+        try (HTMLDocument document = new HTMLDocument($o("document.html"))) {
 
-        // Initialize options with 'cyan' as a background-color
-        PdfRenderingOptions options = new PdfRenderingOptions();
-        options.setBackgroundColor(Color.getCyan());
+            // Initialize options with 'cyan' as a background-color
+            PdfRenderingOptions options = new PdfRenderingOptions();
+            options.setBackgroundColor(Color.getCyan());
 
-        // Create an instance of the PdfDevice class
-        PdfDevice device = new PdfDevice(options, $o("output.pdf"));
+            // Create an instance of the PdfDevice class
+            try (PdfDevice device = new PdfDevice(options, $o("output.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

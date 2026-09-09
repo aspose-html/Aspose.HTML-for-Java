@@ -18,13 +18,15 @@ public class SpecifyOutputDevice {
         String code = "<span>Hello, World!!</span>";
 
         // Initialize an HTML document from HTML code
-        HTMLDocument document = new HTMLDocument(code, ".");
+        try(HTMLDocument document = new HTMLDocument(code, ".")) {
 
-        // Create an instance of the PdfDevice class and specify the output file to render
-        PdfDevice device = new PdfDevice($o("output.pdf"));
+            // Create an instance of the PdfDevice class and specify the output file to render
+            try (PdfDevice device = new PdfDevice($o("output.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

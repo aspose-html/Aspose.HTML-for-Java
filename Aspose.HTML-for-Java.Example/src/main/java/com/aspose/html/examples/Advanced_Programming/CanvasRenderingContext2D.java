@@ -50,10 +50,11 @@ public class CanvasRenderingContext2D {
             context.fillRect(0, 95, 300, 20);
 
             // Create a PDF output device
-            PdfDevice device = new PdfDevice($o("canvas.output.pdf"));
+            try (PdfDevice device = new PdfDevice($o("canvas.output.pdf"))) {
 
-            // Render HTML5 Canvas to PDF
-            document.renderTo(device);
+                // Render HTML5 Canvas to PDF
+                document.renderTo(device);
+            }
         }
         // @END_SNIPPET
     }

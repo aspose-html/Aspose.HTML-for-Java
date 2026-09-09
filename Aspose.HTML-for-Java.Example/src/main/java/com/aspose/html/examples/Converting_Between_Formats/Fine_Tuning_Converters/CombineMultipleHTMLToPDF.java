@@ -29,10 +29,11 @@ public class CombineMultipleHTMLToPDF {
         HtmlRenderer renderer = new HtmlRenderer();
 
         // Create an instance of the PdfDevice class
-        PdfDevice device = new PdfDevice($o("output.pdf"));
+        try(PdfDevice device = new PdfDevice($o("output.pdf"))) {
 
-        // Merge all HTML documents to PDF
-        renderer.render(device, new HTMLDocument[]{document1, document2, document3});
+            // Merge all HTML documents to PDF
+            renderer.render(device, new HTMLDocument[]{document1, document2, document3});
+        }
         // @END_SNIPPET
     }
 }

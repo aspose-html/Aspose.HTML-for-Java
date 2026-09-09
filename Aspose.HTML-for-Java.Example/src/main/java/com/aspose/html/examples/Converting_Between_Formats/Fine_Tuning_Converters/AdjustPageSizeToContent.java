@@ -26,20 +26,22 @@ public class AdjustPageSizeToContent {
                 "    <div style = 'border: 1px solid red; width: 400px' > First Page</div >\n" +
                 "    <div style = 'border: 1px solid red; width: 600px' > Second Page</div >\n";
         // Initialize an HTML document from HTML code
-        HTMLDocument document = new HTMLDocument(code, ".");
+        try (HTMLDocument document = new HTMLDocument(code, ".")) {
 
-        // Create an instance of the PdfRenderingOptions class and set a custom page-size
-        PdfRenderingOptions options = new PdfRenderingOptions();
-        options.getPageSetup().setAnyPage(new Page(new Size(500, 200)));
+            // Create an instance of the PdfRenderingOptions class and set a custom page-size
+            PdfRenderingOptions options = new PdfRenderingOptions();
+            options.getPageSetup().setAnyPage(new Page(new Size(500, 200)));
 
-        // Enable auto-adjusting for the page size
-        options.getPageSetup().setAdjustToWidestPage(true);
+            // Enable auto-adjusting for the page size
+            options.getPageSetup().setAdjustToWidestPage(true);
 
-        // Create an instance of the PdfDevice class and specify options and output file
-        PdfDevice device = new PdfDevice(options, $o("output.pdf"));
+            // Create an instance of the PdfDevice class and specify options and output file
+            try (PdfDevice device = new PdfDevice(options, $o("output.pdf"))) {
 
-        // Render HTML to PDF
-        document.renderTo(device);
+                // Render HTML to PDF
+                document.renderTo(device);
+            }
+        }
         // @END_SNIPPET
     }
 }

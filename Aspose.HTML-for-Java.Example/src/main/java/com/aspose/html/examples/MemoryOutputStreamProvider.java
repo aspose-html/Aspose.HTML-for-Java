@@ -67,10 +67,9 @@ public class MemoryOutputStreamProvider
 
         while (tmp0.hasNext()) {
             MemoryOutputStream stream = (MemoryOutputStream) tmp0.next();
-            stream.dispose();
-        }
+                stream.dispose();
+    }
 
     }
 }
 // @END_SNIPPET
-
