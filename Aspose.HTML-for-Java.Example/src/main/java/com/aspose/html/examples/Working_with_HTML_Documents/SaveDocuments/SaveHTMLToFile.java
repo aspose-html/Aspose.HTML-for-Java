@@ -30,8 +30,7 @@ public class SaveHTMLToFile {
         // Create an instance of the HTMLSaveOptions class
         HTMLSaveOptions options = new HTMLSaveOptions();
 
-        // The following line with the value "0" cuts off all other linked HTML-files while saving this instance
-        // If you remove this line or change the value to "1", the "linked.html" file will be saved as well to the output folder
+        // Set the maximum page handling depth to 1 so that directly referenced pages can be processed during saving
         options.getResourceHandlingOptions().setMaxHandlingDepth(1);
 
         // Save the document with the save options

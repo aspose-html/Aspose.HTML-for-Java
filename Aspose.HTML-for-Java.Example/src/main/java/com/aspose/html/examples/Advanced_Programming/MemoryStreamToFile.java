@@ -22,7 +22,7 @@ public class MemoryStreamToFile {
         // Learn more: https://docs.aspose.com/html/java/output-streams/
 
         // Create an instance of MemoryStreamProvider
-        try (MemoryOutputStreamProvider streamProvider = new MemoryOutputStreamProvider()) {
+        try (MemoryStreamProvider streamProvider = new MemoryStreamProvider()) {
 
             // Initialize an HTMLDocument instance
             try (HTMLDocument document = new HTMLDocument("<span>Hello, World!!</span>", ".")) {

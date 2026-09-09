@@ -11,7 +11,7 @@ public class SaveSVG {
     @org.junit.jupiter.api.Timeout(value = 50, unit = java.util.concurrent.TimeUnit.SECONDS)
     public void example() throws IOException {
         // @START_SNIPPET Example_SaveHtmlToSvg.java
-        // Save HTML as SVG using Java
+        // Create and save an SVG document using Java
         // Learn more: https://docs.aspose.com/html/java/save-a-document/
 
         // Prepare SVG code

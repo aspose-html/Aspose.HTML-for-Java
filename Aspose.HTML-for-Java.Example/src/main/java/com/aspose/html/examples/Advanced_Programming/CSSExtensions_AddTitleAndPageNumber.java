@@ -53,6 +53,6 @@ public class CSSExtensions_AddTitleAndPageNumber {
                 document.renderTo(device);
             }
         }
-        //@END_SNIPPET Examples_Java_AdvancedUsage_CSSExtensions_AddTitleAndPageNumber
+        //@END_SNIPPET
     }
 }

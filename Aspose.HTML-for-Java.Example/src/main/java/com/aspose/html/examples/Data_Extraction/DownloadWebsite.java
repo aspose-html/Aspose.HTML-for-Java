@@ -21,7 +21,7 @@ public class DownloadWebsite {
     @org.junit.jupiter.api.Tag("remote")
     public final void SaveWebpageDefaultSaveOptionsTest() {
         // @START_SNIPPET Example_SaveWebpageWithDefaultSaveOptions.java
-        // Extract and save a wab page with default save options in Java
+        // Extract and save a web page with default save options in Java
         // Learn more: https://docs.aspose.com/html/java/website-to-html/
 
         // Initialize an HTML document from a URL

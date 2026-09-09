@@ -16,14 +16,14 @@ public class XPathQueryUsageExample {
         // Learn more: https://docs.aspose.com/html/java/html-navigation/
 
         // Prepare HTML code
-        String code = "< div class='happy' >\n" +
-                "        <div >\n" +
-                "            <span > Hello! </span >\n" +
-                "        </div >\n" +
-                "    </div >\n" +
-                "    <p class='happy' >\n" +
-                "        <span > World! </span >\n" +
-                "    </p >\n";
+        String code = "<div class='happy'>\n" +
+                "        <div>\n" +
+                "            <span> Hello! </span>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "    <p class='happy'>\n" +
+                "        <span> World! </span>\n" +
+                "    </p>\n";
 
         // Initialize a document based on the prepared code
         HTMLDocument document = new HTMLDocument(code, ".");

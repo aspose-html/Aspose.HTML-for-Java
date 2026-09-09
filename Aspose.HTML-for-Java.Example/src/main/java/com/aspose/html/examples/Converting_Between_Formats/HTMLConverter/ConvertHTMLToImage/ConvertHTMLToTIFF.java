@@ -29,7 +29,7 @@ public class ConvertHTMLToTIFF {
         ImageSaveOptions options = new ImageSaveOptions(ImageFormat.Tiff);
 
         // Convert HTML to TIFF
-        Converter.convertHTML(document, options, $o("tiff-output.bmp"));
+        Converter.convertHTML(document, options, $o("tiff-output.tiff"));
         // @END_SNIPPET
         // Assertions.assertTrue(File.exists(savePath));
     }

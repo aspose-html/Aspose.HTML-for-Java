@@ -17,12 +17,12 @@ public class ColorContrastCheck {
     public final void checkColorContrastAgainstAccessibilityCriteriaTest() {
         // @START_SNIPPET Example_CheckColorContrastAgainstAccessibilityCriteria.java
         // Check color contrast on an HTML document using Java
-        // Learn more: https://docs.aspose.com/html/java/check-color-contract/
+        // Learn more: https://docs.aspose.com/html/java/check-color-contrast/
 
         // Prepare a path to a source HTML file
         String documentPath = $i("check-color.html");
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Get Principle "1.Perceivable" by code "1" and get guideline "1.4"
@@ -32,8 +32,8 @@ public class ColorContrastCheck {
         // Get criterion by code, for example 1.4.3
         Criterion criterion = guideline.getCriterion("1.4.3");
 
-        // Create an accessibility validator, pass the found guideline
-        // as parameters and specify the full validation settings
+        // Create an accessibility validator for the selected criterion
+        // and enable all validation settings
         AccessibilityValidator validator = webAccessibility.createValidator(
                 criterion,
                 ValidationBuilder.getAll()
@@ -57,7 +57,7 @@ public class ColorContrastCheck {
                             System.out.println(String.format("Error in rule %s : %s",
                                     result.getRule().getCode(), result.getError().getErrorMessage()));
 
-                            System.out.println(String.format("CSS Rule: %s",
+                            System.out.println(String.format("HTML Element: %s",
                                     rule.getOuterHTML()));
                         }
                     }
@@ -73,12 +73,12 @@ public class ColorContrastCheck {
     public final void checkColorContrastTest() {
         // @START_SNIPPET Example_CheckHtmlAccessibilityColorContrast.java
         // Validate HTML accessibility for color contrast in Java using WCAG criteria
-        // Learn more: https://docs.aspose.com/html/java/check-color-contract/
+        // Learn more: https://docs.aspose.com/html/java/check-color-contrast/
 
         // Prepare a path to a source HTML file
         String documentPath = $i("check-color.html");
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Get Principle "1.Perceivable" by code "1" and get guideline "1.4"
@@ -91,8 +91,8 @@ public class ColorContrastCheck {
         // Get criterion by code, for example 1.4.6
         Criterion criterion146 = guideline.getCriterion("1.4.6");
 
-        // Create an accessibility validator, pass the found guideline
-        // as parameters and specify the full validation settings
+        // Create an accessibility validator for the selected criteria
+        // and enable all validation settings
         List<IRule> rules = new List<>();
         rules.add(criterion143);
         rules.add(criterion146);

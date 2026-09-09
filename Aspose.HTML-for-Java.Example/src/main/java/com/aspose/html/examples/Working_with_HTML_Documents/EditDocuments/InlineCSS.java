@@ -28,7 +28,7 @@ public class InlineCSS {
             document.save($o("edit-inline-css.html"));
 
             // Create an instance of the PDF output device and render the document into this device
-            try (PdfDevice device = new PdfDevice($o("edit-inline-css.html"))) {
+            try (PdfDevice device = new PdfDevice($o("edit-inline-css.pdf"))) {
                 document.renderTo(device);
             }
         }

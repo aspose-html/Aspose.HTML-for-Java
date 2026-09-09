@@ -28,7 +28,7 @@ public class WebAccessibilityCheck {
         // Check HTML document for WCAG compliance in Java and log each rule code, description, and pass status
         // Learn more: https://docs.aspose.com/html/java/web-accessibility/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Create an accessibility validator
@@ -64,7 +64,7 @@ public class WebAccessibilityCheck {
         // Check website for WCAG compliance in Java
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-check/
 
-        // Initialize webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Create an accessibility validator with static instance
@@ -100,7 +100,7 @@ public class WebAccessibilityCheck {
         // Prepare a path to a source HTML file
         String documentPath = $i("alt-tag.html");
 
-        // Initialize webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Get from the rules list Principle "1. Perceivable"
@@ -156,7 +156,7 @@ public class WebAccessibilityCheck {
         // Validate HTML for multimedia accessibility using Java
         // Learn more: https://docs.aspose.com/html/java/screen-reader-accessibility/
 
-        // Initialize a webAccessibility container
+        // Initialize a WebAccessibility container
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Get from the rules list Principle "1.Perceivable" by code "1"
@@ -211,7 +211,7 @@ public class WebAccessibilityCheck {
         // Check HTML for WCAG compliance and output failed rule codes and error messages
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-check/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Create an accessibility validator with static instance
@@ -237,7 +237,7 @@ public class WebAccessibilityCheck {
                 // print the results of methods with errors
                 for (ITechniqueResult ruleDetail : ruleResult.getErrors()) {
                     // print the code and description of the method
-                    StringBuilder str = new StringBuilder(String.format("\n{0}: {1} - {2}",
+                    StringBuilder str = new StringBuilder(String.format("\n%s: %s - %s",
                             ruleDetail.getRule().getCode(),
                             ruleDetail.getSuccess(),
                             ruleDetail.getRule().getDescription()

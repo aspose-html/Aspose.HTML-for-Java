@@ -29,7 +29,7 @@ public class SaveHTMLToMHTML {
         HTMLDocument document = new HTMLDocument($o("document.html"));
 
         // Save the document to MHTML format
-        document.save($o("save-to-MTHML.mht"), HTMLSaveFormat.MHTML);
+        document.save($o("save-to-MHTML.mht"), HTMLSaveFormat.MHTML);
         // @END_SNIPPET
     }
 }

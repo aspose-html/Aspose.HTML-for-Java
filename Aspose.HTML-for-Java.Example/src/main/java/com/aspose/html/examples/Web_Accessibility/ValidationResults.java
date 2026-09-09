@@ -21,7 +21,7 @@ public class ValidationResults {
         // Validate HTML against WCAG rules using Java
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-validation-results/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Create an accessibility validator with static instance for all rules
@@ -84,7 +84,7 @@ public class ValidationResults {
         // Validate HTML accessibility using Java and get detailed failed rule results
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-validation-results/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Create an accessibility validator with static instance for all rules
@@ -109,8 +109,8 @@ public class ValidationResults {
 
                 // Print the results of all methods
                 for (ITechniqueResult ruleDetail : ruleResult.getResults()) {
-                    // Print the code and description of the criterions
-                    StringBuilder str = new StringBuilder(String.format("\n{0}: {1} - {2}",
+                    // Print the code, status, and description of each technique
+                    StringBuilder str = new StringBuilder(String.format("%n%s: %s - %s",
                             ruleDetail.getRule().getCode(),
                             ruleDetail.getSuccess(),
                             ruleDetail.getRule().getDescription()

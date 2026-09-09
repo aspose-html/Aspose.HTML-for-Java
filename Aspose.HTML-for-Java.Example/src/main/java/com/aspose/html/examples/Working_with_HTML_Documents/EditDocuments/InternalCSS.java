@@ -51,7 +51,7 @@ public class InternalCSS {
             document.save($o("edit-internal-css.html"));
 
             // Create an instance of the PDF output device and render the document on that device
-            try (PdfDevice device = new PdfDevice($o("edit-internal-css.html"))) {
+            try (PdfDevice device = new PdfDevice($o("edit-internal-css.pdf"))) {
 
                 // Render HTML to PDF
                 document.renderTo(device);

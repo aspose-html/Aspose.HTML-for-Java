@@ -17,10 +17,10 @@ public class NodeFilterUsageExample {
         // Learn more: https://docs.aspose.com/html/java/html-navigation/
 
         // Prepare HTML code
-        String code = "    < p > Hello, </p >\n" +
-                "    <img src = 'image1.png' >\n" +
-                "    <img src = 'image2.png' >\n" +
-                "    <p > World ! </p >\n";
+        String code = "    <p> Hello, </p>\n" +
+                "    <img src = 'image1.png'>\n" +
+                "    <img src = 'image2.png'>\n" +
+                "    <p> World! </p>\n";
 
         // Initialize a document based on the prepared code
         HTMLDocument document = new HTMLDocument(code, ".");

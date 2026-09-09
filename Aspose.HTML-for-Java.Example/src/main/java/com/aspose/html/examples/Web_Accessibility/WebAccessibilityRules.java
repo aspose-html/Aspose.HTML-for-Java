@@ -19,13 +19,13 @@ public class WebAccessibilityRules {
 
         String htmlPath = $i("input.html");
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // List of necessary rules for checking (rule code according to the specification) 
         String[] rulesCode = new String[]{"H2", "H37", "H67", "H86"};
 
-        // Get the required IList<Rule> rules from the rules reference
+        // Get the required IList<IRule> rules from the rules reference
         List<IRule> rules = webAccessibility.getRules().getRules(rulesCode);
 
         // Create an accessibility validator, pass the found rules as parameters,
@@ -52,7 +52,7 @@ public class WebAccessibilityRules {
         // Retrieve and list accessibility rules by code with their descriptions from the rules repository
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-rules/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // List of rule codes can contain both technique codes and principles,
@@ -81,7 +81,7 @@ public class WebAccessibilityRules {
         // Get accessibility principle by code from WCAG rules in Aspose.HTML for Java
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-rules/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Get the principle by code
@@ -92,7 +92,7 @@ public class WebAccessibilityRules {
                 rule.getCode(),
                 rule.getDescription()
         ));
-        // @output: 1:Perceivable
+        // @output: 1: Perceivable
         // @END_SNIPPET GetPrinciple
     }
 
@@ -118,7 +118,7 @@ public class WebAccessibilityRules {
                     guideline.getDescription(),
                     guideline
             ));
-            // @output: 1.1:Text Alternatives
+            // @output: 1.1: Text Alternatives
         }
         // @END_SNIPPET GetGuideline
     }
@@ -131,7 +131,7 @@ public class WebAccessibilityRules {
         // Get accessibility criterion and its sufficient techniques in Java
         // Learn more: https://docs.aspose.com/html/java/web-accessibility-rules/
 
-        // Initialize a webAccessibility container
+        // Create a WebAccessibility instance
         WebAccessibility webAccessibility = new WebAccessibility();
 
         // Get the principle by code 
@@ -148,7 +148,7 @@ public class WebAccessibilityRules {
                     criterion.getDescription(),
                     criterion.getLevel()
             ));
-            // @output: 1.1.1:Non-text Content - A
+            // @output: 1.1.1: Non-text Content - A
 
             // Get all Sufficient Techniques and write to console
             for (IRule technique : criterion.getSufficientTechniques())

@@ -45,7 +45,7 @@ public class DocumentTree2 {
         document.save($o("using-dom.html"));
 
         // Create an instance of the PDF output device and render the document into this device
-        PdfDevice device = new PdfDevice($o("using-dom.html"));
+        PdfDevice device = new PdfDevice($o("using-dom.pdf"));
 
         // Render HTML to PDF
         document.renderTo(device);

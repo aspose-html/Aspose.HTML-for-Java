@@ -15,17 +15,23 @@ public class MessageHandlers__2 {
         // Learn more: https://docs.aspose.com/html/java/environment-configuration/
 
         // Message handler logs all failed requests to the console
-        MessageHandler handler = new MessageHandler() {
+        class LogMessageHandler extends MessageHandler {
+
             @Override
             public void invoke(INetworkOperationContext context) {
-                if (context.getResponse().getStatusCode() != HttpURLConnection.HTTP_OK) {
-                    System.out.println(String.format("File '%s' Not Found", context.getRequest().getRequestUri().toString()));
+                int statusCode = context.getResponse().getStatusCode();
+
+                if (statusCode < 200 || statusCode >= 300) {
+                    System.out.println(String.format(
+                            "Resource '%s' returned HTTP status %d.",
+                            context.getRequest().getRequestUri(),
+                            statusCode));
                 }
 
                 // Invoke the next message handler in the chain
                 next(context);
             }
-        };
+        }
         // @END_SNIPPET
     }
 }
